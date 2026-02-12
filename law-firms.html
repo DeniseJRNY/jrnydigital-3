@@ -241,6 +241,610 @@
         .tagline-section p em { font-style: italic; }
         .tagline-section p strong { color: #F5A623; font-weight: 700; }
 
+        /* ========== LAW CLIENTS LOGO SLIDER ========== */
+        .law-logo-slider-section {
+            background: #000000;
+            padding: 15px 0;
+            margin-top: 0;
+            overflow: hidden;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .law-logo-slider-heading {
+            text-align: center;
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
+            padding: 40px 20px 25px;
+            background: #000000;
+        }
+
+        .law-logo-slider {
+            display: flex;
+            width: max-content;
+            animation: lawLogoSlide 30s linear infinite;
+        }
+
+        .law-logo-slider:hover {
+            animation-play-state: paused;
+        }
+
+        .law-logo-track {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 0 30px;
+        }
+
+        .law-logo-track img {
+            height: 110px;
+            width: auto;
+            opacity: 0.7;
+            filter: grayscale(100%) brightness(2);
+            transition: all 0.3s ease;
+        }
+
+        .law-logo-track img:hover {
+            opacity: 1;
+            filter: grayscale(0%) brightness(1);
+        }
+
+        @keyframes lawLogoSlide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .law-logo-slider-section::before,
+        .law-logo-slider-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .law-logo-slider-section::before {
+            left: 0;
+            background: linear-gradient(90deg, #5c3d0d 0%, #3d2a0a 40%, transparent 100%);
+        }
+
+        .law-logo-slider-section::after {
+            right: 0;
+            background: linear-gradient(270deg, #5c3d0d 0%, #3d2a0a 40%, transparent 100%);
+        }
+
+        /* ========== LEAD MAGNET / BLUEPRINT SECTION ========== */
+        .blueprint-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .blueprint-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .blueprint-content h2 {
+            font-size: 42px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .blueprint-content > p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .blueprint-content .blueprint-subtitle {
+            font-size: 17px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .blueprint-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .blueprint-checklist li {
+            position: relative;
+            border-radius: 14px;
+            z-index: 1;
+        }
+
+        .blueprint-checklist li .checklist-wrapper {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 17px;
+            font-weight: 500;
+            color: #ffffff;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .blueprint-checklist li .checklist-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 189, 0, 0.15) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+            pointer-events: none;
+            border-radius: 14px;
+        }
+
+        .blueprint-checklist li:hover .checklist-wrapper::after {
+            opacity: 1;
+        }
+
+        .blueprint-checklist li::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 16px;
+            background: conic-gradient(from var(--angle), transparent 92%, #F5A623 96%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 8s linear infinite;
+        }
+
+        .blueprint-checklist li::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 16px;
+            background: conic-gradient(from var(--angle), transparent 92%, #F5A623 96%, #FFBD00 100%, transparent 100%);
+            z-index: -3;
+            animation: rotateBorder 8s linear infinite;
+            filter: blur(15px);
+            opacity: 0.7;
+        }
+
+        .blueprint-checklist li:hover .checklist-wrapper {
+            border-color: rgba(245,166,35,0.25);
+        }
+
+        .blueprint-check-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: #F5A623;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blueprint-check-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: #ffffff;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .blueprint-cta {
+            display: inline-block;
+            padding: 16px 36px;
+            background: #F5A623;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .blueprint-cta:hover {
+            background: #FFBD00;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(245,166,35,0.35);
+        }
+
+        .blueprint-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blueprint-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            transition: transform 0.4s ease;
+        }
+
+        .blueprint-image img:hover {
+            transform: scale(1.03);
+        }
+
+        /* ========== LAW CASE STUDIES SECTION ========== */
+        .law-results-section {
+            background: #000000;
+            padding: 100px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .law-results-header {
+            text-align: left;
+            margin-bottom: 80px;
+        }
+
+        .law-results-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .law-results-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .law-results-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .law-results-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .law-results-header h2 {
+            font-size: 80px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.1;
+            max-width: 100%;
+        }
+
+        .law-case-studies-container {
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .law-case-study-tabs {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .law-case-studies-cta {
+            margin-left: auto;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .law-case-studies-cta:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .law-case-study-tab {
+            padding: 15px 30px;
+            background: transparent;
+            border: 1px solid #333;
+            border-radius: 50px;
+            color: #888;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .law-case-study-tab:hover {
+            border-color: #FFBD00;
+            color: #FFBD00;
+        }
+
+        .law-case-study-tab.active {
+            background: #FFBD00;
+            border-color: #FFBD00;
+            color: #000000;
+        }
+
+        .law-case-study {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .law-case-study.active {
+            display: grid;
+        }
+
+        .law-case-study-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 450px;
+        }
+
+        .law-case-study-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 189, 0, 0.15) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .law-case-study-image-wrapper:hover::before {
+            opacity: 1;
+        }
+
+        .law-case-study-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .law-case-study-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .law-case-study-stats-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+            z-index: 2;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .law-case-stat {
+            text-align: center;
+        }
+
+        .law-case-stat-number {
+            font-size: 36px;
+            font-weight: 600;
+            color: #FFBD00;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .law-case-stat-label {
+            font-size: 12px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .law-case-study-content {
+            background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .law-case-study-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 189, 0, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .law-case-study-content:hover::before {
+            opacity: 1;
+        }
+
+        .law-case-study-content > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .law-case-study-content h3 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .law-case-study-outcome {
+            font-size: 14px;
+            color: #FFBD00;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .law-case-study-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ffffff;
+        }
+
+        /* ========== TESTIMONIAL SECTION ========== */
+        .law-testimonial-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .law-testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .law-testimonial-content {
+            position: relative;
+        }
+
+        .law-testimonial-quote-mark {
+            font-size: 120px;
+            color: #F5A623;
+            font-family: Georgia, serif;
+            line-height: 0.5;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .law-testimonial-text {
+            font-size: 42px;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 1.35;
+            margin-bottom: 40px;
+            font-style: normal;
+        }
+
+        .law-testimonial-author {
+            font-size: 18px;
+            color: #F5A623;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .law-testimonial-role {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .law-testimonial-cta {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 32px;
+            background: transparent;
+            border: 2px solid #F5A623;
+            color: #F5A623;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .law-testimonial-cta:hover {
+            background: #F5A623;
+            color: #000000;
+        }
+
+        .law-testimonial-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .law-testimonial-image img {
+            max-width: 100%;
+            border-radius: 16px;
+            height: auto;
+        }
+
         /* ========== VALUE CARDS SECTION ========== */
         .value-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
         .value-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -385,6 +989,11 @@
         .footer-bottom p { font-size: 16px; color: rgba(255,255,255,0.7); }
 
         /* ========== RESPONSIVE ========== */
+        @media (max-width: 1200px) {
+            .law-case-study { grid-template-columns: 1fr; gap: 40px; }
+            .law-case-study-image-wrapper { height: 350px; }
+        }
+
         @media (max-width: 1024px) {
             nav { padding: 20px 40px; }
             .hero-content { padding: 140px 40px 60px; }
@@ -394,6 +1003,14 @@
             .stat-number { font-size: 34px; }
             .tagline-section { padding: 40px 40px; }
             .tagline-section p { font-size: 22px; }
+            .law-logo-slider-heading { font-size: 20px; }
+            .blueprint-section { padding: 80px 40px; }
+            .blueprint-container { gap: 50px; }
+            .blueprint-content h2 { font-size: 36px; }
+            .law-results-section { padding: 80px 40px; }
+            .law-results-header h2 { font-size: 56px; }
+            .law-testimonial-section { padding: 80px 40px; }
+            .law-testimonial-text { font-size: 34px; }
             .value-section { padding: 80px 40px; }
             .value-container { gap: 50px; }
             .services-grid-section { padding: 80px 40px; }
@@ -436,6 +1053,34 @@
             .stat-description { font-size: 13px; }
             .tagline-section { padding: 40px 20px; }
             .tagline-section p { font-size: 20px; }
+            .law-logo-slider-heading { font-size: 18px; padding: 30px 20px 20px; }
+            .law-logo-track { gap: 40px; }
+            .law-logo-track img { height: 80px; }
+            .law-logo-slider-section::before,
+            .law-logo-slider-section::after { width: 80px; }
+            .blueprint-section { padding: 60px 20px; }
+            .blueprint-container { grid-template-columns: 1fr; gap: 40px; }
+            .blueprint-content h2 { font-size: 30px; }
+            .blueprint-checklist li .checklist-wrapper { font-size: 15px; padding: 16px 20px; }
+            .blueprint-image { order: -1; max-width: 400px; margin: 0 auto; }
+            .law-results-section { padding: 80px 20px; }
+            .law-results-header { margin-bottom: 40px; }
+            .law-results-header h2 { font-size: 32px; }
+            .law-results-badge { margin-bottom: 30px; }
+            .law-case-study { grid-template-columns: 1fr; gap: 40px; }
+            .law-case-study-image-wrapper { height: 300px; }
+            .law-case-study-stats-overlay { padding: 20px; }
+            .law-case-stat-number { font-size: 28px; }
+            .law-case-study-content { padding: 30px; }
+            .law-case-study-content h3 { font-size: 24px; }
+            .law-case-study-tabs { gap: 10px; }
+            .law-case-study-tab { padding: 12px 20px; font-size: 13px; }
+            .law-case-studies-cta { margin-left: 0; padding: 12px 24px; font-size: 14px; }
+            .law-testimonial-section { padding: 60px 20px; }
+            .law-testimonial-container { grid-template-columns: 1fr; gap: 40px; }
+            .law-testimonial-text { font-size: 28px; }
+            .law-testimonial-quote-mark { font-size: 80px; }
+            .law-testimonial-image { order: -1; }
             .value-section { padding: 60px 20px; }
             .value-container { grid-template-columns: 1fr; gap: 40px; }
             .value-text h2 { font-size: 28px; }
@@ -467,6 +1112,20 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: 30px; }
             .stat-number { font-size: 40px; }
+            .law-logo-track img { height: 60px; }
+            .law-logo-track { gap: 30px; }
+            .blueprint-content h2 { font-size: 26px; }
+            .blueprint-checklist li .checklist-wrapper { font-size: 14px; padding: 14px 16px; gap: 12px; }
+            .blueprint-check-icon { width: 28px; height: 28px; min-width: 28px; }
+            .blueprint-cta { padding: 14px 28px; font-size: 14px; }
+            .law-results-header h2 { font-size: 26px; }
+            .law-case-study-image-wrapper { height: 250px; }
+            .law-case-stat-number { font-size: 24px; }
+            .law-case-study-content h3 { font-size: 22px; }
+            .law-case-study-content p { font-size: 14px; }
+            .law-testimonial-text { font-size: 24px; }
+            .law-testimonial-quote-mark { font-size: 60px; }
+            .law-testimonial-author { font-size: 16px; }
             .services-grid-header h2 { font-size: 26px; }
             .contact-info h2 { font-size: 28px; }
             .faq-header h2 { font-size: 30px; }
@@ -572,6 +1231,39 @@
             <h1>Your Law Firm Digital Marketing Agency</h1>
             <p class="hero-subtitle">We've got every service your law firm needs to succeed online — all under one roof, built on the expertise we've gained from working with multiple law firms.<br><br>We'll bring you the leads while you focus on winning cases.</p>
             <a href="contact-us.html" class="hero-cta">Let's Talk</a>
+        </div>
+    </section>
+
+    <!-- ========== LAW CLIENTS LOGO SLIDER ========== -->
+    <p class="law-logo-slider-heading">Trusted by Leading Law Firms Across Australia</p>
+    <section class="law-logo-slider-section">
+        <div class="law-logo-slider">
+            <!-- First set of logos -->
+            <div class="law-logo-track">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Becker%20Watt%20Lawyers.png" alt="Becker Watt Lawyers">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Birth%20Trauma%20Law.png" alt="Birth Trauma Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Collective%20Family%20Law%20Group.png" alt="Collective Family Law Group">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Franklin%20Family%20Law.png" alt="Franklin Family Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Medical%20Law.png" alt="Medical Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Motorcycle%20law.png" alt="Motorcycle Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Richardson%20&%20Lyons.png" alt="Richardson & Lyons">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Rin%20Kim%20Law.png" alt="Rin Kim Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Seymour%20Furlong%20Lawyers.png" alt="Seymour Furlong Lawyers">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Cycle%20Law(1).png" alt="Cycle Law">
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="law-logo-track">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Becker%20Watt%20Lawyers.png" alt="Becker Watt Lawyers">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Birth%20Trauma%20Law.png" alt="Birth Trauma Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Collective%20Family%20Law%20Group.png" alt="Collective Family Law Group">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Franklin%20Family%20Law.png" alt="Franklin Family Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Medical%20Law.png" alt="Medical Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Motorcycle%20law.png" alt="Motorcycle Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Richardson%20&%20Lyons.png" alt="Richardson & Lyons">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Rin%20Kim%20Law.png" alt="Rin Kim Law">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Seymour%20Furlong%20Lawyers.png" alt="Seymour Furlong Lawyers">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Law%20Clients/Cycle%20Law(1).png" alt="Cycle Law">
+            </div>
         </div>
     </section>
 
@@ -776,6 +1468,159 @@
                     <a href="contact-us.html" class="learn-more">Learn More</a>
                     <a href="contact-us.html" class="book-call">Book a Call</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LEAD MAGNET / BLUEPRINT SECTION ========== -->
+    <section class="blueprint-section">
+        <div class="blueprint-container">
+            <div class="blueprint-content">
+                <h2>The Growth Blueprint For Law Firms</h2>
+                <p>Learn how to consistently acquire new, high-value clients through paid and organic channels — without relying on referrals or unpredictable enquiry flow.</p>
+                <p class="blueprint-subtitle">With this guide, you'll learn how to:</p>
+                <ul class="blueprint-checklist">
+                    <li>
+                        <div class="checklist-wrapper">
+                            <span class="blueprint-check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            Attract qualified enquiries through paid and organic channels
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checklist-wrapper">
+                            <span class="blueprint-check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            Convert more of those enquiries into high-value matters
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checklist-wrapper">
+                            <span class="blueprint-check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            Optimise campaigns continuously for better ROI at lower cost
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checklist-wrapper">
+                            <span class="blueprint-check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            Build a sustainable pipeline you can rely on
+                        </div>
+                    </li>
+                </ul>
+                <a href="#contactForm" class="blueprint-cta">Download My Law Firm Blueprint</a>
+            </div>
+            <div class="blueprint-image">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/371649cc-20250825-1642-digital-marketing-law-book-remix-01k3g64yt3e25ttmv9xxznaxsy_11200pc0pc0pc06c000028.png" alt="The Growth Blueprint For Law Firms - Free Guide" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LAW CASE STUDIES SECTION ========== -->
+    <section class="law-results-section">
+        <div class="law-results-header">
+            <span class="law-results-badge"><span class="law-results-badge-dot"></span>Results</span>
+            <h2>We'll Let The Results Speak<br>For Themselves</h2>
+        </div>
+
+        <div class="law-case-studies-container">
+            <!-- Tabs -->
+            <div class="law-case-study-tabs">
+                <button class="law-case-study-tab active" data-tab="rin-kim-law">Rin Kim Law</button>
+                <button class="law-case-study-tab" data-tab="franklin-family-law">Franklin Family Law</button>
+                <button class="law-case-study-tab" data-tab="love-family-lawyers">Love Family Lawyers</button>
+                <a href="case-studies.html" class="law-case-studies-cta">View All Case Studies</a>
+            </div>
+
+            <!-- Rin Kim Law Case Study -->
+            <div class="law-case-study active" data-content="rin-kim-law">
+                <div class="law-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/RK%20case%20study.png" alt="Rin Kim Law">
+                    <div class="law-case-study-stats-overlay">
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">267%</div>
+                            <div class="law-case-stat-label">Conversion Rate Uplift</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">82%</div>
+                            <div class="law-case-stat-label">Increase in Lead Quality</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">35%</div>
+                            <div class="law-case-stat-label">Cheaper Cost Per Lead</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="law-case-study-content">
+                    <h3>Rin Kim Law</h3>
+                    <div class="law-case-study-outcome">Outcome | 267% uplift in conversion rate &amp; 82% increase in lead quality</div>
+                    <p>Rin Kim Law faced significant challenges in utilising digital advertising to enhance firm recognition and lead generation. Through a comprehensive review of their existing campaigns, refined targeting, tailored landing pages and conversion rate optimisation, we delivered a 267% uplift in conversion rate, 35% cheaper cost per lead at just $200 per high-quality lead, and an 82% increase in lead quality — allowing their team to focus on winning cases.</p>
+                </div>
+            </div>
+
+            <!-- Franklin Family Law Case Study -->
+            <div class="law-case-study" data-content="franklin-family-law">
+                <div class="law-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Franklin%20Family%20Law%20-%20Case%20Study?updatedAt=1769526277265" alt="Franklin Family Law">
+                    <div class="law-case-study-stats-overlay">
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">$90</div>
+                            <div class="law-case-stat-label">Cost Per Lead</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">15%</div>
+                            <div class="law-case-stat-label">Conversion Rate</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">300%</div>
+                            <div class="law-case-stat-label">Increased Lead Quality</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="law-case-study-content">
+                    <h3>Franklin Family Law</h3>
+                    <div class="law-case-study-outcome">Outcome | 300% increased lead quantity in 1 month</div>
+                    <p>Franklin Family Law were using an existing agency and weren't getting the desired results. Unsure how they could get more out of their marketing budget, that's where we stepped in. Through an omnichannel approach and building a seamless user experience for prospects, we were able to triple the number of leads at a 3x lower cost per lead within 1 month. So much so that we had to taper down the advertising spend in order for the team at Franklin Family Law to keep up with the demand.</p>
+                </div>
+            </div>
+
+            <!-- Love Family Lawyers Case Study -->
+            <div class="law-case-study" data-content="love-family-lawyers">
+                <div class="law-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Love%20Family%20Lawyers.png" alt="Love Family Lawyers">
+                    <div class="law-case-study-stats-overlay">
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">&lt;$100</div>
+                            <div class="law-case-stat-label">Branded Search CPC</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">&lt;$180</div>
+                            <div class="law-case-stat-label">Client Acquisition CPC</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">&#8593;&#8593;</div>
+                            <div class="law-case-stat-label">Website Traffic Growth</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="law-case-study-content">
+                    <h3>Love Family Lawyers</h3>
+                    <div class="law-case-study-outcome">Outcome | Branded search CPC under $100 &amp; sustainable growth</div>
+                    <p>Love Family Lawyers struggled with high CPCs, limited impressions, and inefficient budget allocation — their early campaigns yielded just one costly conversion. By extending visibility through the search network, reverting to their highest-converting landing page, disabling low-quality display ads and shifting bidding strategies, we drove branded search conversions under $100 and reduced client acquisition costs from $220 to under $180, delivering sustained growth in a fiercely competitive market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIAL SECTION ========== -->
+    <section class="law-testimonial-section">
+        <div class="law-testimonial-container">
+            <div class="law-testimonial-content">
+                <span class="law-testimonial-quote-mark">&ldquo;</span>
+                <p class="law-testimonial-text">We thought we'd tried everything. JRNY actually brought in qualified leads—and understood legal compliance inside out.</p>
+                <p class="law-testimonial-author">Richardson &amp; Lyons Solicitors</p>
+                <p class="law-testimonial-role">Partner Law Firm</p>
+                <a href="case-studies.html" class="law-testimonial-cta">View All Case Studies</a>
+            </div>
+            <div class="law-testimonial-image">
+                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/R&L%20pic.png" alt="Richardson & Lyons Solicitors - JRNY Digital Case Study" loading="lazy">
             </div>
         </div>
     </section>
@@ -1059,6 +1904,44 @@
 
         // ========== Mouse tracking for service cards ==========
         document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // ========== Mouse tracking for blueprint checklist items ==========
+        document.querySelectorAll('.blueprint-checklist li .checklist-wrapper').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // ========== Law Case Study Tabs ==========
+        const lawTabs = document.querySelectorAll('.law-case-study-tab');
+        const lawCaseStudies = document.querySelectorAll('.law-case-study');
+
+        lawTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.dataset.tab;
+
+                lawTabs.forEach(t => t.classList.remove('active'));
+                lawCaseStudies.forEach(cs => cs.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.querySelector(`.law-case-study[data-content="${targetTab}"]`).classList.add('active');
+            });
+        });
+
+        // ========== Mouse tracking for law case study elements ==========
+        document.querySelectorAll('.law-case-study-content, .law-case-study-image-wrapper').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = ((e.clientX - rect.left) / rect.width) * 100;
