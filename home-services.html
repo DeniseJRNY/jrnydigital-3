@@ -1,0 +1,3046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Services Marketing Agency - JRNY Digital</title>
+    <meta name="description" content="JRNY Digital is a home services digital marketing agency in Australia. We help plumbers, HVAC, electricians and trade businesses grow with SEO, Google Ads and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        .nav-divider {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .nav-links > a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links > a:hover,
+        .nav-links > a.active {
+            color: #F5A623;
+        }
+
+        /* Dropdown Styles */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-dropdown > a:hover,
+        .nav-dropdown > a.active {
+            color: #F5A623;
+        }
+
+        .nav-dropdown > a::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid #ffffff;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .nav-dropdown:hover > a::after {
+            border-top-color: #F5A623;
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease, margin-top 0.3s ease;
+            margin-top: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 0;
+            right: 0;
+            height: 15px;
+        }
+
+        .nav-dropdown:hover .dropdown-menu,
+        .dropdown-menu:hover {
+            opacity: 1;
+            visibility: visible;
+            margin-top: 10px;
+            pointer-events: auto;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 25px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(245, 166, 35, 0.1);
+            color: #F5A623;
+        }
+
+        .dropdown-menu a.active {
+            color: #F5A623;
+            background: rgba(245, 166, 35, 0.05);
+        }
+
+        .nav-cta {
+            background-color: #F5A623;
+            color: #000000;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: #e09515;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Hamburger Button */
+        .mobile-nav-right {
+            display: none;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+
+        .mobile-menu-toggle span:nth-child(1) {
+            transform: translateY(-8px);
+        }
+
+        .mobile-menu-toggle span:nth-child(2) {
+            transform: translateY(0);
+        }
+
+        .mobile-menu-toggle span:nth-child(3) {
+            transform: translateY(8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Mobile Menu Panel */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 85%;
+            max-width: 320px;
+            height: 100%;
+            background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 80px 30px 30px;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+            transform: translateX(100%);
+            visibility: hidden;
+            transition: transform 0.3s ease, visibility 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-menu-links > a,
+        .mobile-menu-links > .mobile-dropdown > a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .mobile-menu-links > a:hover,
+        .mobile-menu-links > .mobile-dropdown > a:hover {
+            color: #F5A623;
+            padding-left: 10px;
+        }
+
+        .mobile-dropdown {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-dropdown > a {
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: none !important;
+        }
+
+        .mobile-dropdown > a::after {
+            content: '+';
+            font-size: 20px;
+            color: #F5A623;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-dropdown.active > a::after {
+            content: '−';
+        }
+
+        .mobile-dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            margin: 0 -30px;
+            padding: 0 30px;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-menu {
+            max-height: 300px;
+        }
+
+        .mobile-dropdown-menu a {
+            display: block;
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 14px 0 14px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .mobile-dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-dropdown-menu a:hover {
+            color: #F5A623;
+            padding-left: 30px;
+        }
+
+        .mobile-menu-cta {
+            display: block;
+            background-color: #F5A623;
+            color: #000000;
+            padding: 16px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .mobile-menu-cta:hover {
+            background-color: #e09515;
+            transform: translateY(-2px);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+
+        .hero-image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.85) 0%,
+                rgba(0, 0, 0, 0.6) 50%,
+                rgba(0, 0, 0, 0.4) 100%
+            );
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: left;
+            max-width: 100%;
+            padding: 160px 60px 80px 80px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .hero-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .hero-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        @property --angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @keyframes rotateBorder {
+            0% {
+                --angle: 0deg;
+                filter: drop-shadow(0 0 5px rgba(245, 166, 35, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 15px rgba(245, 166, 35, 0.8));
+            }
+            100% {
+                --angle: 360deg;
+                filter: drop-shadow(0 0 5px rgba(245, 166, 35, 0.5));
+            }
+        }
+
+        @keyframes rotateBorderNoGlow {
+            0% {
+                --angle: 0deg;
+            }
+            100% {
+                --angle: 360deg;
+            }
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #FFBD00;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* ========== STATS SECTION (Gold on Black) ========== */
+        .stats-section {
+            background: #000000;
+            padding: 70px 60px;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #F5A623;
+            line-height: 1.2;
+        }
+
+        .stat-description {
+            font-size: 15px;
+            color: #ffffff;
+            margin-top: 6px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* ========== TWO COLUMN SECTION ========== */
+        .two-col-section {
+            background: #000000;
+            padding: 100px 60px;
+        }
+
+        .two-col-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .two-col-text h2 {
+            font-size: 36px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+
+        .two-col-text p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .two-col-text .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #F5A623;
+            color: #000000;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .two-col-text .cta-btn:hover {
+            background: #e09515;
+            transform: translateY(-2px);
+        }
+
+        .two-col-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        /* ========== VALUE CARDS SECTION ========== */
+        .value-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .value-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .value-text h2 {
+            font-size: 36px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+
+        .value-text p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .value-cards-scroll {
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .value-cards-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .value-cards-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+        }
+
+        .value-cards-scroll::-webkit-scrollbar-thumb {
+            background: #F5A623;
+            border-radius: 2px;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: rgba(245, 166, 35, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .value-card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 18px;
+        }
+
+        .value-card-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: #F5A623;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .value-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ========== CASE STUDY / TESTIMONIAL SECTION ========== */
+        .case-highlight-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .case-highlight-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .case-highlight-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .case-highlight-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .case-highlight-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .case-highlight-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .case-highlight-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .case-highlight-left h2 {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 30px;
+        }
+
+        .case-highlight-left h2 span {
+            color: #F5A623;
+        }
+
+        .case-highlight-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .case-stat {
+            background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+
+        .case-stat:hover {
+            border-color: rgba(245, 166, 35, 0.3);
+        }
+
+        .case-stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #F5A623;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .case-stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        .case-highlight-quote {
+            position: relative;
+            padding: 30px 0;
+        }
+
+        .case-highlight-quote blockquote {
+            font-size: 18px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            padding-left: 25px;
+            border-left: 3px solid #F5A623;
+        }
+
+        .case-highlight-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .case-highlight-author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F5A623, #FFBD00);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        .case-highlight-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-highlight-author-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .case-highlight-author-role {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .case-highlight-right {
+            position: relative;
+        }
+
+        .case-highlight-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #F5A623, #FFBD00);
+        }
+
+        .case-highlight-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .case-highlight-card-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .case-highlight-card-tag {
+            background: rgba(245, 166, 35, 0.15);
+            color: #F5A623;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-highlight-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .case-highlight-card p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .case-highlight-metrics {
+            display: flex;
+            gap: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .case-metric {
+            flex: 1;
+        }
+
+        .case-metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #F5A623;
+            margin-bottom: 4px;
+        }
+
+        .case-metric-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .case-highlight-cta {
+            display: inline-block;
+            padding: 16px 32px;
+            background: #F5A623;
+            color: #000000;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .case-highlight-cta:hover {
+            background: #FFBD00;
+            transform: translateY(-2px);
+        }
+
+        /* ========== SERVICES GRID SECTION ========== */
+        .services-grid-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .services-grid-header h2 {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, #111111 0%, #0a0a0a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 40px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.4s ease, transform 0.4s ease;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(245, 166, 35, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            border-color: rgba(245, 166, 35, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .service-card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 24px;
+        }
+
+        .service-card-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: #F5A623;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: #ffffff;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .service-card-ctas {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .service-card-ctas a {
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .service-card-ctas .learn-more {
+            color: #F5A623;
+            border-bottom: 1px solid #F5A623;
+            padding-bottom: 2px;
+        }
+
+        .service-card-ctas .learn-more:hover {
+            color: #FFBD00;
+            border-color: #FFBD00;
+        }
+
+        .service-card-ctas .book-call {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .service-card-ctas .book-call:hover {
+            color: #ffffff;
+        }
+
+        /* ========== CONTACT FORM SECTION ========== */
+        .contact-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .contact-info p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .contact-info-image {
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .contact-info-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .contact-form-container {
+            background: transparent;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .form-group input,
+        .form-group select {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 18px 20px;
+            font-size: 15px;
+            color: #ffffff;
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #F5A623;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+            padding-right: 50px;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .form-submit {
+            margin-top: 20px;
+        }
+
+        .form-submit button {
+            width: 100%;
+            padding: 20px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit button:hover {
+            background: #F5A623;
+            border-color: #F5A623;
+            color: #000000;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .form-success-icon {
+            width: 70px;
+            height: 70px;
+            background: #F5A623;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #000000;
+            margin: 0 auto 25px;
+        }
+
+        .form-success h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .form-success p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        /* ========== FAQ SECTION ========== */
+        .faq-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .faq-header {
+            position: sticky;
+            top: 100px;
+        }
+
+        .faq-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .faq-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .faq-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .faq-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .faq-header h2 {
+            font-size: 56px;
+            font-weight: 400;
+            font-style: normal;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .faq-header h2 span {
+            color: #666666;
+            display: block;
+        }
+
+        .faq-header p {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.6;
+            margin-top: 25px;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 189, 0, 0.4) 0%, rgba(255, 189, 0, 0.2) 25%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+            pointer-events: none;
+            border-radius: 15px;
+        }
+
+        .faq-item:hover::before {
+            opacity: 1;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 189, 0, 0.3);
+        }
+
+        .faq-item.active {
+            background: #000000;
+            border-color: rgba(255, 189, 0, 0.4);
+            box-shadow: 0 0 30px rgba(255, 189, 0, 0.15);
+        }
+
+        .faq-item.active::before {
+            opacity: 1;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 25px 30px;
+            background: transparent;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            color: #FFBD00;
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 600px;
+        }
+
+        .faq-answer-content {
+            padding: 0 30px 25px 30px;
+        }
+
+        .faq-answer-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+        }
+
+        .faq-answer-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-cta-area {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+        }
+
+        .faq-cta-area-content {
+            grid-column: 2;
+            text-align: left;
+        }
+
+        .faq-cta-area p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 25px;
+        }
+
+        .faq-cta-area .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #F5A623;
+            color: #000000;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-cta-area .cta-btn:hover {
+            background: #e09515;
+            transform: translateY(-2px);
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            background: #000000;
+            padding: 100px 60px;
+        }
+
+        .cta-header {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .cta-header h2 {
+            font-size: 80px;
+            font-weight: 400;
+            color: #ffc500;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .cta-header p {
+            font-size: 18px;
+            color: #ffffff;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .cta-container-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .cta-container-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 22px;
+            background: conic-gradient(from var(--angle), transparent 92%, #F5A623 96%, #FFBD00 100%, transparent 100%);
+            z-index: 0;
+            animation: rotateBorder 8s linear infinite;
+        }
+
+        .cta-container-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 25px;
+            background: conic-gradient(from var(--angle), transparent 92%, #F5A623 96%, #FFBD00 100%, transparent 100%);
+            z-index: -1;
+            animation: rotateBorder 8s linear infinite;
+            filter: blur(15px);
+            opacity: 0.7;
+        }
+
+        .cta-container {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 80px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            z-index: 1;
+        }
+
+        .cta-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .cta-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .cta-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 30%) var(--mouse-y, 50%), rgba(255, 189, 0, 0.2) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .cta-container:hover::before {
+            opacity: 1;
+        }
+
+        .cta-container > *:not(.cta-video-bg):not(.cta-video-overlay) {
+            position: relative;
+            z-index: 3;
+        }
+
+        .cta-content h3 {
+            font-size: 42px;
+            font-weight: 400;
+            font-style: italic;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .cta-container-partners {
+            margin-top: 20px;
+        }
+
+        .cta-container-partners img {
+            height: 80px;
+            width: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #ffffff;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .cta-button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #000000;
+            padding: 80px 60px 0;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #333;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 30px;
+            max-width: 280px;
+        }
+
+        .footer-subscribe {
+            display: flex;
+            align-items: center;
+            background: #111;
+            border-radius: 50px;
+            padding: 5px;
+            max-width: 320px;
+        }
+
+        .footer-subscribe input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .footer-subscribe input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-subscribe button {
+            background: #ffc500;
+            color: #000000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .footer-subscribe button:hover {
+            background: #e6b100;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ffc500;
+        }
+
+        .footer-column ul li a.highlight {
+            color: #ffc500;
+        }
+
+        .footer-bottom {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 20px 40px;
+            }
+
+            .hero-content {
+                padding: 140px 40px 60px;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .stats-section {
+                padding: 50px 40px;
+            }
+
+            .stat-number {
+                font-size: 34px;
+            }
+
+            .two-col-section {
+                padding: 80px 40px;
+            }
+
+            .two-col-container {
+                gap: 50px;
+            }
+
+            .value-section {
+                padding: 80px 40px;
+            }
+
+            .value-container {
+                gap: 50px;
+            }
+
+            .case-highlight-section {
+                padding: 80px 40px;
+            }
+
+            .case-highlight-content {
+                gap: 50px;
+            }
+
+            .case-highlight-left h2 {
+                font-size: 38px;
+            }
+
+            .case-stat-number {
+                font-size: 34px;
+            }
+
+            .services-grid-section {
+                padding: 80px 40px;
+            }
+
+            .services-grid-header h2 {
+                font-size: 38px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-section {
+                padding: 80px 40px;
+            }
+
+            .contact-info h2 {
+                font-size: 38px;
+            }
+
+            .faq-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .faq-cta-area {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .faq-cta-area-content {
+                grid-column: 1;
+                text-align: center;
+            }
+
+            .faq-header {
+                position: static;
+            }
+
+            .faq-header h2 {
+                font-size: 42px;
+            }
+
+            .cta-section {
+                padding: 100px 40px;
+            }
+
+            .cta-header h2 {
+                font-size: 42px;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 40px;
+            }
+
+            .cta-content h3 {
+                font-size: 32px;
+            }
+
+            .cta-container-partners img {
+                height: 60px;
+            }
+
+            .footer-main {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+
+            .footer-brand {
+                grid-column: span 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-nav-right {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .mobile-menu-overlay,
+            .mobile-menu {
+                display: block;
+            }
+
+            .logo img {
+                height: 38px;
+            }
+
+            .hero {
+                justify-content: center;
+            }
+
+            .hero-content {
+                padding: 120px 20px 60px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+                max-width: 100%;
+            }
+
+            .hero-overlay {
+                background: rgba(0, 0, 0, 0.8);
+            }
+
+            .stats-section {
+                padding: 40px 20px;
+            }
+
+            .stats-container {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .stat-item {
+                flex: 1 1 40%;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .stat-description {
+                font-size: 13px;
+            }
+
+            .two-col-section {
+                padding: 60px 20px;
+            }
+
+            .two-col-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .two-col-text h2 {
+                font-size: 28px;
+            }
+
+            .value-section {
+                padding: 60px 20px;
+            }
+
+            .value-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .value-text h2 {
+                font-size: 28px;
+            }
+
+            .value-cards-scroll {
+                max-height: none;
+                overflow-y: visible;
+            }
+
+            .case-highlight-section {
+                padding: 60px 20px;
+            }
+
+            .case-highlight-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .case-highlight-left h2 {
+                font-size: 32px;
+            }
+
+            .case-highlight-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            .case-stat {
+                padding: 20px;
+            }
+
+            .case-stat-number {
+                font-size: 30px;
+            }
+
+            .case-highlight-card {
+                padding: 35px;
+            }
+
+            .case-highlight-metrics {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .case-highlight-quote blockquote {
+                font-size: 16px;
+            }
+
+            .services-grid-section {
+                padding: 60px 20px;
+            }
+
+            .services-grid-header h2 {
+                font-size: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 35px 25px;
+            }
+
+            .contact-section {
+                padding: 60px 20px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-info h2 {
+                font-size: 32px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-section {
+                padding: 60px 20px;
+            }
+
+            .faq-header h2 {
+                font-size: 36px;
+            }
+
+            .cta-section {
+                padding: 80px 20px;
+            }
+
+            .cta-header h2 {
+                font-size: 32px;
+            }
+
+            .cta-header p {
+                font-size: 16px;
+            }
+
+            .cta-container {
+                padding: 40px 25px;
+                min-height: auto;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .cta-content h3 {
+                font-size: 26px;
+                margin-bottom: 10px;
+            }
+
+            .cta-container-partners {
+                margin-top: 5px;
+            }
+
+            .cta-container-partners img {
+                height: 50px;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+                margin-top: 5px;
+            }
+
+            footer {
+                padding: 60px 20px 0;
+            }
+
+            .footer-main {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+
+            .footer-subscribe {
+                max-width: 100%;
+            }
+
+            .footer-bottom p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .stat-number {
+                font-size: 40px;
+            }
+
+            .services-grid-header h2 {
+                font-size: 26px;
+            }
+
+            .contact-info h2 {
+                font-size: 28px;
+            }
+
+            .faq-header h2 {
+                font-size: 30px;
+            }
+
+            .cta-header h2 {
+                font-size: 26px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/JRNY%20logo.png" alt="JRNY Digital">
+            </a>
+        </div>
+        <div class="nav-divider"></div>
+        <div class="nav-links">
+            <a href="about-us.html">About Us</a>
+            <div class="nav-dropdown">
+                <a href="#">Services</a>
+                <div class="dropdown-menu">
+                    <a href="google-ads.html">Google Ads</a>
+                    <a href="seo.html">SEO</a>
+                    <a href="cro.html">CRO</a>
+                    <a href="social-media-ads.html">Social Media Ads</a>
+                    <a href="email-marketing.html">Email Marketing</a>
+                </div>
+            </div>
+            <a href="pricing.html">Pricing</a>
+            <div class="nav-dropdown">
+                <a href="#" class="active">Who We Can Help</a>
+                <div class="dropdown-menu">
+                    <a href="home-services.html" class="active">Home Services</a>
+                    <a href="financial-services.html">Financial Services</a>
+                    <a href="law-firms.html">Law Firms</a>
+                    <a href="healthcare-services.html">Healthcare Services</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#">Results</a>
+                <div class="dropdown-menu">
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonial.html">Testimonials</a>
+                </div>
+            </div>
+            <a href="blog.html">Resources</a>
+        </div>
+        <a href="contact-us.html" class="nav-cta">Get Free Strategy Session</a>
+        <!-- Mobile Nav Right (Hamburger) -->
+        <div class="mobile-nav-right">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu Panel -->
+    <nav class="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="about-us.html">About Us</a>
+            <div class="mobile-dropdown">
+                <a href="#">Services</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="google-ads.html">Google Ads</a>
+                    <a href="seo.html">SEO</a>
+                    <a href="cro.html">CRO</a>
+                    <a href="social-media-ads.html">Social Media Ads</a>
+                    <a href="email-marketing.html">Email Marketing</a>
+                </div>
+            </div>
+            <a href="pricing.html">Pricing</a>
+            <div class="mobile-dropdown">
+                <a href="#">Who We Can Help</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="home-services.html">Home Services</a>
+                    <a href="financial-services.html">Financial Services</a>
+                    <a href="law-firms.html">Law Firms</a>
+                    <a href="healthcare-services.html">Healthcare Services</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <a href="#">Results</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonial.html">Testimonials</a>
+                </div>
+            </div>
+            <a href="blog.html">Resources</a>
+        </div>
+        <a href="contact-us.html" class="mobile-menu-cta">Get Free Strategy Session</a>
+    </nav>
+
+    <!-- ========== SECTION 1: HERO ========== -->
+    <section class="hero">
+        <div class="hero-image-container"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge"><span class="hero-badge-dot"></span>Home Services</span>
+            <h1>Your Home Services and Improvements Digital Marketing Agency</h1>
+            <p class="hero-subtitle">Homes don’t take care of themselves. In Australia, there are over 10.8 million homes—and 500,000 more are bought every year. That’s endless opportunity waiting for your business.<br><br>So, why isn’t your schedule packed? Why aren’t they booking you?</p>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: STATS BAR ========== -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-target="55" data-suffix="%" data-decimals="0">0%</div>
+                <div class="stat-description">search online before booking home services.</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="78" data-suffix="%" data-decimals="0">0%</div>
+                <div class="stat-description">mobile searches for home services lead to action within 24 hours.</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="81.6" data-suffix="%" data-decimals="1">0%</div>
+                <div class="stat-description">customers have no home service provider in mind when they start their search.</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="95" data-suffix="%" data-decimals="0">0%</div>
+                <div class="stat-description">read online reviews before booking a home service.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3: TWO-COLUMN (Text + Image) ========== -->
+    <section class="two-col-section">
+        <div class="two-col-container">
+            <div class="two-col-text">
+                <h2>Your customers are actively searching. The question is—are they finding you?</h2>
+                <p>Let’s make it happen.</p>
+                <p>At JRNY Digital, we specialise in marketing home service businesses just like yours. We know how to turn your hard work into loyal customers.</p>
+                <p>From HVAC pros to painters, cleaners and roofers, we’ve helped businesses across Australia become visible, trusted and booked. No matter your size or speciality, your skills deserve the spotlight—and we’ll make sure your customers see them.</p>
+                <a href="contact-us.html" class="cta-btn">Let’s Talk</a>
+            </div>
+            <div class="two-col-image">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="Home service professional at work" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4: TWO-COLUMN (Text + Scrollable Cards) ========== -->
+    <section class="value-section">
+        <div class="value-container">
+            <div class="value-text">
+                <h2>We drive growth for home services with proven, results-focused lead generation services.</h2>
+                <p>You’ve built something real—something you’re proud of. You show up. You work hard. You deliver.</p>
+                <p>But great work isn’t enough if no one sees it.</p>
+                <p>Right now, your customers are online, searching for exactly what you do. The question is—are they finding you? Or are they going to your competitors?</p>
+                <p>At JRNY Digital, we make sure they find you first. We cut through the noise with bold, no-BS strategies that work.</p>
+            </div>
+            <div class="value-cards-scroll">
+                <!-- Card 1: Drive Traffic -->
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="14" r="8"/>
+                            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
+                            <path d="M36 10l4-4m0 0l4 4m-4-4v12"/>
+                        </svg>
+                    </div>
+                    <h3>We Drive You More Traffic</h3>
+                    <p>Your competitors are everywhere, clawing for the same clients. We’ll help you crush them. With pinpoint local SEO (making sure you own searches like “roofing services near me”), optimised Google profiles, and geo-targeted ads, you’ll take the lead.</p>
+                </div>
+                <!-- Card 2: Make You Seen -->
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M2 24s8-16 22-16 22 16 22 16-8 16-22 16S2 24 2 24z"/>
+                            <circle cx="24" cy="24" r="7"/>
+                            <circle cx="24" cy="24" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>We Make You Seen</h3>
+                    <p>Invisible online? You’re leaving money on the table. We’ll build you a sleek website that demands attention. Add social media that sparks engagement and content that builds trust and you’ll own the digital space.</p>
+                </div>
+                <!-- Card 3: Protect Reputation -->
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <svg viewBox="0 0 48 48">
+                            <polygon points="24,4 29,17 43,17 31.5,26 35,40 24,31 13,40 16.5,26 5,17 19,17"/>
+                            <path d="M24 31v-8"/>
+                            <circle cx="24" cy="20" r="2"/>
+                        </svg>
+                    </div>
+                    <h3>We Protect Your Reputation</h3>
+                    <p>One bad review shouldn’t wreck your hard work. We manage your online presence, respond to feedback, and help you stack up glowing reviews that build trust fast.</p>
+                </div>
+                <!-- Card 4: Stretch Every Dollar -->
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="20"/>
+                            <path d="M24 12v24"/>
+                            <path d="M18 20c0-2.2 2.7-4 6-4s6 1.8 6 4-2.7 4-6 4-6 1.8-6 4 2.7 4 6 4 6-1.8 6-4"/>
+                        </svg>
+                    </div>
+                    <h3>We Stretch Every Dollar</h3>
+                    <p>Tight budget? No problem. Every dollar works overtime with us. From high-ROI PPC ads to sharp local SEO, we make sure your money doesn’t just work—it wins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CASE STUDY: SHIELD FENCING ========== -->
+    <section class="case-highlight-section">
+        <div class="case-highlight-container">
+            <span class="case-highlight-badge"><span class="case-highlight-badge-dot"></span>Real Results</span>
+
+            <div class="case-highlight-content">
+                <div class="case-highlight-left">
+                    <h2>From $0 to <span>$700K in Revenue</span> in Their First Year</h2>
+
+                    <div class="case-highlight-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-number">$0 → $700K</div>
+                            <div class="case-stat-label">Revenue in Year One</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-number">$2K</div>
+                            <div class="case-stat-label">One-Off Google Ads Setup</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-number">12</div>
+                            <div class="case-stat-label">Months of Consistent Growth</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-number">350x</div>
+                            <div class="case-stat-label">Return on Ad Setup</div>
+                        </div>
+                    </div>
+
+                    <div class="case-highlight-quote">
+                        <blockquote>"Jason and team are amazing to work with. Knowledgeable, proactive, and most importantly: result driven... They deliver, they say what they're gonna do, and do what they say. Highly recommend."</blockquote>
+                        <div class="case-highlight-author">
+                            <div class="case-highlight-author-avatar">YK</div>
+                            <div class="case-highlight-author-info">
+                                <span class="case-highlight-author-name">Yash K</span>
+                                <span class="case-highlight-author-role">Yamal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-highlight-right">
+                    <div class="case-highlight-card">
+                        <div class="case-highlight-card-header">
+                            <div class="case-highlight-card-logo">Shield Fencing</div>
+                            <span class="case-highlight-card-tag">Home Services</span>
+                        </div>
+                        <h3>A one-off Google Ads build that turned into $700K in revenue — all within 12 months.</h3>
+                        <p>Shield Fencing came to us as a mate's business looking for help with Google Ads. We set up a $2K+GST one-off campaign build — targeting high-intent local searches for fencing services. The results? They went from zero to $700K in revenue in their first year, entirely from Google Ads. No ongoing management needed. We built it right from day one — the right keywords, the right structure, the right landing experience — and it just kept delivering.</p>
+
+                        <div class="case-highlight-metrics">
+                            <div class="case-metric">
+                                <div class="case-metric-value">$700K</div>
+                                <div class="case-metric-label">First Year Revenue</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="case-metric-value">Google Ads</div>
+                                <div class="case-metric-label">Primary Channel</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="case-metric-value">Fencing</div>
+                                <div class="case-metric-label">Industry</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact-us.html" class="case-highlight-cta">Get Results Like This →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 5: MARKETING SERVICES GRID ========== -->
+    <section class="services-grid-section">
+        <div class="services-grid-header">
+            <h2>Marketing Services for Home Service Providers</h2>
+        </div>
+        <div class="services-grid">
+            <!-- Card 1: Social Media Advertising -->
+            <div class="service-card">
+                <div class="service-card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <rect x="6" y="10" width="52" height="40" rx="4"/>
+                        <circle cx="22" cy="30" r="6"/>
+                        <circle cx="42" cy="30" r="6"/>
+                        <path d="M28 30h8"/>
+                        <path d="M32 6v4"/>
+                        <path d="M26 54h12"/>
+                        <path d="M32 50v4"/>
+                    </svg>
+                </div>
+                <h3>Social Media Advertising</h3>
+                <p>Get noticed. Our campaigns use bold visuals and killer content to grow your audience fast. With 80% of businesses on Facebook and Instagram, it’s time to grab your phone and join the action. Big results, small budgets.</p>
+                <div class="service-card-ctas">
+                    <a href="social-media-ads.html" class="learn-more">Learn More</a>
+                    <a href="contact-us.html" class="book-call">Book a Call</a>
+                </div>
+            </div>
+            <!-- Card 2: PPC & Google Ads -->
+            <div class="service-card">
+                <div class="service-card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <circle cx="32" cy="32" r="26"/>
+                        <circle cx="32" cy="32" r="16"/>
+                        <circle cx="32" cy="32" r="6"/>
+                        <path d="M32 6v8"/>
+                        <path d="M32 50v8"/>
+                        <path d="M6 32h8"/>
+                        <path d="M50 32h8"/>
+                    </svg>
+                </div>
+                <h3>Pay Per Click (PPC) &amp; Google Ads</h3>
+                <p>Show up when it matters. Our Google Ads deliver instant leads and real results. In a market where clicks can cost $40+, we make every dollar count. Stay ahead, get leads, grow fast.</p>
+                <div class="service-card-ctas">
+                    <a href="google-ads.html" class="learn-more">Learn More</a>
+                    <a href="contact-us.html" class="book-call">Book a Call</a>
+                </div>
+            </div>
+            <!-- Card 3: CRO & Landing Pages -->
+            <div class="service-card">
+                <div class="service-card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <rect x="8" y="8" width="48" height="48" rx="4"/>
+                        <path d="M8 20h48"/>
+                        <circle cx="16" cy="14" r="2"/>
+                        <circle cx="24" cy="14" r="2"/>
+                        <circle cx="32" cy="14" r="2"/>
+                        <path d="M20 32h24"/>
+                        <path d="M20 40h16"/>
+                        <path d="M44 28l4 4-4 4"/>
+                    </svg>
+                </div>
+                <h3>Conversion Rate Optimisation (CRO) &amp; Landing Page Creation</h3>
+                <p>Turn visits into bookings. We optimise every element of your site to drive action. Need a killer landing page? We build trust and boost conversions fast.</p>
+                <div class="service-card-ctas">
+                    <a href="cro.html" class="learn-more">Learn More</a>
+                    <a href="contact-us.html" class="book-call">Book a Call</a>
+                </div>
+            </div>
+            <!-- Card 4: SEO -->
+            <div class="service-card">
+                <div class="service-card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <circle cx="28" cy="28" r="20"/>
+                        <path d="M42 42l16 16"/>
+                        <path d="M20 28h16"/>
+                        <path d="M28 20v16"/>
+                    </svg>
+                </div>
+                <h3>Search Engine Optimisation (SEO)</h3>
+                <p>Get found first. With 55% of clients searching online, SEO puts you where they’re looking. Searches like “landscaping near me” (+65%) and “roofing companies” (+107%) are exploding. We’ll get you to the top.</p>
+                <div class="service-card-ctas">
+                    <a href="seo.html" class="learn-more">Learn More</a>
+                    <a href="contact-us.html" class="book-call">Book a Call</a>
+                </div>
+            </div>
+            <!-- Card 5: Ad Copy & Creative -->
+            <div class="service-card">
+                <div class="service-card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <path d="M32 8c0 0-8 4-8 16v8h16v-8c0-12-8-16-8-16z"/>
+                        <path d="M24 32v8c0 4.4 3.6 8 8 8s8-3.6 8-8v-8"/>
+                        <path d="M32 48v8"/>
+                        <path d="M26 56h12"/>
+                        <path d="M20 24h-4"/>
+                        <path d="M48 24h-4"/>
+                        <path d="M14 14l3 3"/>
+                        <path d="M47 14l-3 3"/>
+                    </svg>
+                </div>
+                <h3>Conversion-Focused Ad Copy and Creative Development</h3>
+                <p>Ads that work. We craft punchy copy and striking visuals that grab attention and drive results. No fluff—just sales.</p>
+                <div class="service-card-ctas">
+                    <a href="contact-us.html" class="learn-more">Learn More</a>
+                    <a href="contact-us.html" class="book-call">Book a Call</a>
+                </div>
+            </div>
+            <!-- Card 6: CRM & Automation -->
+            <div class="service-card">
+                <div class="service-card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <circle cx="20" cy="20" r="8"/>
+                        <circle cx="44" cy="20" r="8"/>
+                        <circle cx="32" cy="44" r="8"/>
+                        <path d="M26 26l6 12"/>
+                        <path d="M38 26l-6 12"/>
+                        <path d="M28 20h8"/>
+                    </svg>
+                </div>
+                <h3>Customer Relationship Management (CRM) and Automation</h3>
+                <p>Save time. Stay organised. Our CRM solutions handle the hard work so you can focus on growing your business.</p>
+                <div class="service-card-ctas">
+                    <a href="contact-us.html" class="learn-more">Learn More</a>
+                    <a href="contact-us.html" class="book-call">Book a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 6: CONTACT FORM ========== -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Let's Start Your JRNY</h2>
+                <p>Home services deserve marketing that works as hard as you do. Let us be your partner in growth, trust and success.</p>
+                <div class="contact-info-image">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80" alt="Home service professionals at work" loading="lazy">
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <form class="contact-form" name="home-services-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+                    <input type="hidden" name="form-name" value="home-services-contact">
+                    <p style="display:none">
+                        <label>Don’t fill this out: <input name="bot-field"></label>
+                    </p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="revenue">Current Monthly Revenue</label>
+                            <input type="text" id="revenue" name="revenue">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website URL</label>
+                            <input type="text" id="website" name="website" placeholder="e.g. jrnydigital.com.au">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hearAbout">How Did You Hear About Us?</label>
+                        <input type="text" id="hearAbout" name="hearAbout">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Monthly Marketing Budget?</label>
+                        <select id="budget" name="budget">
+                            <option value="" disabled selected></option>
+                            <option value="0-5000">$0 - $5,000</option>
+                            <option value="5000-10000">$5,000 - $10,000</option>
+                            <option value="10000-25000">$10,000 - $25,000</option>
+                            <option value="25000-50000">$25,000 - $50,000</option>
+                            <option value="50000+">$50,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+                <div class="form-success" id="formSuccess" style="display:none;">
+                    <div class="form-success-icon">✓</div>
+                    <h3>Form Submitted Successfully!</h3>
+                    <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 7: FAQ ========== -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+                <span class="faq-badge"><span class="faq-badge-dot"></span>FAQ</span>
+                <h2>Frequently<span>Asked Questions</span></h2>
+                <p>Have questions? Our FAQ section has you covered with quick answers to the most common inquiries.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>How do you help businesses stand out from the competition?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We create custom strategies that focus on Local SEO, Google Ads and content that gets you noticed. The goal? Make your business the first and only choice for your customers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Can you work within my budget?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Absolutely. We’re experts at cost-effective strategies, turning every dollar into measurable results for your business.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>How soon will I see results?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Google Ads can deliver leads in days while SEO builds steady long-term growth. You’ll see progress from day one—and we’ll keep you in the loop every step of the way.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>What sets your agency apart?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We live and breathe home services. No fluff, no buzzwords—just real strategies that deliver real results. We’re honest, transparent and focused on your success.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Do you provide reporting?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes. You’ll get clear no-nonsense reports that show exactly how your campaigns are performing and how much ROI they’re delivering.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Is home services website development important?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Absolutely. Your website is your digital storefront—a place where customers find you, trust you and book your services in just a few clicks.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>What is home services SEO?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>It’s how you own the top spot in local search results. From smart keywords to polished Google profiles, SEO makes sure you’re the business people see first when they’re ready to hire.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Why do home services need search engine optimisation?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Because visibility matters. SEO gets your business in front of the right people at the right time, driving traffic, leads and an edge over the competition—all without breaking the bank.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>What is digital advertising for home services?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>It’s precision-targeted campaigns—like Google Ads and Facebook Ads—that put your business in front of local customers already searching for your services. Fast results guaranteed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Is social media marketing essential for home services businesses?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes. Social media builds connection and trust. It lets you showcase your work, engage with your community and stay top-of-mind for customers who might need you tomorrow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-cta-area">
+            <div class="faq-cta-area-content">
+                <p>Still have questions? Let's talk and create a strategy that works for you.</p>
+                <a href="contact-us.html" class="cta-btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 8: CTA ========== -->
+    <section class="cta-section">
+        <div class="cta-header">
+            <h2>Still Doing Your Own Marketing?</h2>
+            <p>Book a free growth audit. In 30 minutes, we’ll review your current marketing,<br>show you where you’re leaving revenue on the table, and map out what a dedicated team could do for your business.</p>
+        </div>
+        <div class="cta-container-wrapper">
+            <div class="cta-container">
+                <video class="cta-video-bg" autoplay muted loop playsinline>
+                    <source src="https://ik.imagekit.io/2z8yysunx/JRNY/JRNY%20Website%20-%20Pics.mp4" type="video/mp4">
+                </video>
+                <div class="cta-video-overlay"></div>
+                <div class="cta-content">
+                    <h3>Get Your Free Growth Audit</h3>
+                    <div class="cta-container-partners">
+                        <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Mobile-Mockup-JRNY-3-1.webp" alt="Google Partner, Shopify Partner, Facebook Marketing Partners">
+                    </div>
+                </div>
+                <a href="contact-us.html" class="cta-button">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/JRNY%20logo.png" alt="JRNY Digital">
+                    </div>
+                    <p>We’re human, we’re real we care about our clients. Honesty, Transparency and Results - that’s our motto.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="social-media-ads.html">Social Media Ads</a></li>
+                        <li><a href="google-ads.html">Google Ads</a></li>
+                        <li><a href="email-marketing.html">Email Marketing</a></li>
+                        <li><a href="seo.html">SEO</a></li>
+                        <li><a href="cro.html">Conversion Rate Optimisation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Who We Can Help</h4>
+                    <ul>
+                        <li><a href="home-services.html">Home Services</a></li>
+                        <li><a href="financial-services.html">Financial Services</a></li>
+                        <li><a href="law-firms.html">Law Firms</a></li>
+                        <li><a href="healthcare-services.html">Healthcare Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; All Rights Reserved. JRNY DIGITAL Australia Pty Ltd. ABN 82 642 424 904</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== Mobile Menu Toggle ==========
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+
+        if (mobileMenuToggle && mobileMenu && mobileMenuOverlay) {
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileMenuOverlay.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            mobileDropdowns.forEach(dropdown => {
+                const dropdownLink = dropdown.querySelector('a');
+                dropdownLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                });
+            });
+
+            mobileMenu.querySelectorAll('a:not(.mobile-dropdown > a)').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // ========== Mouse tracking for CTA glow effect ==========
+        document.querySelectorAll('.cta-container').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // ========== Mouse tracking for service cards ==========
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // ========== Mouse tracking for FAQ items ==========
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                item.style.setProperty('--mouse-x', x + '%');
+                item.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // ========== FAQ Accordion ==========
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.closest('.faq-item');
+                const isActive = item.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Open clicked one if it wasn’t already open
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // ========== Stats Counting Animation ==========
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stats-section .stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseFloat(stat.getAttribute('data-target'));
+                const suffix = stat.getAttribute('data-suffix') || '';
+                const decimals = parseInt(stat.getAttribute('data-decimals')) || 0;
+                const duration = 2000;
+                const startTime = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const current = eased * target;
+
+                    if (decimals > 0) {
+                        stat.textContent = current.toFixed(decimals) + suffix;
+                    } else {
+                        stat.textContent = Math.floor(current) + suffix;
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    }
+                }
+                requestAnimationFrame(update);
+            });
+        }
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            statsObserver.observe(statsSection);
+        }
+
+        // ========== Contact Form Submission ==========
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        contactForm.style.display = 'none';
+                        formSuccess.style.display = 'block';
+                    } else {
+                        alert('Something went wrong (Error ' + response.status + '). Please try again.');
+                    }
+                })
+                .catch(function(error) {
+                    alert('Something went wrong. Please try again.');
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - JRNY Digital | Get in Touch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        .nav-divider {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .nav-links > a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links > a:hover,
+        .nav-links > a.active {
+            color: #F5A623;
+        }
+
+        /* Dropdown Styles */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-dropdown > a:hover,
+        .nav-dropdown > a.active {
+            color: #F5A623;
+        }
+
+        .nav-dropdown > a::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid #ffffff;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .nav-dropdown:hover > a::after {
+            border-top-color: #F5A623;
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease, margin-top 0.3s ease;
+            margin-top: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 0;
+            right: 0;
+            height: 15px;
+        }
+
+        .nav-dropdown:hover .dropdown-menu,
+        .dropdown-menu:hover {
+            opacity: 1;
+            visibility: visible;
+            margin-top: 10px;
+            pointer-events: auto;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 25px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(245, 166, 35, 0.1);
+            color: #F5A623;
+        }
+
+        .dropdown-menu a.active {
+            color: #F5A623;
+            background: rgba(245, 166, 35, 0.05);
+        }
+
+        .nav-cta {
+            background-color: #F5A623;
+            color: #000000;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: #e09515;
+            transform: translateY(-2px);
+        }
+        /* Mobile Menu Hamburger Button */
+        .mobile-nav-right {
+            display: none;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+
+        .mobile-menu-toggle span:nth-child(1) {
+            transform: translateY(-8px);
+        }
+
+        .mobile-menu-toggle span:nth-child(2) {
+            transform: translateY(0);
+        }
+
+        .mobile-menu-toggle span:nth-child(3) {
+            transform: translateY(8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Mobile Menu Panel */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 85%;
+            max-width: 320px;
+            height: 100%;
+            background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 80px 30px 30px;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+            transform: translateX(100%);
+            visibility: hidden;
+            transition: transform 0.3s ease, visibility 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-menu-links > a,
+        .mobile-menu-links > .mobile-dropdown > a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .mobile-menu-links > a:hover,
+        .mobile-menu-links > .mobile-dropdown > a:hover {
+            color: #F5A623;
+            padding-left: 10px;
+        }
+
+        .mobile-dropdown {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-dropdown > a {
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: none !important;
+        }
+
+        .mobile-dropdown > a::after {
+            content: '+';
+            font-size: 20px;
+            color: #F5A623;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-dropdown.active > a::after {
+            content: '−';
+        }
+
+        .mobile-dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            margin: 0 -30px;
+            padding: 0 30px;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-menu {
+            max-height: 300px;
+        }
+
+        .mobile-dropdown-menu a {
+            display: block;
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 14px 0 14px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .mobile-dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-dropdown-menu a:hover {
+            color: #F5A623;
+            padding-left: 30px;
+        }
+
+        .mobile-menu-cta {
+            display: block;
+            background-color: #F5A623;
+            color: #000000;
+            padding: 16px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .mobile-menu-cta:hover {
+            background-color: #e09515;
+            transform: translateY(-2px);
+        }
+
+
+        /* Contact Section */
+        .contact-section {
+            background: #000000;
+            min-height: 100vh;
+            padding: 160px 60px 100px;
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-content {
+            padding-top: 20px;
+        }
+
+        .contact-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .contact-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .contact-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .contact-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        @property --angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @keyframes rotateBorder {
+            0% {
+                --angle: 0deg;
+                filter: drop-shadow(0 0 5px rgba(245, 166, 35, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 15px rgba(245, 166, 35, 0.8));
+            }
+            100% {
+                --angle: 360deg;
+                filter: drop-shadow(0 0 5px rgba(245, 166, 35, 0.5));
+            }
+        }
+
+        .contact-content h1 {
+            font-size: 72px;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .contact-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .contact-benefits {
+            border-left: 2px solid #F5A623;
+            padding-left: 25px;
+            margin-bottom: 40px;
+        }
+
+        .contact-benefits li {
+            list-style: none;
+            font-size: 15px;
+            font-style: italic;
+            color: #F5A623;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .contact-benefits li:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        .contact-social a:hover {
+            color: #F5A623;
+        }
+
+        .contact-social svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Contact Form */
+        .contact-form-container {
+            background: transparent;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .form-group input,
+        .form-group select {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 18px 20px;
+            font-size: 15px;
+            color: #ffffff;
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #F5A623;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+            padding-right: 50px;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .form-submit {
+            margin-top: 20px;
+        }
+
+        .form-submit button {
+            width: 100%;
+            padding: 20px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit button:hover {
+            background: #F5A623;
+            border-color: #F5A623;
+            color: #000000;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .form-success-icon {
+            width: 70px;
+            height: 70px;
+            background: #F5A623;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #000000;
+            margin: 0 auto 25px;
+        }
+
+        .form-success h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .form-success p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        /* Reviews Marquee Section */
+        .reviews-marquee-section {
+            background: #000000;
+            padding: 100px 0 100px;
+            overflow: hidden;
+        }
+
+        .reviews-marquee-row {
+            display: flex;
+            width: max-content;
+            gap: 20px;
+            padding: 0 10px;
+        }
+
+        .reviews-marquee-row.row-1 {
+            animation: marqueeLeft 55s linear infinite;
+        }
+
+        .reviews-marquee-row.row-2 {
+            animation: marqueeRight 60s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes marqueeLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes marqueeRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        .reviews-marquee-row:hover {
+            animation-play-state: paused;
+        }
+
+        .review-card {
+            background: linear-gradient(145deg, #141414 0%, #0d0d0d 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px;
+            min-width: 380px;
+            max-width: 380px;
+            flex-shrink: 0;
+            transition: border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .review-card:hover {
+            border-color: rgba(245, 166, 35, 0.2);
+        }
+
+        .review-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .review-card-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .review-card-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .review-card-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .review-card-stars {
+            color: #F5A623;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .review-card-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #ffffff;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .letter-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .reviews-cta {
+            text-align: center;
+            margin-top: 50px;
+            padding: 0 60px;
+        }
+
+        .btn-google-reviews {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-google-reviews:hover {
+            border-color: rgba(245, 166, 35, 0.4);
+            background: rgba(245, 166, 35, 0.05);
+        }
+
+        /* Brands Section */
+        .brands-section {
+            background: #000000;
+            padding: 100px 60px;
+        }
+
+        .brands-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .brands-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .brands-header h2 {
+            font-size: 56px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .brands-header h2 span {
+            color: #F5A623;
+        }
+
+        .brands-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px 40px;
+            align-items: center;
+        }
+
+        .brands-grid img {
+            width: calc(12.5% - 35px);
+            height: auto;
+            max-height: 120px;
+            object-fit: contain;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .brands-grid img:hover {
+            opacity: 1;
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 1200px) {
+            .brands-grid img {
+                width: calc(16.66% - 30px);
+                max-height: 100px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .testimonials-grid-section {
+                padding: 80px 40px;
+            }
+
+            .testimonials-grid-header h2 {
+                font-size: 42px;
+            }
+
+            .brands-section {
+                padding: 80px 40px;
+            }
+
+            .brands-header h2 {
+                font-size: 42px;
+            }
+
+            .brands-grid {
+                gap: 45px 30px;
+            }
+
+            .brands-grid img {
+                width: calc(20% - 24px);
+                max-height: 90px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid-section {
+                padding: 60px 20px;
+            }
+
+            .testimonials-grid-header h2 {
+                font-size: 36px;
+            }
+
+            .testimonial-card-wrapper {
+                min-width: 280px;
+                max-width: 280px;
+            }
+
+            .testimonial-card-text {
+                font-size: 14px;
+            }
+
+            .brands-section {
+                padding: 60px 20px;
+            }
+
+            .brands-header {
+                margin-bottom: 50px;
+            }
+
+            .brands-header h2 {
+                font-size: 32px;
+            }
+
+            .brands-grid {
+                gap: 35px 20px;
+            }
+
+            .brands-grid img {
+                width: calc(25% - 15px);
+                max-height: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brands-grid {
+                gap: 30px 15px;
+            }
+
+            .brands-grid img {
+                width: calc(33.33% - 10px);
+                max-height: 60px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            padding: 80px 60px 0;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #333;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 30px;
+            max-width: 280px;
+        }
+
+        .footer-subscribe {
+            display: flex;
+            align-items: center;
+            background: #111;
+            border-radius: 50px;
+            padding: 5px;
+            max-width: 320px;
+        }
+
+        .footer-subscribe input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .footer-subscribe input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-subscribe button {
+            background: #ffc500;
+            color: #000000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .footer-subscribe button:hover {
+            background: #e6b100;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ffc500;
+        }
+
+        .footer-column ul li a.highlight {
+            color: #ffc500;
+        }
+
+        .footer-bottom {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 20px 40px;
+            }
+
+            .contact-section {
+                padding: 140px 40px 80px;
+            }
+
+            .contact-container {
+                gap: 60px;
+            }
+
+            .contact-content h1 {
+                font-size: 56px;
+            }
+
+            .footer-main {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+
+            .footer-brand {
+                grid-column: span 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .review-card {
+                min-width: 300px;
+                max-width: 300px;
+                padding: 22px;
+            }
+
+            .reviews-cta {
+                padding: 0 20px;
+                margin-top: 35px;
+            }
+
+            .btn-google-reviews {
+                font-size: 14px;
+                padding: 12px 24px;
+            }
+
+            .nav-links {
+            display: none;
+        }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-nav-right {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .mobile-menu-overlay,
+            .mobile-menu {
+                display: block;
+            }
+
+            .logo img {
+                height: 38px;
+            }
+
+            .contact-section {
+                padding: 120px 20px 60px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .contact-content h1 {
+                font-size: 42px;
+            }
+
+            .contact-subtitle {
+                font-size: 15px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 60px 20px 0;
+            }
+
+            .footer-main {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+
+            .footer-subscribe {
+                max-width: 100%;
+            }
+
+            .footer-bottom p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/JRNY%20logo.png" alt="JRNY Digital">
+            </a>
+        </div>
+        <div class="nav-divider"></div>
+        <div class="nav-links">
+            <a href="about-us.html">About Us</a>
+            <div class="nav-dropdown">
+                <a href="#">Services</a>
+                <div class="dropdown-menu">
+                    <a href="google-ads.html">Google Ads</a>
+                    <a href="seo.html">SEO</a>
+                    <a href="cro.html">CRO</a>
+                    <a href="social-media-ads.html">Social Media Ads</a>
+                    <a href="email-marketing.html">Email Marketing</a>
+                </div>
+            </div>
+            <a href="pricing.html">Pricing</a>
+            <div class="nav-dropdown">
+                <a href="#">Who We Can Help</a>
+                <div class="dropdown-menu">
+                    <a href="home-services.html">Home Services</a>
+                    <a href="financial-services.html">Financial Services</a>
+                    <a href="law-firms.html">Law Firms</a>
+                    <a href="healthcare-services.html">Healthcare Services</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#">Results</a>
+                <div class="dropdown-menu">
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonial.html">Testimonials</a>
+                </div>
+            </div>
+            <a href="blog.html">Resources</a>
+        </div>
+        <a href="contact-us.html" class="nav-cta">Get Free Strategy Session</a>
+        <!-- Mobile Nav Right (Hamburger) -->
+        <div class="mobile-nav-right">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+    </nav>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu Panel -->
+    <nav class="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="about-us.html">About Us</a>
+            <div class="mobile-dropdown">
+                <a href="#">Services</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="google-ads.html">Google Ads</a>
+                    <a href="seo.html">SEO</a>
+                    <a href="cro.html">CRO</a>
+                    <a href="social-media-ads.html">Social Media Ads</a>
+                    <a href="email-marketing.html">Email Marketing</a>
+                </div>
+            </div>
+            <a href="pricing.html">Pricing</a>
+            <div class="mobile-dropdown">
+                <a href="#">Who We Can Help</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="home-services.html">Home Services</a>
+                    <a href="financial-services.html">Financial Services</a>
+                    <a href="law-firms.html">Law Firms</a>
+                    <a href="healthcare-services.html">Healthcare Services</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <a href="#">Results</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonial.html">Testimonials</a>
+                </div>
+            </div>
+            <a href="blog.html">Resources</a>
+        </div>
+        <a href="contact-us.html" class="mobile-menu-cta">Get Free Strategy Session</a>
+    </nav>
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-content">
+                <span class="contact-badge"><span class="contact-badge-dot"></span>Contact Us</span>
+                <h1>Get in touch</h1>
+                <p class="contact-subtitle">Ready to scale your business? Claim your FREE strategy audit, worth $1200! Learn how our framework can help you:</p>
+
+                <ul class="contact-benefits">
+                    <li>Increase Website Traffic</li>
+                    <li>Scale Your Advertising Budget Profitably</li>
+                    <li>Reduce Customer Acquisition Costs</li>
+                    <li>Improve Conversion Rates</li>
+                    <li>Dramatically Increase ROI and Customer Lifetime Value</li>
+                </ul>
+
+                <div class="contact-social">
+                    <a href="https://www.facebook.com/jrnydigital" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/jrnydigitalau/?hl=en" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@jrnydigitalau" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/jrny-digital?originalSubdomain=au" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCc-O5thp1DhCDJj6bSFGQ6Q" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+                    <!-- Hidden form-name field required for Netlify AJAX submissions -->
+                    <input type="hidden" name="form-name" value="contact">
+                    <!-- Spam protection - hidden from humans -->
+                    <p style="display:none">
+                        <label>Don't fill this out: <input name="bot-field"></label>
+                    </p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="revenue">Current Monthly Revenue</label>
+                            <input type="text" id="revenue" name="revenue">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website URL</label>
+                            <input type="text" id="website" name="website" placeholder="e.g. jrnydigital.com.au">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hearAbout">How Did You Hear About Us?</label>
+                        <input type="text" id="hearAbout" name="hearAbout">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Monthly Marketing Budget?</label>
+                        <select id="budget" name="budget">
+                            <option value="" disabled selected></option>
+                            <option value="0-5000">$0 - $5,000</option>
+                            <option value="5000-10000">$5,000 - $10,000</option>
+                            <option value="10000-25000">$10,000 - $25,000</option>
+                            <option value="25000-50000">$25,000 - $50,000</option>
+                            <option value="50000+">$50,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+                <div class="form-success" id="formSuccess" style="display:none;">
+                    <div class="form-success-icon">✓</div>
+                    <h3>Form Submitted Successfully!</h3>
+                    <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Marquee Section -->
+    <section class="reviews-marquee-section">
+        <!-- Row 1 - scrolls left -->
+        <div class="reviews-marquee-row row-1">
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #5a3a8a;">J</div>
+                    <div>
+                        <div class="review-card-name">Jeromy Tawil</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We recently partnered with JRNY Digital to launch a new marketing process and the experience has been exceptional. JRNY Digital identified challenges and provided effective, actionable solutions that have been pivotal in improving our marketing efforts.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #3a5a8a;">B</div>
+                    <div>
+                        <div class="review-card-name">Brendon Gardiner</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We recently partnered with JRNY Digital to launch our first marketing process, and the experience has been outstanding. They quickly identified key challenges and provided practical, results-driven solutions.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #8a3a5a;">R</div>
+                    <div>
+                        <div class="review-card-name">Rav Brar</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Couldn't have scaled without JRNY. After going with 5 different agencies, we finally settled with JRNY and started seeing immediate improvements from day 1. I wish I found them sooner.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #3a8a5a;">S</div>
+                    <div>
+                        <div class="review-card-name">Shaun Corbett-Jones</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">I was referred to JRNY through a mutual contact and my experience so far has been nothing short of productive and professional. They were flexible and provided great support. I would be happy to recommend them to anyone.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #2c3e7a;">M</div>
+                    <div>
+                        <div class="review-card-name">Mayfair Marketing</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We partnered with JRNY Digital over a year ago. As a specialist agency their strategies that they have been able to assist with have been great for our clients. Jason and the team have a wealth of knowledge.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #3a8a7a;">Q</div>
+                    <div>
+                        <div class="review-card-name">QPCare Info</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We're currently working with JRNY Digital, and Paul has been absolutely amazing to deal with. He's professional, responsive, and genuinely committed to helping us achieve great results. Highly recommend JRNY Digital!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #8a5a3a;">F</div>
+                    <div>
+                        <div class="review-card-name">Fiona Williams</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Our team have recently partnered with JRNY Digital and I could not speak more highly of our experience!! Innovative ideas delivered with enthusiasm and a genuine care for our business and its results. 10/10</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #7a5a2c;">M</div>
+                    <div>
+                        <div class="review-card-name">Myka Candles & Moulds</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">The team at JRNY Digital has been a breath of fresh air. They are incredibly friendly and offer clear communication every step of the way. This has been incredibly helpful in understanding our marketing campaigns.</p>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #5a3a8a;">J</div>
+                    <div>
+                        <div class="review-card-name">Jeromy Tawil</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We recently partnered with JRNY Digital to launch a new marketing process and the experience has been exceptional. JRNY Digital identified challenges and provided effective, actionable solutions that have been pivotal in improving our marketing efforts.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #3a5a8a;">B</div>
+                    <div>
+                        <div class="review-card-name">Brendon Gardiner</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We recently partnered with JRNY Digital to launch our first marketing process, and the experience has been outstanding. They quickly identified key challenges and provided practical, results-driven solutions.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #8a3a5a;">R</div>
+                    <div>
+                        <div class="review-card-name">Rav Brar</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Couldn't have scaled without JRNY. After going with 5 different agencies, we finally settled with JRNY and started seeing immediate improvements from day 1. I wish I found them sooner.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #3a8a5a;">S</div>
+                    <div>
+                        <div class="review-card-name">Shaun Corbett-Jones</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">I was referred to JRNY through a mutual contact and my experience so far has been nothing short of productive and professional. They were flexible and provided great support. I would be happy to recommend them to anyone.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #2c3e7a;">M</div>
+                    <div>
+                        <div class="review-card-name">Mayfair Marketing</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We partnered with JRNY Digital over a year ago. As a specialist agency their strategies that they have been able to assist with have been great for our clients. Jason and the team have a wealth of knowledge.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #3a8a7a;">Q</div>
+                    <div>
+                        <div class="review-card-name">QPCare Info</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We're currently working with JRNY Digital, and Paul has been absolutely amazing to deal with. He's professional, responsive, and genuinely committed to helping us achieve great results. Highly recommend JRNY Digital!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #8a5a3a;">F</div>
+                    <div>
+                        <div class="review-card-name">Fiona Williams</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Our team have recently partnered with JRNY Digital and I could not speak more highly of our experience!! Innovative ideas delivered with enthusiasm and a genuine care for our business and its results. 10/10</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #7a5a2c;">M</div>
+                    <div>
+                        <div class="review-card-name">Myka Candles & Moulds</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">The team at JRNY Digital has been a breath of fresh air. They are incredibly friendly and offer clear communication every step of the way. This has been incredibly helpful in understanding our marketing campaigns.</p>
+            </div>
+        </div>
+
+        <!-- Row 2 - scrolls right -->
+        <div class="reviews-marquee-row row-2">
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #5a7a3a;">B</div>
+                    <div>
+                        <div class="review-card-name">Bernd Winter</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">After bouncing about town with various levels of average and indifferent agencies we have settled for a journey with JRNY and are delighted with the guidance and results. Happy to work to real conversion strategies and data, without any of the usual agency smoke and mirrors.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #8a7a3a;">Y</div>
+                    <div>
+                        <div class="review-card-name">Yash K (Yamal)</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Jason and team are amazing to work with. Knowledgeable, proactive, and most importantly: result driven. They deliver, they say what they're gonna do, and do what they say. Highly recommend.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar"><img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/4.png" alt="Bang & Olufsen"></div>
+                    <div>
+                        <div class="review-card-name">Bang & Olufsen</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">JRNY is one of the most efficient and effective Marketing Teams you could employ to look after all online marketing solutions. They will increase your revenue and engage with your consumers meaningfully.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar"><img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/5.png" alt="Naudic"></div>
+                    <div>
+                        <div class="review-card-name">Naudic</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Your Service and skill is the BEST I've experienced in 15 years of working with outsourced digital marketing support. I definitely recommend your services to anyone looking to grow their e-commerce business.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar"><img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/6.png" alt="Pawssum"></div>
+                    <div>
+                        <div class="review-card-name">Pawssum</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Not everyday you find a provider that promises and delivers while exceeding expectations. I've been through a lot of digital marketing providers during the years, but these guys are something else.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #2c7a5a;">B</div>
+                    <div>
+                        <div class="review-card-name">Brendan Chan</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We've been working with JRNY Digital since August 2021, and wow, we're impressed! Before we teamed up with them, figuring out all this digital marketing stuff felt really complicated. But the team at JRNY made it so much easier and clearer for us.</p>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #5a7a3a;">B</div>
+                    <div>
+                        <div class="review-card-name">Bernd Winter</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">After bouncing about town with various levels of average and indifferent agencies we have settled for a journey with JRNY and are delighted with the guidance and results. Happy to work to real conversion strategies and data, without any of the usual agency smoke and mirrors.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #8a7a3a;">Y</div>
+                    <div>
+                        <div class="review-card-name">Yash K (Yamal)</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Jason and team are amazing to work with. Knowledgeable, proactive, and most importantly: result driven. They deliver, they say what they're gonna do, and do what they say. Highly recommend.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar"><img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/4.png" alt="Bang & Olufsen"></div>
+                    <div>
+                        <div class="review-card-name">Bang & Olufsen</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">JRNY is one of the most efficient and effective Marketing Teams you could employ to look after all online marketing solutions. They will increase your revenue and engage with your consumers meaningfully.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar"><img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/5.png" alt="Naudic"></div>
+                    <div>
+                        <div class="review-card-name">Naudic</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Your Service and skill is the BEST I've experienced in 15 years of working with outsourced digital marketing support. I definitely recommend your services to anyone looking to grow their e-commerce business.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar"><img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/6.png" alt="Pawssum"></div>
+                    <div>
+                        <div class="review-card-name">Pawssum</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">Not everyday you find a provider that promises and delivers while exceeding expectations. I've been through a lot of digital marketing providers during the years, but these guys are something else.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="review-card-avatar letter-avatar" style="background: #2c7a5a;">B</div>
+                    <div>
+                        <div class="review-card-name">Brendan Chan</div>
+                        <div class="review-card-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-card-text">We've been working with JRNY Digital since August 2021, and wow, we're impressed! Before we teamed up with them, figuring out all this digital marketing stuff felt really complicated. But the team at JRNY made it so much easier and clearer for us.</p>
+            </div>
+        </div>
+
+        <!-- Google Reviews CTA -->
+        <div class="reviews-cta">
+            <a href="https://www.google.com/search?q=jrny+digital+google+reviews#lrd=0x6b9149499c706a0d:0x241e4f9bce097feb,1,,,," class="btn-google-reviews" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                Read More of Our Google Reviews
+            </a>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands-section">
+        <div class="brands-container">
+            <div class="brands-header">
+                <h2>Here Are Some Awesome<br><span>Brands We've Partnered With</span></h2>
+            </div>
+            <div class="brands-grid">
+                <!-- Row 1 -->
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Domino's%20Pizza.png" alt="Domino's Pizza">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Anglicare.png" alt="Anglicare">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Salon%20Supplies%20&%20Furniture.png" alt="Salon Supplies & Furniture">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Pacific%20Harbour.png" alt="Pacific Harbour">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/The%20Blinds%20Place.png" alt="The Blinds Place">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Canvas%20Art%20Factory.png" alt="Canvas Art Factory">
+                <!-- Row 2 -->
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Goodstart%20Early%20Learning.png" alt="Goodstart Early Learning">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Sunshine%20Coast%20Council.png" alt="Sunshine Coast Council">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Bond%20University.png" alt="Bond University">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Aero%20Healthcare.png" alt="Aero Healthcare">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Naudic.png" alt="Naudic">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Bang%20&%20Olufsen.png" alt="Bang & Olufsen">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Torga%20Optical.png" alt="Torga Optical">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/HAYS.png" alt="HAYS">
+                <!-- Row 3 -->
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Wagners.png" alt="Wagners">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Asset%20Outdoor.png" alt="Asset Outdoor">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Bariano.png" alt="Bariano">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Pioneer.png" alt="Pioneer">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Allianz.png" alt="Allianz">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Queensland%20Museum.png" alt="Queensland Museum">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Collective%20Family%20Law%20Group.png" alt="Collective Family Law Group">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Cars4us.png" alt="Cars4us">
+                <!-- Row 4 -->
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/NGU%20Real%20Estate.png" alt="NGU Real Estate">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Boo%20Beauty%20Bar%20Academy.png" alt="Boo Beauty Bar Academy">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Cane%20&%20Wood%20Emporium.png" alt="Cane & Wood Emporium">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Liquimix.png" alt="Liquimix">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Credit%20Hub.png" alt="Credit Hub">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Seymour%20Furlong%20Lawyers.png" alt="Seymour Furlong Lawyers">
+                <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/Beacon%20Support.png" alt="Beacon Support">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="https://ik.imagekit.io/jrnydigital/JRNY%20DIGITAL/JRNY%20logo.png" alt="JRNY Digital">
+                    </div>
+                    <p>We're human, we're real we care about our clients. Honesty, Transparency and Results - that's our motto.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="social-media-ads.html">Social Media Ads</a></li>
+                        <li><a href="google-ads.html">Google Ads</a></li>
+                        <li><a href="email-marketing.html">Email Marketing</a></li>
+                        <li><a href="seo.html">SEO</a></li>
+                        <li><a href="cro.html">Conversion Rate Optimisation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Who We Can Help</h4>
+                    <ul>
+                        <li><a href="home-services.html">Home Services</a></li>
+                        <li><a href="financial-services.html">Financial Services</a></li>
+                        <li><a href="law-firms.html">Law Firms</a></li>
+                        <li><a href="healthcare-services.html">Healthcare Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © All Rights Reserved. JRNY DIGITAL Australia Pty Ltd. ABN 82 642 424 904</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+
+        if (mobileMenuToggle && mobileMenu && mobileMenuOverlay) {
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileMenuOverlay.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // Mobile dropdown toggles
+            mobileDropdowns.forEach(dropdown => {
+                const dropdownLink = dropdown.querySelector('a');
+                dropdownLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                });
+            });
+
+            // Close menu when clicking a link (except dropdown toggles)
+            mobileMenu.querySelectorAll('a:not(.mobile-dropdown > a)').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // Contact form submission handler
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        contactForm.style.display = 'none';
+                        formSuccess.style.display = 'block';
+                    } else {
+                        alert('Something went wrong (Error ' + response.status + '). Please try again.');
+                    }
+                })
+                .catch(function(error) {
+                    alert('Something went wrong. Please try again.');
+                });
+            });
+        }
+    </script>
+</body>
