@@ -788,7 +788,7 @@
 
         .case-highlight-stats {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
             margin-bottom: 40px;
         }
@@ -800,6 +800,10 @@
             padding: 30px;
             text-align: center;
             transition: border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .case-stat:hover {
@@ -2045,7 +2049,7 @@
             }
 
             .case-highlight-stats {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 gap: 15px;
             }
 
@@ -2422,10 +2426,6 @@
                         <div class="case-stat">
                             <div class="case-stat-number">$0 → $700K</div>
                             <div class="case-stat-label">Revenue in Year One</div>
-                        </div>
-                        <div class="case-stat">
-                            <div class="case-stat-number">$2K</div>
-                            <div class="case-stat-label">One-Off Google Ads Setup</div>
                         </div>
                         <div class="case-stat">
                             <div class="case-stat-number">12</div>
