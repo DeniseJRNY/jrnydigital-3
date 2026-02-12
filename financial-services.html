@@ -281,6 +281,183 @@
         .service-card-ctas .book-call { color: rgba(255,255,255,0.6); }
         .service-card-ctas .book-call:hover { color: #ffffff; }
 
+        /* ========== FINANCIAL TESTIMONIALS SECTION ========== */
+        .fin-testimonials-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .fin-testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .fin-testimonials-header {
+            text-align: left;
+            margin-bottom: 80px;
+        }
+
+        .fin-results-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .fin-results-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .fin-results-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .fin-results-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .fin-testimonials-header h2 {
+            font-size: 80px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.1;
+            max-width: 100%;
+        }
+
+        .fin-testimonials-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .fin-tab {
+            padding: 12px 28px;
+            background: transparent;
+            border: 1px solid #333;
+            border-radius: 50px;
+            color: #888;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .fin-tab:hover {
+            border-color: #FFBD00;
+            color: #FFBD00;
+        }
+
+        .fin-tab.active {
+            background: #FFBD00;
+            border-color: #FFBD00;
+            color: #000000;
+        }
+
+        .fin-testimonial-panel {
+            display: none;
+        }
+
+        .fin-testimonial-panel.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .fin-testimonial-image {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 450px;
+        }
+
+        .fin-testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .fin-testimonial-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .fin-stat-item {
+            padding: 30px 0;
+            border-top: 3px solid #F5A623;
+        }
+
+        .fin-stat-item:last-child {
+            border-bottom: 3px solid #F5A623;
+        }
+
+        .fin-stat-row {
+            display: flex;
+            align-items: baseline;
+            gap: 25px;
+        }
+
+        .fin-stat-number {
+            font-size: 64px;
+            font-weight: 400;
+            color: #F5A623;
+            line-height: 1;
+            min-width: 160px;
+        }
+
+        .fin-stat-info {
+            flex: 1;
+        }
+
+        .fin-stat-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .fin-stat-subtitle {
+            font-size: 15px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+        }
+
         /* ========== CONTACT FORM SECTION ========== */
         .contact-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
         .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -399,6 +576,10 @@
             .services-grid-section { padding: 80px 40px; }
             .services-grid-header h2 { font-size: 38px; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .fin-testimonials-section { padding: 80px 40px; }
+            .fin-testimonials-header h2 { font-size: 56px; }
+            .fin-stat-number { font-size: 52px; min-width: 130px; }
+            .fin-stat-title { font-size: 18px; }
             .contact-section { padding: 80px 40px; }
             .contact-info h2 { font-size: 38px; }
             .faq-container { grid-template-columns: 1fr; gap: 50px; }
@@ -444,6 +625,14 @@
             .services-grid-header h2 { font-size: 30px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-card { padding: 35px 25px; }
+            .fin-testimonials-section { padding: 60px 20px; }
+            .fin-testimonials-header h2 { font-size: 32px; }
+            .fin-testimonial-panel.active { grid-template-columns: 1fr; gap: 40px; }
+            .fin-testimonial-image { min-height: 300px; }
+            .fin-stat-number { font-size: 44px; min-width: 110px; }
+            .fin-stat-title { font-size: 17px; }
+            .fin-stat-subtitle { font-size: 13px; }
+            .fin-tab { padding: 10px 22px; font-size: 13px; }
             .contact-section { padding: 60px 20px; }
             .contact-container { grid-template-columns: 1fr; gap: 40px; }
             .contact-info h2 { font-size: 32px; }
@@ -468,6 +657,11 @@
             .hero h1 { font-size: 30px; }
             .stat-number { font-size: 40px; }
             .services-grid-header h2 { font-size: 26px; }
+            .fin-testimonials-header h2 { font-size: 26px; }
+            .fin-stat-number { font-size: 36px; min-width: 90px; }
+            .fin-stat-title { font-size: 15px; }
+            .fin-stat-row { gap: 15px; }
+            .fin-stat-item { padding: 20px 0; }
             .contact-info h2 { font-size: 28px; }
             .faq-header h2 { font-size: 30px; }
             .cta-header h2 { font-size: 26px; }
@@ -828,6 +1022,93 @@
         </div>
     </section>
 
+    <!-- ========== FINANCIAL TESTIMONIALS ========== -->
+    <section class="fin-testimonials-section">
+        <div class="fin-testimonials-container">
+            <div class="fin-testimonials-header">
+                <span class="fin-results-badge"><span class="fin-results-badge-dot"></span>Results</span>
+                <h2>We'll Let The Results Speak<br>For Themselves</h2>
+            </div>
+
+            <div class="fin-testimonials-tabs">
+                <button class="fin-tab active" data-fin-tab="client-1">Client 1</button>
+                <button class="fin-tab" data-fin-tab="client-2">Client 2</button>
+            </div>
+
+            <!-- Client 1 Panel -->
+            <div class="fin-testimonial-panel active" data-fin-content="client-1">
+                <div class="fin-testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&q=80" alt="Financial services professional" loading="lazy">
+                </div>
+                <div class="fin-testimonial-stats">
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">257%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Marketing Efficiency Ratio</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">430%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Decrease Advertising Spend</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">7.5</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Return on Investment</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client 2 Panel -->
+            <div class="fin-testimonial-panel" data-fin-content="client-2">
+                <div class="fin-testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Financial growth dashboard analytics" loading="lazy">
+                </div>
+                <div class="fin-testimonial-stats">
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">277%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Increase Opportunity Value</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">348%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Conversion Rate Improvement</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">709%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Sales Qualified Opportunities</div>
+                                <div class="fin-stat-subtitle">Since implementing our framework</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== SECTION 5: CONTACT FORM ========== -->
     <section class="contact-section">
         <div class="contact-container">
@@ -1147,6 +1428,22 @@
                 const y = ((e.clientY - rect.top) / rect.height) * 100;
                 item.style.setProperty('--mouse-x', x + '%');
                 item.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // ========== Financial Testimonials Tabs ==========
+        const finTabs = document.querySelectorAll('.fin-tab');
+        const finPanels = document.querySelectorAll('.fin-testimonial-panel');
+
+        finTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.dataset.finTab;
+
+                finTabs.forEach(t => t.classList.remove('active'));
+                finPanels.forEach(p => p.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.querySelector(`.fin-testimonial-panel[data-fin-content="${targetTab}"]`).classList.add('active');
             });
         });
 
