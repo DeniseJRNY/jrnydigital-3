@@ -241,11 +241,1203 @@
         .tagline-section p em { font-style: italic; }
         .tagline-section p strong { color: #F5A623; font-weight: 700; }
 
+        /* ========== WHO WE WORK WITH (FINANCE) ========== */
+        .fin-trades-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .fin-trades-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .fin-trades-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .fin-trades-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .fin-trades-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .fin-trades-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .fin-trades-heading {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .fin-trades-body {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 750px;
+            margin-bottom: 50px;
+        }
+
+        .fin-trades-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 50px;
+        }
+
+        .fin-trade-item {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 60px;
+            padding: 16px 28px 16px 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+            overflow: hidden;
+        }
+
+        .fin-trade-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 60px;
+            background: radial-gradient(ellipse at 20% 50%, rgba(245, 166, 35, 0.08), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .fin-trade-item:hover {
+            border-color: rgba(245, 166, 35, 0.5);
+            background: rgba(245, 166, 35, 0.06);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(245, 166, 35, 0.12), 0 0 0 1px rgba(245, 166, 35, 0.15);
+        }
+
+        .fin-trade-item:hover::before {
+            opacity: 1;
+        }
+
+        .fin-trade-item-indicator {
+            width: 8px;
+            height: 8px;
+            background: #F5A623;
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 0 0 rgba(245, 166, 35, 0);
+        }
+
+        .fin-trade-item:hover .fin-trade-item-indicator {
+            box-shadow: 0 0 8px 3px rgba(245, 166, 35, 0.4);
+            transform: scale(1.25);
+        }
+
+        .fin-trade-item span {
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fin-trade-item:hover span {
+            color: #ffffff;
+        }
+
+        .fin-trades-cta-line {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 28px 32px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .fin-trades-cta-line:hover {
+            border-color: rgba(245, 166, 35, 0.25);
+            background: rgba(245, 166, 35, 0.03);
+        }
+
+        .fin-trades-cta-line a {
+            color: #F5A623;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .fin-trades-cta-line a:hover {
+            text-decoration: underline;
+        }
+
+        .fin-trades-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .fin-trades-header-row .fin-trades-heading {
+            margin-bottom: 0;
+        }
+
+        .fin-section-cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #F5A623;
+            color: #000000;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .fin-section-cta-btn:hover {
+            background: #e09515;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .fin-trades-section {
+                padding: 60px 20px;
+            }
+
+            .fin-trades-heading {
+                font-size: 32px;
+            }
+
+            .fin-trades-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fin-trades-heading {
+                font-size: 26px;
+            }
+        }
+
+        /* ========== THE PROBLEM (FINANCE) ========== */
+        .fin-problem-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .fin-problem-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .fin-problem-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .fin-problem-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .fin-problem-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .fin-problem-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .fin-problem-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .fin-problem-left {
+            position: sticky;
+            top: 120px;
+        }
+
+        .fin-problem-left h2 {
+            font-size: 42px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .fin-problem-left p {
+            font-size: 17px;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        .fin-problem-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .fin-problem-card {
+            position: relative;
+            background: linear-gradient(145deg, #111111 0%, #0a0a0a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .fin-problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(245, 166, 35, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .fin-problem-card:hover::before {
+            opacity: 1;
+        }
+
+        .fin-problem-card:hover {
+            border-color: rgba(245, 166, 35, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(245, 166, 35, 0.08);
+        }
+
+        .fin-problem-card-mockup {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .fin-problem-card-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6) saturate(0.8);
+            transition: all 0.5s ease;
+        }
+
+        .fin-problem-card:hover .fin-problem-card-mockup img {
+            filter: brightness(0.75) saturate(1);
+            transform: scale(1.03);
+        }
+
+        .fin-problem-card-mockup-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, #0a0a0a, transparent);
+            pointer-events: none;
+        }
+
+        .fin-problem-card-mockup-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 14px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #F5A623;
+            z-index: 2;
+        }
+
+        .fin-problem-card-body {
+            padding: 32px 36px 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fin-problem-card-number {
+            font-size: 13px;
+            font-weight: 700;
+            color: #F5A623;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .fin-problem-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .fin-problem-card p {
+            font-size: 15px;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 1024px) {
+            .fin-problem-layout {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .fin-problem-left {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fin-problem-section {
+                padding: 60px 20px;
+            }
+
+            .fin-problem-left h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fin-problem-left h2 {
+                font-size: 26px;
+            }
+        }
+
+        /* ========== SEARCH PROOF (FINANCE) ========== */
+        .fin-search-proof-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .fin-search-proof-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .fin-search-proof-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .fin-search-proof-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .fin-search-proof-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .fin-search-proof-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .fin-search-proof-heading {
+            font-size: 42px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 60px;
+            max-width: 900px;
+        }
+
+        .fin-sp-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .fin-sp-card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 3px solid #F5A623;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(245, 166, 35, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .fin-sp-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(245, 166, 35, 0.2);
+        }
+
+        .fin-sp-search-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            border-bottom: 1px solid #eee;
+            background: #fafafa;
+        }
+
+        .fin-sp-g-logo svg {
+            width: 28px;
+            height: 28px;
+            display: block;
+        }
+
+        .fin-sp-search-query {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333333;
+        }
+
+        .fin-sp-search-tabs {
+            display: flex;
+            gap: 16px;
+            padding: 8px 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fin-sp-search-tab {
+            font-size: 11px;
+            color: #888888;
+            padding: 6px 0 8px;
+            letter-spacing: 0.02em;
+            border-bottom: 2px solid transparent;
+        }
+
+        .fin-sp-search-tab.active {
+            color: #1a73e8;
+            border-bottom-color: #1a73e8;
+        }
+
+        .fin-sp-search-meta {
+            padding: 6px 20px;
+            font-size: 11px;
+            color: #888888;
+        }
+
+        .fin-sp-search-results {
+            padding: 8px 20px 20px;
+        }
+
+        .fin-sp-result {
+            margin-bottom: 18px;
+        }
+
+        .fin-sp-result:last-child {
+            margin-bottom: 0;
+        }
+
+        .fin-sp-rank {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F5A623 0%, #FFBD00 100%);
+            font-size: 10px;
+            font-weight: 800;
+            color: #000000;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .fin-sp-url {
+            font-size: 11px;
+            color: #202124;
+            margin-bottom: 2px;
+        }
+
+        .fin-sp-url span {
+            color: #888888;
+        }
+
+        .fin-sp-title {
+            font-size: 14px;
+            color: #1a0dab;
+            font-weight: 600;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .fin-sp-desc {
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        .fin-sp-highlight {
+            background: linear-gradient(135deg, rgba(245, 166, 35, 0.06) 0%, rgba(255, 189, 0, 0.04) 100%);
+            border-left: 3px solid #F5A623;
+            padding: 10px 12px;
+            border-radius: 0 8px 8px 0;
+            margin-left: -12px;
+            margin-right: -8px;
+        }
+
+        @media (max-width: 1024px) {
+            .fin-sp-cards {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .fin-search-proof-heading {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fin-search-proof-section {
+                padding: 60px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fin-search-proof-heading {
+                font-size: 26px;
+            }
+        }
+
+        /* ========== CLIENT JOURNEY (FINANCE) ========== */
+        .fin-journey-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .fin-journey-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .fin-journey-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .fin-journey-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .fin-journey-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .fin-journey-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .fin-journey-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .fin-journey-heading {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        .fin-journey-header-row .fin-journey-heading {
+            margin-bottom: 0;
+        }
+
+        .fin-journey-intro {
+            font-size: 17px;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 750px;
+            margin-bottom: 60px;
+        }
+
+        .fin-journey-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .fin-journey-steps::before {
+            content: '';
+            position: absolute;
+            top: 72px;
+            left: 60px;
+            right: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #F5A623 0%, rgba(245, 166, 35, 0.3) 30%, rgba(245, 166, 35, 0.3) 70%, #F5A623 100%);
+            z-index: 0;
+        }
+
+        .fin-journey-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+            height: 100%;
+        }
+
+        .fin-journey-step-icon-wrap {
+            width: 144px;
+            height: 144px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 28px;
+            background: #0a0a0a;
+        }
+
+        .fin-journey-step-icon-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            background: conic-gradient(from var(--angle), transparent 50%, rgba(245, 166, 35, 0.4) 75%, #F5A623 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 4s linear infinite;
+        }
+
+        .fin-journey-step-icon-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: #0a0a0a;
+            z-index: -1;
+        }
+
+        .fin-journey-step-icon-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, rgba(245, 166, 35, 0.06) 0%, transparent 70%);
+            transition: all 0.4s ease;
+        }
+
+        .fin-journey-step:hover .fin-journey-step-icon-inner {
+            background: radial-gradient(circle at center, rgba(245, 166, 35, 0.12) 0%, transparent 70%);
+        }
+
+        .fin-journey-step-icon-inner svg {
+            width: 56px;
+            height: 56px;
+            stroke: #F5A623;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.4s ease;
+        }
+
+        .fin-journey-step:hover .fin-journey-step-icon-inner svg {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.4));
+        }
+
+        .fin-journey-step-number {
+            font-size: 12px;
+            font-weight: 700;
+            color: #F5A623;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .fin-journey-step h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .fin-journey-step-desc {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .fin-journey-step-solution {
+            font-size: 13px;
+            font-weight: 600;
+            color: #F5A623;
+            line-height: 1.5;
+            padding: 10px 18px;
+            background: rgba(245, 166, 35, 0.06);
+            border: 1px solid rgba(245, 166, 35, 0.15);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .fin-journey-step:hover .fin-journey-step-solution {
+            background: rgba(245, 166, 35, 0.1);
+            border-color: rgba(245, 166, 35, 0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .fin-journey-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+            }
+
+            .fin-journey-steps::before {
+                display: none;
+            }
+
+            .fin-journey-heading {
+                font-size: 36px;
+            }
+
+            .fin-journey-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fin-journey-section {
+                padding: 60px 20px;
+            }
+
+            .fin-journey-steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .fin-journey-heading {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fin-journey-heading {
+                font-size: 26px;
+            }
+        }
+
+        /* ========== HOW IT WORKS SECTION ========== */
+        .fin-hiw-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .fin-hiw-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .fin-hiw-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .fin-hiw-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .fin-hiw-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .fin-hiw-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .fin-hiw-heading {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .fin-hiw-intro {
+            font-size: 17px;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 60px;
+        }
+
+        .fin-hiw-steps {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .fin-hiw-step {
+            position: relative;
+            background: linear-gradient(145deg, #111111 0%, #0a0a0a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .fin-hiw-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(245, 166, 35, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .fin-hiw-step:hover::before {
+            opacity: 1;
+        }
+
+        .fin-hiw-step:hover {
+            border-color: rgba(245, 166, 35, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(245, 166, 35, 0.08);
+        }
+
+        .fin-hiw-step-image {
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+        }
+
+        .fin-hiw-step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.55) saturate(0.85);
+            transition: all 0.5s ease;
+        }
+
+        .fin-hiw-step:hover .fin-hiw-step-image img {
+            filter: brightness(0.7) saturate(1);
+            transform: scale(1.04);
+        }
+
+        .fin-hiw-step-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .fin-hiw-step-number {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            font-size: 72px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.1);
+            line-height: 1;
+            z-index: 2;
+            transition: color 0.4s ease;
+        }
+
+        .fin-hiw-step:hover .fin-hiw-step-number {
+            color: rgba(245, 166, 35, 0.2);
+        }
+
+        .fin-hiw-step-body {
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fin-hiw-step-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #F5A623;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .fin-hiw-step h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .fin-hiw-step p {
+            font-size: 15px;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 1024px) {
+            .fin-hiw-section {
+                padding: 80px 40px;
+            }
+
+            .fin-hiw-heading {
+                font-size: 40px;
+            }
+
+            .fin-hiw-steps {
+                gap: 20px;
+            }
+
+            .fin-hiw-step-body {
+                padding: 32px 28px;
+            }
+
+            .fin-hiw-step-number {
+                font-size: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fin-hiw-section {
+                padding: 60px 20px;
+            }
+
+            .fin-hiw-heading {
+                font-size: 30px;
+            }
+
+            .fin-hiw-steps {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .fin-hiw-step {
+                grid-template-columns: 1fr;
+            }
+
+            .fin-hiw-step-image {
+                min-height: 200px;
+            }
+
+            .fin-hiw-step-body {
+                padding: 28px 24px;
+            }
+
+            .fin-hiw-step-number {
+                font-size: 52px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fin-hiw-heading {
+                font-size: 26px;
+            }
+        }
+
         /* ========== VALUE CARDS SECTION ========== */
         .value-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .value-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-        .value-text h2 { font-size: 36px; font-weight: 400; color: #ffffff; line-height: 1.3; margin-bottom: 25px; }
-        .value-text p { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 20px; }
+        .value-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .value-text h2 { font-size: 36px; font-weight: 400; color: #F5A623; line-height: 1.3; margin-bottom: 25px; }
+        .value-text p { font-size: 16px; color: #ffffff; line-height: 1.8; margin-bottom: 20px; }
         .value-text .highlight-stat { color: #F5A623; font-weight: 700; }
 
         .value-cards-scroll { max-height: 600px; overflow-y: auto; padding-right: 15px; display: flex; flex-direction: column; gap: 20px; }
@@ -258,7 +1450,7 @@
         .value-card-icon { width: 48px; height: 48px; margin-bottom: 18px; }
         .value-card-icon svg { width: 48px; height: 48px; stroke: #F5A623; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
         .value-card h3 { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
-        .value-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; margin: 0; }
+        .value-card p { font-size: 14px; color: #ffffff; line-height: 1.7; margin: 0; }
 
         /* ========== SERVICES GRID SECTION ========== */
         .services-grid-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -348,7 +1540,7 @@
         }
 
         .fin-testimonials-header h2 {
-            font-size: 80px;
+            font-size: 48px;
             font-weight: 400;
             color: #ffffff;
             line-height: 1.1;
@@ -454,15 +1646,15 @@
 
         .fin-stat-subtitle {
             font-size: 15px;
-            color: rgba(255,255,255,0.6);
+            color: #ffffff;
             font-weight: 400;
         }
 
         /* ========== CONTACT FORM SECTION ========== */
         .contact-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .contact-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
         .contact-info h2 { font-size: 48px; font-weight: 400; color: #ffffff; line-height: 1.2; margin-bottom: 25px; }
-        .contact-info p { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 20px; }
+        .contact-info p { font-size: 17px; color: #ffffff; line-height: 1.8; margin-bottom: 20px; }
         .contact-info-image { border-radius: 16px; overflow: hidden; margin-top: 10px; }
         .contact-info-image img { width: 100%; height: auto; display: block; border-radius: 16px; }
 
@@ -482,7 +1674,7 @@
         .form-success { text-align: center; padding: 60px 20px; }
         .form-success-icon { width: 70px; height: 70px; background: #F5A623; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 700; color: #000000; margin: 0 auto 25px; }
         .form-success h3 { font-size: 24px; font-weight: 600; color: #ffffff; margin-bottom: 12px; }
-        .form-success p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+        .form-success p { font-size: 15px; color: #ffffff; line-height: 1.6; }
 
         /* ========== FAQ SECTION ========== */
         .faq-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -518,7 +1710,7 @@
 
         .faq-cta-area { max-width: 1400px; margin: 60px auto 0; display: grid; grid-template-columns: 400px 1fr; gap: 80px; }
         .faq-cta-area-content { grid-column: 2; text-align: left; }
-        .faq-cta-area p { font-size: 17px; color: rgba(255,255,255,0.75); margin-bottom: 25px; }
+        .faq-cta-area p { font-size: 17px; color: #ffffff; margin-bottom: 25px; }
         .faq-cta-area .cta-btn { display: inline-block; padding: 16px 40px; background: #F5A623; color: #000000; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
         .faq-cta-area .cta-btn:hover { background: #e09515; transform: translateY(-2px); }
 
@@ -552,14 +1744,14 @@
         .footer-brand { display: flex; flex-direction: column; }
         .footer-logo { margin-bottom: 30px; }
         .footer-logo img { height: 50px; width: auto; }
-        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 30px; max-width: 280px; }
+        .footer-brand p { font-size: 14px; color: #ffffff; line-height: 1.7; margin-bottom: 30px; max-width: 280px; }
         .footer-column h4 { font-size: 18px; font-weight: 600; color: #ffffff; margin-bottom: 25px; }
         .footer-column ul { list-style: none; padding: 0; margin: 0; }
         .footer-column ul li { margin-bottom: 15px; }
-        .footer-column ul li a { font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; }
+        .footer-column ul li a { font-size: 14px; color: #ffffff; text-decoration: none; transition: color 0.3s ease; }
         .footer-column ul li a:hover { color: #ffc500; }
         .footer-bottom { padding: 40px 0; text-align: center; }
-        .footer-bottom p { font-size: 16px; color: rgba(255,255,255,0.7); }
+        .footer-bottom p { font-size: 16px; color: #ffffff; }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
@@ -691,7 +1883,6 @@
                     <a href="email-marketing.html">Email Marketing</a>
                 </div>
             </div>
-            <a href="pricing.html">Pricing</a>
             <div class="nav-dropdown">
                 <a href="#" class="active">Who We Can Help</a>
                 <div class="dropdown-menu">
@@ -735,7 +1926,6 @@
                     <a href="email-marketing.html">Email Marketing</a>
                 </div>
             </div>
-            <a href="pricing.html">Pricing</a>
             <div class="mobile-dropdown">
                 <a href="#">Who We Can Help</a>
                 <div class="mobile-dropdown-menu">
@@ -802,6 +1992,345 @@
     <!-- ========== TAGLINE ========== -->
     <section class="tagline-section">
         <p>The question isn't whether they're looking for answers. It's whether they're finding <em>you</em>. <strong>Let's make sure they do.</strong></p>
+    </section>
+
+    <!-- ========== WHO WE WORK WITH (FINANCE) ========== -->
+    <section class="fin-trades-section">
+        <div class="fin-trades-container">
+            <span class="fin-trades-badge"><span class="fin-trades-badge-dot"></span>Who We Work With</span>
+            <div class="fin-trades-header-row">
+                <h2 class="fin-trades-heading">We Understand Your Corner of Finance</h2>
+                <a href="contact-us.html" class="fin-section-cta-btn">Let's Talk</a>
+            </div>
+            <p class="fin-trades-body">Financial services isn't one industry — it's dozens. We build strategies around your specific vertical, your compliance requirements, and how your ideal clients actually search for firms like yours.</p>
+
+            <div class="fin-trades-grid">
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Mortgage Brokers</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Financial Planners</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Accountants &amp; Tax Agents</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Insurance Brokers</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Wealth Management</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Super &amp; Retirement</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Commercial Lending</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Fintech &amp; Neobanks</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Credit Unions</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Debt Consolidation</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>SMSF Specialists</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Equipment Finance</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Property Investment</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Conveyancers</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>Bookkeeping</span>
+                </div>
+                <div class="fin-trade-item">
+                    <div class="fin-trade-item-indicator"></div>
+                    <span>FX &amp; Remittance</span>
+                </div>
+            </div>
+
+            <p class="fin-trades-cta-line">Don't see your niche? Chances are we've worked with it. <a href="contact-us.html">Get in touch</a> and we'll show you what's possible.</p>
+        </div>
+    </section>
+
+    <!-- ========== THE PROBLEM (FINANCE) ========== -->
+    <section class="fin-problem-section">
+        <div class="fin-problem-container">
+            <div class="fin-problem-layout">
+                <div class="fin-problem-left">
+                    <span class="fin-problem-badge"><span class="fin-problem-badge-dot"></span>The Problem</span>
+                    <h2>Expertise Alone Won't Fill Your Pipeline</h2>
+                    <p>Your credentials are solid. But if your marketing isn't working as strategically as the advice you give, you're losing clients every day.</p>
+                </div>
+
+                <div class="fin-problem-cards">
+                    <!-- Card 1: Competitors Outspending You -->
+                    <div class="fin-problem-card">
+                        <div class="fin-problem-card-mockup">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="Stock market trading dashboard" loading="lazy">
+                            <div class="fin-problem-card-mockup-overlay"></div>
+                            <div class="fin-problem-card-mockup-badge">Ad Spend</div>
+                        </div>
+                        <div class="fin-problem-card-body">
+                            <div class="fin-problem-card-number">Problem 01</div>
+                            <h3>Your Competitors Are Outspending You Online</h3>
+                            <p>While you're relying on referrals and word of mouth, your competitors are spending $5K-$20K a month on Google Ads and LinkedIn. They're showing up first for every high-intent search your ideal clients are typing. Every day you're not visible is a day they win clients that should've been yours.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Compliance Scares Off Agencies -->
+                    <div class="fin-problem-card">
+                        <div class="fin-problem-card-mockup">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Legal compliance documents and contracts" loading="lazy">
+                            <div class="fin-problem-card-mockup-overlay"></div>
+                            <div class="fin-problem-card-mockup-badge">Compliance</div>
+                        </div>
+                        <div class="fin-problem-card-body">
+                            <div class="fin-problem-card-number">Problem 02</div>
+                            <h3>Compliance Scares Off Most Agencies</h3>
+                            <p>Most agencies don't understand ASIC, ACCC, or the Australian Financial Complaints Authority. They either produce content that puts you at risk, or they play it so safe nothing converts. You need an agency that knows how to market aggressively within the lines.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Content Doesn't Build Trust -->
+                    <div class="fin-problem-card">
+                        <div class="fin-problem-card-mockup">
+                            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80" alt="Financial charts and data on screen" loading="lazy">
+                            <div class="fin-problem-card-mockup-overlay"></div>
+                            <div class="fin-problem-card-mockup-badge">Trust</div>
+                        </div>
+                        <div class="fin-problem-card-body">
+                            <div class="fin-problem-card-number">Problem 03</div>
+                            <h3>Your Content Doesn't Build Trust</h3>
+                            <p>In financial services, people don't buy on impulse. They read 3-5 pieces of content before they even pick up the phone. If your website reads like a brochure from 2012 and your blog hasn't been updated in months, you're losing trust before the conversation starts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROOF IN THE SEARCH RESULTS (FINANCE) ========== -->
+    <section class="fin-search-proof-section">
+        <div class="fin-search-proof-container">
+            <span class="fin-search-proof-badge"><span class="fin-search-proof-badge-dot"></span>Proof In The Search Results</span>
+            <h2 class="fin-search-proof-heading">We do this through data-driven strategies and a deep understanding of how your clients search</h2>
+
+            <div class="fin-sp-cards">
+                <!-- Card 1: Financial Advisor Near Me -->
+                <div class="fin-sp-card">
+                    <div class="fin-sp-search-bar">
+                        <div class="fin-sp-g-logo"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59A14.5 14.5 0 0 1 9.5 24c0-1.59.28-3.14.77-4.59l-7.98-6.19A23.99 23.99 0 0 0 0 24c0 3.77.9 7.34 2.44 10.5l8.09-5.91z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div>
+                        <span class="fin-sp-search-query">financial advisor near me</span>
+                    </div>
+                    <div class="fin-sp-search-tabs">
+                        <span class="fin-sp-search-tab active">All</span>
+                        <span class="fin-sp-search-tab">Maps</span>
+                        <span class="fin-sp-search-tab">Images</span>
+                        <span class="fin-sp-search-tab">News</span>
+                    </div>
+                    <div class="fin-sp-search-meta">About 3,240,000 results (0.39 seconds)</div>
+                    <div class="fin-sp-search-results">
+                        <div class="fin-sp-result fin-sp-highlight">
+                            <div class="fin-sp-url"><span class="fin-sp-rank">1</span>parkerwealthgroup.com.au</div>
+                            <div class="fin-sp-title">Parker Wealth Group | Award-Winning Financial Advisors Parramatta</div>
+                            <div class="fin-sp-desc">Independent financial advice tailored to your goals. Retirement planning, wealth management, and investment strategies. Rated 4.9 stars by 180+ clients. Free initial consultation.</div>
+                        </div>
+                        <div class="fin-sp-result">
+                            <div class="fin-sp-url"><span>competitorwealth.com.au</span></div>
+                            <div class="fin-sp-title">Competitor Wealth | Financial Planning Services</div>
+                            <div class="fin-sp-desc">Professional financial planning and investment management for individuals and families across Australia...</div>
+                        </div>
+                        <div class="fin-sp-result">
+                            <div class="fin-sp-url"><span>genericadvisory.com.au</span></div>
+                            <div class="fin-sp-title">Generic Advisory Group | Financial Advisors</div>
+                            <div class="fin-sp-desc">Comprehensive financial advisory services including super, insurance, and estate planning...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Best Mortgage Broker Sydney -->
+                <div class="fin-sp-card">
+                    <div class="fin-sp-search-bar">
+                        <div class="fin-sp-g-logo"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59A14.5 14.5 0 0 1 9.5 24c0-1.59.28-3.14.77-4.59l-7.98-6.19A23.99 23.99 0 0 0 0 24c0 3.77.9 7.34 2.44 10.5l8.09-5.91z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div>
+                        <span class="fin-sp-search-query">best mortgage broker Sydney</span>
+                    </div>
+                    <div class="fin-sp-search-tabs">
+                        <span class="fin-sp-search-tab active">All</span>
+                        <span class="fin-sp-search-tab">Maps</span>
+                        <span class="fin-sp-search-tab">Images</span>
+                        <span class="fin-sp-search-tab">News</span>
+                    </div>
+                    <div class="fin-sp-search-meta">About 1,870,000 results (0.44 seconds)</div>
+                    <div class="fin-sp-search-results">
+                        <div class="fin-sp-result fin-sp-highlight">
+                            <div class="fin-sp-url"><span class="fin-sp-rank">1</span>hendersonhomeloans.com.au</div>
+                            <div class="fin-sp-title">Henderson Home Loans | Top-Rated Mortgage Broker Sydney</div>
+                            <div class="fin-sp-desc">Access to 40+ lenders. Personalised home loan strategies that save you thousands. No hidden fees. 98% customer satisfaction rate. Apply online today.</div>
+                        </div>
+                        <div class="fin-sp-result">
+                            <div class="fin-sp-url"><span>sydneyloans.com.au</span></div>
+                            <div class="fin-sp-title">Sydney Home Loans | Mortgage Broking Services</div>
+                            <div class="fin-sp-desc">Helping Sydney homebuyers find the right loan. Compare rates from major lenders and get pre-approval fast...</div>
+                        </div>
+                        <div class="fin-sp-result">
+                            <div class="fin-sp-url"><span>loanmarket.com.au</span></div>
+                            <div class="fin-sp-title">Loan Market | Find a Broker Near You</div>
+                            <div class="fin-sp-desc">Australia's largest mortgage broking network. Connect with a local expert for home loans, refinancing...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: SMSF Accountant Melbourne -->
+                <div class="fin-sp-card">
+                    <div class="fin-sp-search-bar">
+                        <div class="fin-sp-g-logo"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59A14.5 14.5 0 0 1 9.5 24c0-1.59.28-3.14.77-4.59l-7.98-6.19A23.99 23.99 0 0 0 0 24c0 3.77.9 7.34 2.44 10.5l8.09-5.91z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div>
+                        <span class="fin-sp-search-query">SMSF accountant Melbourne</span>
+                    </div>
+                    <div class="fin-sp-search-tabs">
+                        <span class="fin-sp-search-tab active">All</span>
+                        <span class="fin-sp-search-tab">Maps</span>
+                        <span class="fin-sp-search-tab">Images</span>
+                        <span class="fin-sp-search-tab">News</span>
+                    </div>
+                    <div class="fin-sp-search-meta">About 892,000 results (0.51 seconds)</div>
+                    <div class="fin-sp-search-results">
+                        <div class="fin-sp-result fin-sp-highlight">
+                            <div class="fin-sp-url"><span class="fin-sp-rank">1</span>clearviewsmsf.com.au</div>
+                            <div class="fin-sp-title">Clearview SMSF | Specialist SMSF Accountants Melbourne</div>
+                            <div class="fin-sp-desc">Expert SMSF setup, administration, and audit services. ATO-compliant. Over 500 SMSF clients managed. Free strategy session available.</div>
+                        </div>
+                        <div class="fin-sp-result">
+                            <div class="fin-sp-url"><span>melbournesuper.com.au</span></div>
+                            <div class="fin-sp-title">Melbourne Super Solutions | SMSF Accounting</div>
+                            <div class="fin-sp-desc">Specialist SMSF accounting, tax returns, and compliance services for self-managed superannuation funds...</div>
+                        </div>
+                        <div class="fin-sp-result">
+                            <div class="fin-sp-url"><span>taxpartners.com.au</span></div>
+                            <div class="fin-sp-title">Tax Partners | SMSF & Business Accounting</div>
+                            <div class="fin-sp-desc">Full-service accounting firm offering SMSF administration, audit, and business advisory across Victoria...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== YOUR CLIENT'S JOURNEY ========== -->
+    <section class="fin-journey-section">
+        <div class="fin-journey-container">
+            <span class="fin-journey-badge"><span class="fin-journey-badge-dot"></span>Your Client's Journey</span>
+            <div class="fin-journey-header-row">
+                <h2 class="fin-journey-heading">Every New Client Starts With a Search.<br>We Make Sure It Ends With You.</h2>
+                <a href="contact-us.html" class="fin-section-cta-btn">Let's Talk</a>
+            </div>
+            <p class="fin-journey-intro">Your next client isn't picking a financial advisor out of a phone book. They're researching online, comparing options, and choosing the firm that looks the most credible before they ever pick up the phone.</p>
+
+            <div class="fin-journey-steps">
+                <!-- Step 1 -->
+                <div class="fin-journey-step">
+                    <div class="fin-journey-step-icon-wrap">
+                        <div class="fin-journey-step-icon-inner">
+                            <svg viewBox="0 0 56 56">
+                                <circle cx="28" cy="20" r="10"/>
+                                <path d="M28 34v10"/>
+                                <path d="M20 50h16"/>
+                                <path d="M14 20c0-7.7 6.3-14 14-14s14 6.3 14 14"/>
+                                <path d="M10 12l4 4"/>
+                                <path d="M46 12l-4 4"/>
+                                <path d="M28 2v4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="fin-journey-step-number">Step 01</div>
+                    <h3>The Trigger</h3>
+                    <p class="fin-journey-step-desc">A life event hits — retirement planning, a new mortgage, a business restructure, a growing SMSF. They open Google and start searching.</p>
+                    <div class="fin-journey-step-solution">Google Ads + SEO — appear at the exact moment of intent</div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="fin-journey-step">
+                    <div class="fin-journey-step-icon-wrap">
+                        <div class="fin-journey-step-icon-inner">
+                            <svg viewBox="0 0 56 56">
+                                <path d="M4 28s10-16 24-16 24 16 24 16-10 16-24 16S4 28 4 28z"/>
+                                <circle cx="28" cy="28" r="8"/>
+                                <circle cx="28" cy="28" r="3"/>
+                                <path d="M12 8l4 6"/>
+                                <path d="M44 8l-4 6"/>
+                                <line x1="28" y1="4" x2="28" y2="10"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="fin-journey-step-number">Step 02</div>
+                    <h3>The Research Phase</h3>
+                    <p class="fin-journey-step-desc">They don't just click one result. They read blog posts, compare credentials, look at reviews, and scan your website to see if you actually know what you're talking about.</p>
+                    <div class="fin-journey-step-solution">Thought leadership + trust-driven website design</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="fin-journey-step">
+                    <div class="fin-journey-step-icon-wrap">
+                        <div class="fin-journey-step-icon-inner">
+                            <svg viewBox="0 0 56 56">
+                                <rect x="8" y="8" width="40" height="40" rx="4" ry="4"/>
+                                <line x1="16" y1="20" x2="28" y2="20"/>
+                                <line x1="16" y1="28" x2="34" y2="28"/>
+                                <line x1="16" y1="36" x2="24" y2="36"/>
+                                <polyline points="34 32 38 38 46 24"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="fin-journey-step-number">Step 03</div>
+                    <h3>The Shortlist</h3>
+                    <p class="fin-journey-step-desc">They narrow it down to 2-3 firms. The one with the best website, strongest reviews, and clearest call to action gets the consultation booked.</p>
+                    <div class="fin-journey-step-solution">CRO + landing pages built for booked consultations</div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="fin-journey-step">
+                    <div class="fin-journey-step-icon-wrap">
+                        <div class="fin-journey-step-icon-inner">
+                            <svg viewBox="0 0 56 56">
+                                <circle cx="20" cy="18" r="8"/>
+                                <circle cx="38" cy="18" r="8"/>
+                                <path d="M4 44c0-7 5.4-13 12-14.5"/>
+                                <path d="M52 44c0-7-5.4-13-12-14.5"/>
+                                <path d="M22 30c0-1 2.7-2 6-2s6 1 6 2"/>
+                                <path d="M28 36v8"/>
+                                <path d="M24 40h8"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="fin-journey-step-number">Step 04</div>
+                    <h3>The Relationship Begins</h3>
+                    <p class="fin-journey-step-desc">They've signed on. But without ongoing communication, you're just another provider. The firms that nurture clients retain them for life.</p>
+                    <div class="fin-journey-step-solution">CRM automation + email nurture + review generation</div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ========== SECTION 3: TWO-COLUMN (Text + Scrollable Cards) ========== -->
@@ -890,6 +2419,160 @@
                     </div>
                     <h3>We Measure What Matters</h3>
                     <p>Forget fluff metrics. We focus on actionable data, giving you transparency and insight into what's working.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FINANCIAL TESTIMONIALS ========== -->
+    <section class="fin-testimonials-section">
+        <div class="fin-testimonials-container">
+            <div class="fin-testimonials-header">
+                <span class="fin-results-badge"><span class="fin-results-badge-dot"></span>Results</span>
+                <h2>We'll Let The Results Speak<br>For Themselves</h2>
+            </div>
+
+            <div class="fin-testimonials-tabs">
+                <button class="fin-tab active" data-fin-tab="client-1">Cryptocurrency</button>
+                <button class="fin-tab" data-fin-tab="client-2">Stocks</button>
+            </div>
+
+            <!-- Client 1 Panel -->
+            <div class="fin-testimonial-panel active" data-fin-content="client-1">
+                <div class="fin-testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&q=80" alt="Financial services professional" loading="lazy">
+                </div>
+                <div class="fin-testimonial-stats">
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">257%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Marketing Efficiency Ratio</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">430%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Decrease Advertising Spend</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">7.5</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Return on Investment</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client 2 Panel -->
+            <div class="fin-testimonial-panel" data-fin-content="client-2">
+                <div class="fin-testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Financial growth dashboard analytics" loading="lazy">
+                </div>
+                <div class="fin-testimonial-stats">
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">277%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Increase Opportunity Value</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">348%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Conversion Rate Improvement</div>
+                                <div class="fin-stat-subtitle">Within 1 month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-stat-item">
+                        <div class="fin-stat-row">
+                            <div class="fin-stat-number">709%</div>
+                            <div class="fin-stat-info">
+                                <div class="fin-stat-title">Sales Qualified Opportunities</div>
+                                <div class="fin-stat-subtitle">Since implementing our framework</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="fin-hiw-section">
+        <div class="fin-hiw-container">
+            <span class="fin-hiw-badge"><span class="fin-hiw-badge-dot"></span>How It Works</span>
+            <h2 class="fin-hiw-heading">From First Call to Full Pipeline</h2>
+            <p class="fin-hiw-intro">Most of our financial services clients see measurable pipeline growth within the first 60-90 days. Here's how we get there.</p>
+
+            <div class="fin-hiw-steps">
+                <!-- Step 1 -->
+                <div class="fin-hiw-step">
+                    <div class="fin-hiw-step-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80" alt="Financial audit and analysis review on laptop" loading="lazy">
+                        <div class="fin-hiw-step-image-overlay"></div>
+                        <div class="fin-hiw-step-number">01</div>
+                    </div>
+                    <div class="fin-hiw-step-body">
+                        <div class="fin-hiw-step-label">Step One</div>
+                        <h3>Free Growth Audit</h3>
+                        <p>We review your digital presence, your competitors, and the search landscape for your financial niche. You'll walk away with a clear picture of where you're leaving opportunities on the table.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="fin-hiw-step">
+                    <div class="fin-hiw-step-image">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80" alt="Compliance strategy planning with financial documents" loading="lazy">
+                        <div class="fin-hiw-step-image-overlay"></div>
+                        <div class="fin-hiw-step-number">02</div>
+                    </div>
+                    <div class="fin-hiw-step-body">
+                        <div class="fin-hiw-step-label">Step Two</div>
+                        <h3>Compliant Strategy</h3>
+                        <p>We build a marketing plan designed for your financial vertical — with ASIC and ACCC compliance baked in. Every recommendation is tied to qualified leads and client acquisition.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="fin-hiw-step">
+                    <div class="fin-hiw-step-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Marketing campaign dashboard with analytics and metrics" loading="lazy">
+                        <div class="fin-hiw-step-image-overlay"></div>
+                        <div class="fin-hiw-step-number">03</div>
+                    </div>
+                    <div class="fin-hiw-step-body">
+                        <div class="fin-hiw-step-label">Step Three</div>
+                        <h3>Launch &amp; Optimise</h3>
+                        <p>We go live and start driving qualified interest. Every campaign is monitored, tested, and refined weekly. We track consultations booked, leads qualified, and cost per acquisition.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="fin-hiw-step">
+                    <div class="fin-hiw-step-image">
+                        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=700&q=80" alt="Financial growth charts and scaling investment data" loading="lazy">
+                        <div class="fin-hiw-step-image-overlay"></div>
+                        <div class="fin-hiw-step-number">04</div>
+                    </div>
+                    <div class="fin-hiw-step-body">
+                        <div class="fin-hiw-step-label">Step Four</div>
+                        <h3>Scale What Works</h3>
+                        <p>Once we identify the channels driving the best clients, we double down. New markets, increased budgets, expanded content — all driven by data and optimised for long-term growth.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1022,93 +2705,6 @@
         </div>
     </section>
 
-    <!-- ========== FINANCIAL TESTIMONIALS ========== -->
-    <section class="fin-testimonials-section">
-        <div class="fin-testimonials-container">
-            <div class="fin-testimonials-header">
-                <span class="fin-results-badge"><span class="fin-results-badge-dot"></span>Results</span>
-                <h2>We'll Let The Results Speak<br>For Themselves</h2>
-            </div>
-
-            <div class="fin-testimonials-tabs">
-                <button class="fin-tab active" data-fin-tab="client-1">Client 1</button>
-                <button class="fin-tab" data-fin-tab="client-2">Client 2</button>
-            </div>
-
-            <!-- Client 1 Panel -->
-            <div class="fin-testimonial-panel active" data-fin-content="client-1">
-                <div class="fin-testimonial-image">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&q=80" alt="Financial services professional" loading="lazy">
-                </div>
-                <div class="fin-testimonial-stats">
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">257%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Marketing Efficiency Ratio</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">430%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Decrease Advertising Spend</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">7.5</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Return on Investment</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Client 2 Panel -->
-            <div class="fin-testimonial-panel" data-fin-content="client-2">
-                <div class="fin-testimonial-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Financial growth dashboard analytics" loading="lazy">
-                </div>
-                <div class="fin-testimonial-stats">
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">277%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Increase Opportunity Value</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">348%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Conversion Rate Improvement</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">709%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Sales Qualified Opportunities</div>
-                                <div class="fin-stat-subtitle">Since implementing our framework</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ========== SECTION 5: CONTACT FORM ========== -->
     <section class="contact-section">
         <div class="contact-container">
@@ -1121,65 +2717,56 @@
                 </div>
             </div>
             <div class="contact-form-container">
-                <form class="contact-form" name="financial-services-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
-                    <input type="hidden" name="form-name" value="financial-services-contact">
-                    <p style="display:none">
-                        <label>Don't fill this out: <input name="bot-field"></label>
-                    </p>
+                <form class="contact-form" id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" required>
+                            <input type="text" id="firstName" name="entry.898026604" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" required>
+                            <input type="text" id="lastName" name="entry.740647919" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="entry.218975118" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="entry.739101585">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="revenue">Current Monthly Revenue</label>
-                            <input type="text" id="revenue" name="revenue">
+                            <input type="text" id="revenue" name="entry.944393005">
                         </div>
                         <div class="form-group">
                             <label for="website">Website URL</label>
-                            <input type="text" id="website" name="website" placeholder="e.g. jrnydigital.com.au">
+                            <input type="text" id="website" name="entry.1572941628" placeholder="e.g. jrnydigital.com.au">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="hearAbout">How Did You Hear About Us?</label>
-                        <input type="text" id="hearAbout" name="hearAbout">
+                        <input type="text" id="hearAbout" name="entry.2041540004">
                     </div>
                     <div class="form-group">
                         <label for="budget">Monthly Marketing Budget?</label>
-                        <select id="budget" name="budget">
+                        <select id="budget" name="entry.413828990">
                             <option value="" disabled selected></option>
-                            <option value="0-5000">$0 - $5,000</option>
-                            <option value="5000-10000">$5,000 - $10,000</option>
-                            <option value="10000-25000">$10,000 - $25,000</option>
-                            <option value="25000-50000">$25,000 - $50,000</option>
-                            <option value="50000+">$50,000+</option>
+                            <option value="$0 - $5,000">$0 - $5,000</option>
+                            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                            <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                            <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+                            <option value="$50,000+">$50,000+</option>
                         </select>
                     </div>
                     <div class="form-submit">
                         <button type="submit">Submit</button>
                     </div>
                 </form>
-                <div class="form-success" id="formSuccess" style="display:none;">
-                    <div class="form-success-icon">&#10003;</div>
-                    <h3>Form Submitted Successfully!</h3>
-                    <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -1420,6 +3007,28 @@
             });
         });
 
+        // ========== Mouse tracking for problem cards ==========
+        document.querySelectorAll('.fin-problem-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // ========== Mouse tracking for How It Works steps ==========
+        document.querySelectorAll('.fin-hiw-step').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
         // ========== Mouse tracking for FAQ items ==========
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('mousemove', (e) => {
@@ -1502,31 +3111,36 @@
             statsObserver.observe(statsSection);
         }
 
-        // ========== Contact Form Submission ==========
+        // ========== Contact Form Submission - Google Forms (hidden iframe method) ==========
         const contactForm = document.getElementById('contactForm');
-        const formSuccess = document.getElementById('formSuccess');
+        const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeqOmxO3Hei3qxF4s96Wgf7DV_JNq7ZFRJqD9Xj5zwUALDZIA/formResponse';
 
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                const formData = new FormData(contactForm);
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
 
-                fetch('/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(formData).toString()
-                })
-                .then(function(response) {
-                    if (response.ok) {
-                        contactForm.style.display = 'none';
-                        formSuccess.style.display = 'block';
-                    } else {
-                        alert('Something went wrong (Error ' + response.status + '). Please try again.');
-                    }
-                })
-                .catch(function(error) {
-                    alert('Something went wrong. Please try again.');
-                });
+                // Create hidden iframe to submit form
+                var iframe = document.createElement('iframe');
+                iframe.name = 'hidden_iframe';
+                iframe.id = 'hidden_iframe';
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+
+                // Set form to submit to the hidden iframe
+                contactForm.setAttribute('action', googleFormURL);
+                contactForm.setAttribute('target', 'hidden_iframe');
+                contactForm.setAttribute('method', 'POST');
+
+                // Submit the form natively (into the hidden iframe)
+                contactForm.submit();
+
+                // Redirect after a short delay to allow submission
+                setTimeout(function() {
+                    window.location.href = 'https://jrnydigital.com.au/thank-you/';
+                }, 1000);
             });
         }
     </script>
