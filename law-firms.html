@@ -224,7 +224,7 @@
 
         .hero h1 { font-size: 72px; font-weight: 400; line-height: 1.1; margin-bottom: 30px; }
         .hero h1 span { color: #FFBD00; }
-        .hero-subtitle { font-size: 18px; color: rgba(255,255,255,0.85); max-width: 700px; margin: 0; line-height: 1.7; }
+        .hero-subtitle { font-size: 18px; color: #ffffff; max-width: 700px; margin: 0; line-height: 1.7; }
         .hero-cta { display: inline-block; padding: 18px 45px; background: #F5A623; color: #000000; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; margin-top: 35px; }
         .hero-cta:hover { background: #e09515; transform: translateY(-2px); }
 
@@ -330,7 +330,7 @@
         }
 
         .blueprint-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -340,7 +340,7 @@
 
         .blueprint-content h2 {
             font-size: 42px;
-            font-weight: 600;
+            font-weight: 400;
             color: #ffffff;
             line-height: 1.25;
             margin-bottom: 20px;
@@ -348,7 +348,7 @@
 
         .blueprint-content > p {
             font-size: 16px;
-            color: rgba(255,255,255,0.7);
+            color: #ffffff;
             line-height: 1.8;
             margin-bottom: 30px;
         }
@@ -562,10 +562,10 @@
         }
 
         .law-results-header h2 {
-            font-size: 80px;
+            font-size: 48px;
             font-weight: 400;
             color: #ffffff;
-            line-height: 1.1;
+            line-height: 1.2;
             max-width: 100%;
         }
 
@@ -770,7 +770,7 @@
         }
 
         .law-testimonial-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -809,7 +809,7 @@
 
         .law-testimonial-role {
             font-size: 14px;
-            color: rgba(255,255,255,0.6);
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -845,11 +845,1200 @@
             height: auto;
         }
 
+        /* ========== WHO WE WORK WITH SECTION ========== */
+        .law-trades-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .law-trades-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .law-trades-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .law-trades-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .law-trades-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .law-trades-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .law-trades-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .law-trades-heading {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .law-trades-header-row .law-trades-heading {
+            margin-bottom: 0;
+        }
+
+        .law-section-cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #F5A623;
+            color: #000000;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .law-section-cta-btn:hover {
+            background: #e09515;
+            transform: translateY(-2px);
+        }
+
+        .law-trades-body {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 750px;
+            margin-bottom: 50px;
+        }
+
+        .law-trades-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 50px;
+        }
+
+        .law-trade-item {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 60px;
+            padding: 16px 28px 16px 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+            overflow: hidden;
+        }
+
+        .law-trade-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 60px;
+            background: radial-gradient(ellipse at 20% 50%, rgba(245, 166, 35, 0.08), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .law-trade-item:hover {
+            border-color: rgba(245, 166, 35, 0.5);
+            background: rgba(245, 166, 35, 0.06);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(245, 166, 35, 0.12), 0 0 0 1px rgba(245, 166, 35, 0.15);
+        }
+
+        .law-trade-item:hover::before {
+            opacity: 1;
+        }
+
+        .law-trade-item-indicator {
+            width: 8px;
+            height: 8px;
+            background: #F5A623;
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 0 0 rgba(245, 166, 35, 0);
+        }
+
+        .law-trade-item:hover .law-trade-item-indicator {
+            box-shadow: 0 0 8px 3px rgba(245, 166, 35, 0.4);
+            transform: scale(1.25);
+        }
+
+        .law-trade-item span {
+            font-size: 15px;
+            font-weight: 500;
+            color: #ffffff;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .law-trade-item:hover span {
+            color: #ffffff;
+        }
+
+        .law-trades-cta-line {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 28px 32px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .law-trades-cta-line:hover {
+            border-color: rgba(245, 166, 35, 0.25);
+            background: rgba(245, 166, 35, 0.03);
+        }
+
+        .law-trades-cta-line a {
+            color: #F5A623;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .law-trades-cta-line a:hover {
+            color: #FFBD00;
+        }
+
+        @media (max-width: 1024px) {
+            .law-trades-section {
+                padding: 80px 40px;
+            }
+
+            .law-trades-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .law-trades-section {
+                padding: 60px 20px;
+            }
+
+            .law-trades-heading {
+                font-size: 28px;
+            }
+
+            .law-trades-grid {
+                gap: 10px;
+            }
+
+            .law-trade-item {
+                padding: 14px 22px 14px 18px;
+            }
+
+            .law-trade-item span {
+                font-size: 14px;
+            }
+
+            .law-trades-cta-line {
+                padding: 22px 24px;
+                font-size: 15px;
+            }
+
+            .law-trades-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* ========== THE PROBLEM SECTION ========== */
+        .law-problem-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .law-problem-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .law-problem-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .law-problem-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .law-problem-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .law-problem-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .law-problem-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .law-problem-left {
+            position: sticky;
+            top: 120px;
+        }
+
+        .law-problem-left h2 {
+            font-size: 42px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .law-problem-left p {
+            font-size: 17px;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        .law-problem-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .law-problem-card {
+            position: relative;
+            background: linear-gradient(145deg, #111111 0%, #0a0a0a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .law-problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(245, 166, 35, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .law-problem-card:hover::before {
+            opacity: 1;
+        }
+
+        .law-problem-card:hover {
+            border-color: rgba(245, 166, 35, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(245, 166, 35, 0.08);
+        }
+
+        .law-problem-card-mockup {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .law-problem-card-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6) saturate(0.8);
+            transition: all 0.5s ease;
+        }
+
+        .law-problem-card:hover .law-problem-card-mockup img {
+            filter: brightness(0.75) saturate(1);
+            transform: scale(1.03);
+        }
+
+        .law-problem-card-mockup-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, #0a0a0a, transparent);
+            pointer-events: none;
+        }
+
+        .law-problem-card-mockup-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 14px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #F5A623;
+            z-index: 2;
+        }
+
+        .law-problem-card-body {
+            padding: 32px 36px 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .law-problem-card-number {
+            font-size: 13px;
+            font-weight: 700;
+            color: #F5A623;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .law-problem-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .law-problem-card p {
+            font-size: 15px;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 1024px) {
+            .law-problem-section {
+                padding: 80px 40px;
+            }
+
+            .law-problem-layout {
+                gap: 50px;
+            }
+
+            .law-problem-left h2 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .law-problem-section {
+                padding: 60px 20px;
+            }
+
+            .law-problem-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .law-problem-left {
+                position: static;
+            }
+
+            .law-problem-left h2 {
+                font-size: 32px;
+            }
+
+            .law-problem-card-mockup {
+                height: 180px;
+            }
+
+            .law-problem-card-body {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .law-problem-left h2 {
+                font-size: 26px;
+            }
+        }
+
+        /* ========== SEARCH PROOF SECTION ========== */
+        .law-search-proof-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .law-search-proof-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .law-search-proof-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .law-search-proof-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .law-search-proof-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .law-search-proof-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .law-search-proof-heading {
+            font-size: 42px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 60px;
+            max-width: 900px;
+        }
+
+        .law-sp-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .law-sp-card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 3px solid #F5A623;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(245, 166, 35, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .law-sp-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(245, 166, 35, 0.2);
+        }
+
+        .law-sp-search-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            border-bottom: 1px solid #eee;
+            background: #fafafa;
+        }
+
+        .law-sp-g-logo svg {
+            width: 28px;
+            height: 28px;
+            display: block;
+        }
+
+        .law-sp-search-query {
+            font-size: 15px;
+            font-weight: 500;
+            color: #333333;
+        }
+
+        .law-sp-search-tabs {
+            display: flex;
+            gap: 16px;
+            padding: 8px 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .law-sp-search-tab {
+            font-size: 11px;
+            color: #888888;
+            padding: 6px 0 8px;
+            letter-spacing: 0.02em;
+            border-bottom: 2px solid transparent;
+        }
+
+        .law-sp-search-tab.active {
+            color: #1a73e8;
+            border-bottom-color: #1a73e8;
+        }
+
+        .law-sp-search-meta {
+            padding: 6px 20px;
+            font-size: 11px;
+            color: #888888;
+        }
+
+        .law-sp-search-results {
+            padding: 8px 20px 20px;
+        }
+
+        .law-sp-result {
+            margin-bottom: 18px;
+        }
+
+        .law-sp-result:last-child {
+            margin-bottom: 0;
+        }
+
+        .law-sp-rank {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F5A623 0%, #FFBD00 100%);
+            font-size: 10px;
+            font-weight: 800;
+            color: #000000;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .law-sp-url {
+            font-size: 11px;
+            color: #202124;
+            margin-bottom: 2px;
+        }
+
+        .law-sp-url span {
+            color: #888888;
+        }
+
+        .law-sp-title {
+            font-size: 14px;
+            color: #1a0dab;
+            font-weight: 600;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .law-sp-desc {
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        .law-sp-highlight {
+            background: linear-gradient(135deg, rgba(245, 166, 35, 0.06) 0%, rgba(255, 189, 0, 0.04) 100%);
+            border-left: 3px solid #F5A623;
+            padding: 10px 12px;
+            border-radius: 0 8px 8px 0;
+            margin-left: -12px;
+            margin-right: -8px;
+        }
+
+        @media (max-width: 1024px) {
+            .law-sp-cards {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .law-search-proof-heading {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .law-search-proof-section {
+                padding: 60px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .law-search-proof-heading {
+                font-size: 26px;
+            }
+        }
+
+        /* ========== CLIENT JOURNEY SECTION ========== */
+        .law-journey-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .law-journey-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .law-journey-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .law-journey-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .law-journey-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .law-journey-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .law-journey-heading {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        .law-journey-intro {
+            font-size: 17px;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 750px;
+            margin-bottom: 60px;
+        }
+
+        .law-journey-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .law-journey-steps::before {
+            content: '';
+            position: absolute;
+            top: 72px;
+            left: 60px;
+            right: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #F5A623 0%, rgba(245, 166, 35, 0.3) 30%, rgba(245, 166, 35, 0.3) 70%, #F5A623 100%);
+            z-index: 0;
+        }
+
+        .law-journey-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+            height: 100%;
+        }
+
+        .law-journey-step-icon-wrap {
+            width: 144px;
+            height: 144px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 28px;
+            background: #0a0a0a;
+        }
+
+        .law-journey-step-icon-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            background: conic-gradient(from var(--angle), transparent 50%, rgba(245, 166, 35, 0.4) 75%, #F5A623 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 4s linear infinite;
+        }
+
+        .law-journey-step-icon-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: #0a0a0a;
+            z-index: -1;
+        }
+
+        .law-journey-step-icon-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, rgba(245, 166, 35, 0.06) 0%, transparent 70%);
+            transition: all 0.4s ease;
+        }
+
+        .law-journey-step:hover .law-journey-step-icon-inner {
+            background: radial-gradient(circle at center, rgba(245, 166, 35, 0.12) 0%, transparent 70%);
+        }
+
+        .law-journey-step-icon-inner svg {
+            width: 56px;
+            height: 56px;
+            stroke: #F5A623;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.4s ease;
+        }
+
+        .law-journey-step:hover .law-journey-step-icon-inner svg {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.4));
+        }
+
+        .law-journey-step-number {
+            font-size: 12px;
+            font-weight: 700;
+            color: #F5A623;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .law-journey-step h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .law-journey-step-desc {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .law-journey-step-solution {
+            font-size: 13px;
+            font-weight: 600;
+            color: #F5A623;
+            line-height: 1.5;
+            padding: 10px 18px;
+            background: rgba(245, 166, 35, 0.06);
+            border: 1px solid rgba(245, 166, 35, 0.15);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .law-journey-step:hover .law-journey-step-solution {
+            background: rgba(245, 166, 35, 0.1);
+            border-color: rgba(245, 166, 35, 0.3);
+        }
+
+        .law-journey-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .law-journey-header-row .law-section-cta-btn {
+            margin-top: 0;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .law-journey-section { padding: 80px 40px; }
+            .law-journey-heading { font-size: 38px; }
+            .law-journey-steps { grid-template-columns: repeat(2, 1fr); gap: 50px 0; }
+            .law-journey-steps::before { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .law-journey-section { padding: 60px 20px; }
+            .law-journey-heading { font-size: 30px; }
+            .law-journey-steps { grid-template-columns: 1fr; gap: 40px; }
+            .law-journey-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .law-journey-header-row .law-section-cta-btn {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .law-journey-heading { font-size: 26px; }
+            .law-journey-step-icon-wrap { width: 100px; height: 100px; }
+            .law-journey-step-icon-inner svg { width: 40px; height: 40px; }
+            .law-journey-step h3 { font-size: 18px; }
+        }
+
+        /* ========== HOW IT WORKS SECTION (LAW) ========== */
+        .law-hiw-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .law-hiw-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .law-hiw-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .law-hiw-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .law-hiw-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .law-hiw-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .law-hiw-heading {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .law-hiw-intro {
+            font-size: 17px;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 60px;
+        }
+
+        .law-hiw-steps {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .law-hiw-step {
+            position: relative;
+            background: linear-gradient(145deg, #111111 0%, #0a0a0a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .law-hiw-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(245, 166, 35, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .law-hiw-step:hover::before {
+            opacity: 1;
+        }
+
+        .law-hiw-step:hover {
+            border-color: rgba(245, 166, 35, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(245, 166, 35, 0.08);
+        }
+
+        .law-hiw-step-image {
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+        }
+
+        .law-hiw-step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.55) saturate(0.85);
+            transition: all 0.5s ease;
+        }
+
+        .law-hiw-step:hover .law-hiw-step-image img {
+            filter: brightness(0.7) saturate(1);
+            transform: scale(1.04);
+        }
+
+        .law-hiw-step-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .law-hiw-step-number {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            font-size: 72px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.1);
+            line-height: 1;
+            z-index: 2;
+            transition: color 0.4s ease;
+        }
+
+        .law-hiw-step:hover .law-hiw-step-number {
+            color: rgba(245, 166, 35, 0.2);
+        }
+
+        .law-hiw-step-body {
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .law-hiw-step-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #F5A623;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .law-hiw-step h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .law-hiw-step p {
+            font-size: 15px;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 1024px) {
+            .law-hiw-section { padding: 80px 40px; }
+            .law-hiw-heading { font-size: 40px; }
+            .law-hiw-steps { gap: 20px; }
+            .law-hiw-step-body { padding: 32px 28px; }
+            .law-hiw-step-number { font-size: 60px; }
+        }
+
+        @media (max-width: 768px) {
+            .law-hiw-section { padding: 60px 20px; }
+            .law-hiw-heading { font-size: 30px; }
+            .law-hiw-steps { grid-template-columns: 1fr; gap: 20px; }
+            .law-hiw-step { grid-template-columns: 1fr; }
+            .law-hiw-step-image { min-height: 200px; }
+            .law-hiw-step-body { padding: 28px 24px; }
+            .law-hiw-step-number { font-size: 52px; }
+        }
+
+        @media (max-width: 480px) {
+            .law-hiw-heading { font-size: 26px; }
+            .law-hiw-step-number { font-size: 40px; }
+            .law-hiw-step h3 { font-size: 20px; }
+            .law-hiw-step-image { min-height: 180px; }
+            .law-hiw-step-body { padding: 24px 20px; }
+        }
+
         /* ========== VALUE CARDS SECTION ========== */
         .value-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .value-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-        .value-text h2 { font-size: 36px; font-weight: 400; color: #ffffff; line-height: 1.3; margin-bottom: 25px; }
-        .value-text p { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 20px; }
+        .value-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .value-text h2 { font-size: 36px; font-weight: 400; color: #F5A623; line-height: 1.3; margin-bottom: 25px; }
+        .value-text p { font-size: 16px; color: #ffffff; line-height: 1.8; margin-bottom: 20px; }
         .value-text .highlight-stat { color: #F5A623; font-weight: 700; }
 
         .value-cards-scroll { max-height: 600px; overflow-y: auto; padding-right: 15px; display: flex; flex-direction: column; gap: 20px; }
@@ -862,7 +2051,7 @@
         .value-card-icon { width: 48px; height: 48px; margin-bottom: 18px; }
         .value-card-icon svg { width: 48px; height: 48px; stroke: #F5A623; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
         .value-card h3 { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
-        .value-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; margin: 0; }
+        .value-card p { font-size: 14px; color: #ffffff; line-height: 1.7; margin: 0; }
 
         /* ========== SERVICES GRID SECTION ========== */
         .services-grid-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -887,9 +2076,9 @@
 
         /* ========== CONTACT FORM SECTION ========== */
         .contact-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .contact-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
         .contact-info h2 { font-size: 48px; font-weight: 400; color: #ffffff; line-height: 1.2; margin-bottom: 25px; }
-        .contact-info p { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 20px; }
+        .contact-info p { font-size: 17px; color: #ffffff; line-height: 1.8; margin-bottom: 20px; }
         .contact-info-image { border-radius: 16px; overflow: hidden; margin-top: 10px; }
         .contact-info-image img { width: 100%; height: auto; display: block; border-radius: 16px; }
 
@@ -910,7 +2099,7 @@
         .form-success { text-align: center; padding: 60px 20px; }
         .form-success-icon { font-size: 60px; color: #F5A623; margin-bottom: 20px; }
         .form-success h3 { font-size: 28px; color: #ffffff; margin-bottom: 15px; }
-        .form-success p { font-size: 16px; color: rgba(255,255,255,0.7); }
+        .form-success p { font-size: 16px; color: #ffffff; }
 
         /* ========== FAQ SECTION ========== */
         .faq-section { background: #000000; padding: 100px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -924,7 +2113,7 @@
 
         .faq-header h2 { font-size: 52px; font-weight: 400; color: #ffffff; line-height: 1.2; margin-bottom: 20px; }
         .faq-header h2 span { display: block; }
-        .faq-header p { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+        .faq-header p { font-size: 16px; color: #ffffff; line-height: 1.7; }
 
         .faq-list { display: flex; flex-direction: column; gap: 12px; }
         .faq-item { background: linear-gradient(145deg, #111111 0%, #0a0a0a 100%); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; transition: border-color 0.4s ease; position: relative; }
@@ -945,7 +2134,7 @@
 
         .faq-cta-area { max-width: 1400px; margin: 60px auto 0; display: grid; grid-template-columns: 400px 1fr; gap: 80px; }
         .faq-cta-area-content { grid-column: 2; text-align: left; }
-        .faq-cta-area p { font-size: 17px; color: rgba(255,255,255,0.75); margin-bottom: 25px; }
+        .faq-cta-area p { font-size: 17px; color: #ffffff; margin-bottom: 25px; }
         .faq-cta-area .cta-btn { display: inline-block; padding: 16px 40px; background: #F5A623; color: #000000; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
         .faq-cta-area .cta-btn:hover { background: #e09515; transform: translateY(-2px); }
 
@@ -979,14 +2168,14 @@
         .footer-brand { display: flex; flex-direction: column; }
         .footer-logo { margin-bottom: 30px; }
         .footer-logo img { height: 50px; width: auto; }
-        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 30px; max-width: 280px; }
+        .footer-brand p { font-size: 14px; color: #ffffff; line-height: 1.7; margin-bottom: 30px; max-width: 280px; }
         .footer-column h4 { font-size: 18px; font-weight: 600; color: #ffffff; margin-bottom: 25px; }
         .footer-column ul { list-style: none; padding: 0; margin: 0; }
         .footer-column ul li { margin-bottom: 15px; }
-        .footer-column ul li a { font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; }
+        .footer-column ul li a { font-size: 14px; color: #ffffff; text-decoration: none; transition: color 0.3s ease; }
         .footer-column ul li a:hover { color: #ffc500; }
         .footer-bottom { padding: 40px 0; text-align: center; }
-        .footer-bottom p { font-size: 16px; color: rgba(255,255,255,0.7); }
+        .footer-bottom p { font-size: 16px; color: #ffffff; }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1200px) {
@@ -1008,7 +2197,7 @@
             .blueprint-container { gap: 50px; }
             .blueprint-content h2 { font-size: 36px; }
             .law-results-section { padding: 80px 40px; }
-            .law-results-header h2 { font-size: 56px; }
+            .law-results-header h2 { font-size: 40px; }
             .law-testimonial-section { padding: 80px 40px; }
             .law-testimonial-text { font-size: 34px; }
             .value-section { padding: 80px 40px; }
@@ -1156,7 +2345,6 @@
                     <a href="email-marketing.html">Email Marketing</a>
                 </div>
             </div>
-            <a href="pricing.html">Pricing</a>
             <div class="nav-dropdown">
                 <a href="#" class="active">Who We Can Help</a>
                 <div class="dropdown-menu">
@@ -1200,7 +2388,6 @@
                     <a href="email-marketing.html">Email Marketing</a>
                 </div>
             </div>
-            <a href="pricing.html">Pricing</a>
             <div class="mobile-dropdown">
                 <a href="#">Who We Can Help</a>
                 <div class="mobile-dropdown-menu">
@@ -1270,6 +2457,342 @@
     <!-- ========== TAGLINE ========== -->
     <section class="tagline-section">
         <p>Your next client is searching for help right now. The question is — are they finding <em>you</em>, or your <em>competitor</em>? <strong>Let's make sure it's you.</strong></p>
+    </section>
+
+    <!-- ========== WHO WE WORK WITH (LAW) ========== -->
+    <section class="law-trades-section">
+        <div class="law-trades-container">
+            <span class="law-trades-badge"><span class="law-trades-badge-dot"></span>Who We Work With</span>
+            <div class="law-trades-header-row">
+                <h2 class="law-trades-heading">We Know Your Practice Area. We Market It Better.</h2>
+                <a href="contact-us.html" class="law-section-cta-btn">Let's Talk</a>
+            </div>
+            <p class="law-trades-body">A family law firm's marketing needs are nothing like a criminal defence practice. We build strategies around your specific area of law, your compliance requirements, and how your ideal clients actually search.</p>
+
+            <div class="law-trades-grid">
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Family Law</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Criminal Defence</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Personal Injury</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Medical Negligence</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Employment Law</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Immigration Law</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Commercial Litigation</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Property &amp; Conveyancing</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Wills &amp; Estate Planning</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Traffic &amp; Driving Offences</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Insurance Law</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Construction Law</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Motorcycle &amp; Cycling</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Birth Trauma &amp; Injury</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Workers Compensation</span>
+                </div>
+                <div class="law-trade-item">
+                    <div class="law-trade-item-indicator"></div>
+                    <span>Consumer Law</span>
+                </div>
+            </div>
+
+            <p class="law-trades-cta-line">Don't see your practice area? Chances are we've worked with it. <a href="contact-us.html">Get in touch</a> and we'll show you what's possible.</p>
+        </div>
+    </section>
+
+    <!-- ========== THE PROBLEM (LAW) ========== -->
+    <section class="law-problem-section">
+        <div class="law-problem-container">
+            <div class="law-problem-layout">
+                <div class="law-problem-left">
+                    <span class="law-problem-badge"><span class="law-problem-badge-dot"></span>The Problem</span>
+                    <h2>Being a Great Lawyer Isn't Enough to Fill Your Pipeline</h2>
+                    <p>Your credentials are impeccable. But if your marketing isn't working as hard as you are, you're losing matters every day.</p>
+                </div>
+
+                <div class="law-problem-cards">
+                    <!-- Card 1: Competitors Buying Clients -->
+                    <div class="law-problem-card">
+                        <div class="law-problem-card-mockup">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Google Ads dashboard showing competitor ad spend" loading="lazy">
+                            <div class="law-problem-card-mockup-overlay"></div>
+                            <div class="law-problem-card-mockup-badge">Ad Spend</div>
+                        </div>
+                        <div class="law-problem-card-body">
+                            <div class="law-problem-card-number">Problem 01</div>
+                            <h3>Competitors Are Buying Your Clients</h3>
+                            <p>While you're waiting on referrals, competing firms are spending $10K-$30K a month on Google Ads. They're showing up first for every high-intent search your potential clients type. Every day you're not visible is a day they sign the retainer that should've been yours.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Legal Ad Rules -->
+                    <div class="law-problem-card">
+                        <div class="law-problem-card-mockup">
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" alt="Legal compliance documents and regulation paperwork" loading="lazy">
+                            <div class="law-problem-card-mockup-overlay"></div>
+                            <div class="law-problem-card-mockup-badge">Compliance</div>
+                        </div>
+                        <div class="law-problem-card-body">
+                            <div class="law-problem-card-number">Problem 02</div>
+                            <h3>Legal Ad Rules Scare Off Most Agencies</h3>
+                            <p>Most agencies don't understand the Legal Profession Uniform Law, state conduct rules, or restrictions around testimonials and claims. They either produce content that risks your practising certificate, or play it so safe nothing converts. You need an agency that markets aggressively within the rules.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Generic Website -->
+                    <div class="law-problem-card">
+                        <div class="law-problem-card-mockup">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80" alt="Generic law firm website on laptop screen" loading="lazy">
+                            <div class="law-problem-card-mockup-overlay"></div>
+                            <div class="law-problem-card-mockup-badge">Differentiation</div>
+                        </div>
+                        <div class="law-problem-card-body">
+                            <div class="law-problem-card-number">Problem 03</div>
+                            <h3>Your Website Looks Like Every Other Firm</h3>
+                            <p>Gavels, scales of justice, and stock photos of handshakes. Your potential clients have seen it a hundred times. If your site doesn't clearly communicate what makes you different and make it dead simple to book a consultation, you're losing matters to firms with weaker credentials but better marketing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEARCH PROOF (LAW) ========== -->
+    <section class="law-search-proof-section">
+        <div class="law-search-proof-container">
+            <span class="law-search-proof-badge"><span class="law-search-proof-badge-dot"></span>Proof In The Search Results</span>
+            <h2 class="law-search-proof-heading">We do this through data-driven strategies and a deep understanding of how your potential clients search</h2>
+
+            <div class="law-sp-cards">
+                <!-- Card 1: Family Lawyer Sydney -->
+                <div class="law-sp-card">
+                    <div class="law-sp-search-bar">
+                        <div class="law-sp-g-logo"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59A14.5 14.5 0 0 1 9.5 24c0-1.59.28-3.14.77-4.59l-7.98-6.19A23.99 23.99 0 0 0 0 24c0 3.77.9 7.34 2.44 10.5l8.09-5.91z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div>
+                        <span class="law-sp-search-query">family lawyer Sydney</span>
+                    </div>
+                    <div class="law-sp-search-tabs">
+                        <span class="law-sp-search-tab active">All</span>
+                        <span class="law-sp-search-tab">Maps</span>
+                        <span class="law-sp-search-tab">Images</span>
+                        <span class="law-sp-search-tab">News</span>
+                    </div>
+                    <div class="law-sp-search-meta">About 5,120,000 results (0.42 seconds)</div>
+                    <div class="law-sp-search-results">
+                        <div class="law-sp-result law-sp-highlight">
+                            <div class="law-sp-url"><span class="law-sp-rank">1</span>ashtonclarkefamilylaw.com.au</div>
+                            <div class="law-sp-title">Ashton &amp; Clarke Family Law | Experienced Family Lawyers Sydney</div>
+                            <div class="law-sp-desc">Specialising in divorce, property settlements, and parenting disputes. Rated 4.9 stars by 210+ clients. Free 30-minute consultation.</div>
+                        </div>
+                        <div class="law-sp-result">
+                            <div class="law-sp-url"><span>sydneyfamilylawyers.com.au</span></div>
+                            <div class="law-sp-title">Sydney Family Lawyers | Divorce &amp; Custody Solicitors</div>
+                            <div class="law-sp-desc">Expert family law services in Sydney. Parenting orders, property division, and de facto matters...</div>
+                        </div>
+                        <div class="law-sp-result">
+                            <div class="law-sp-url"><span>familylawhelp.com.au</span></div>
+                            <div class="law-sp-title">Family Law Help | Free Legal Advice &amp; Support</div>
+                            <div class="law-sp-desc">Understanding your rights in family law. Resources for divorce, child custody, and financial settlements...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Personal Injury Solicitor Melbourne -->
+                <div class="law-sp-card">
+                    <div class="law-sp-search-bar">
+                        <div class="law-sp-g-logo"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59A14.5 14.5 0 0 1 9.5 24c0-1.59.28-3.14.77-4.59l-7.98-6.19A23.99 23.99 0 0 0 0 24c0 3.77.9 7.34 2.44 10.5l8.09-5.91z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div>
+                        <span class="law-sp-search-query">personal injury solicitor Melbourne</span>
+                    </div>
+                    <div class="law-sp-search-tabs">
+                        <span class="law-sp-search-tab active">All</span>
+                        <span class="law-sp-search-tab">Maps</span>
+                        <span class="law-sp-search-tab">Images</span>
+                        <span class="law-sp-search-tab">News</span>
+                    </div>
+                    <div class="law-sp-search-meta">About 2,340,000 results (0.38 seconds)</div>
+                    <div class="law-sp-search-results">
+                        <div class="law-sp-result law-sp-highlight">
+                            <div class="law-sp-url"><span class="law-sp-rank">1</span>hargrovelegal.com.au</div>
+                            <div class="law-sp-title">Hargrove Legal | Personal Injury Solicitors Melbourne</div>
+                            <div class="law-sp-desc">No win, no fee personal injury specialists. Car accidents, workplace injuries, and medical negligence. Over $45M recovered. Obligation-free case review.</div>
+                        </div>
+                        <div class="law-sp-result">
+                            <div class="law-sp-url"><span>melbourneinjurylaw.com.au</span></div>
+                            <div class="law-sp-title">Melbourne Injury Law | Compensation Claims</div>
+                            <div class="law-sp-desc">Experienced personal injury lawyers helping Victorians get the compensation they deserve...</div>
+                        </div>
+                        <div class="law-sp-result">
+                            <div class="law-sp-url"><span>claimright.com.au</span></div>
+                            <div class="law-sp-title">ClaimRight Lawyers | No Win No Fee Claims</div>
+                            <div class="law-sp-desc">Personal injury and workers compensation claims. Free case assessment. Offices across Melbourne...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Criminal Defence Lawyer Brisbane -->
+                <div class="law-sp-card">
+                    <div class="law-sp-search-bar">
+                        <div class="law-sp-g-logo"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59A14.5 14.5 0 0 1 9.5 24c0-1.59.28-3.14.77-4.59l-7.98-6.19A23.99 23.99 0 0 0 0 24c0 3.77.9 7.34 2.44 10.5l8.09-5.91z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div>
+                        <span class="law-sp-search-query">criminal defence lawyer Brisbane</span>
+                    </div>
+                    <div class="law-sp-search-tabs">
+                        <span class="law-sp-search-tab active">All</span>
+                        <span class="law-sp-search-tab">Maps</span>
+                        <span class="law-sp-search-tab">Images</span>
+                        <span class="law-sp-search-tab">News</span>
+                    </div>
+                    <div class="law-sp-search-meta">About 1,680,000 results (0.45 seconds)</div>
+                    <div class="law-sp-search-results">
+                        <div class="law-sp-result law-sp-highlight">
+                            <div class="law-sp-url"><span class="law-sp-rank">1</span>drummondcriminallaw.com.au</div>
+                            <div class="law-sp-title">Drummond Criminal Law | Criminal Defence Lawyers Brisbane</div>
+                            <div class="law-sp-desc">Aggressive criminal defence. Drug offences, assault, DUI, and fraud. 24/7 availability. Former prosecutor on staff. Free initial consultation.</div>
+                        </div>
+                        <div class="law-sp-result">
+                            <div class="law-sp-url"><span>brisbanecriminal.com.au</span></div>
+                            <div class="law-sp-title">Brisbane Criminal Lawyers | Defence Solicitors</div>
+                            <div class="law-sp-desc">Experienced criminal defence lawyers in Brisbane. Representing clients across all Queensland courts...</div>
+                        </div>
+                        <div class="law-sp-result">
+                            <div class="law-sp-url"><span>qldlegal.com.au</span></div>
+                            <div class="law-sp-title">QLD Legal | Criminal &amp; Traffic Law Specialists</div>
+                            <div class="law-sp-desc">Specialist criminal defence firm. Bail applications, sentence appeals, and court representation...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CLIENT JOURNEY (LAW) ========== -->
+    <section class="law-journey-section">
+        <div class="law-journey-container">
+            <span class="law-journey-badge"><span class="law-journey-badge-dot"></span>Your Client's Journey</span>
+            <div class="law-journey-header-row">
+                <h2 class="law-journey-heading">Every New Matter Starts With a Search.<br>We Make Sure It Ends With You.</h2>
+                <a href="contact-us.html" class="law-section-cta-btn">Let's Talk</a>
+            </div>
+            <p class="law-journey-intro">96% of people seeking legal advice start with a search engine. Your next client is on their phone at 11pm, stressed, searching for answers.</p>
+
+            <div class="law-journey-steps">
+                <!-- Step 1 -->
+                <div class="law-journey-step">
+                    <div class="law-journey-step-icon-wrap">
+                        <div class="law-journey-step-icon-inner">
+                            <svg viewBox="0 0 56 56">
+                                <path d="M38 8L18 8a4 4 0 00-4 4v32a4 4 0 004 4h20a4 4 0 004-4V12a4 4 0 00-4-4z"/>
+                                <line x1="24" y1="12" x2="32" y2="12"/>
+                                <circle cx="28" cy="40" r="2"/>
+                                <path d="M20 22l6 6-6 6"/>
+                                <path d="M36 22l-6 6 6 6"/>
+                                <path d="M10 20l-4 2"/>
+                                <path d="M10 36l-4-2"/>
+                                <path d="M46 20l4 2"/>
+                                <path d="M46 36l4-2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="law-journey-step-number">Step 01</div>
+                    <h3>The Crisis Hits</h3>
+                    <p class="law-journey-step-desc">A relationship breaks down. Someone gets injured. A business dispute escalates. They grab their phone and search for help.</p>
+                    <div class="law-journey-step-solution">Google Ads + SEO — appear at the exact moment of need</div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="law-journey-step">
+                    <div class="law-journey-step-icon-wrap">
+                        <div class="law-journey-step-icon-inner">
+                            <svg viewBox="0 0 56 56">
+                                <path d="M4 28s10-16 24-16 24 16 24 16-10 16-24 16S4 28 4 28z"/>
+                                <circle cx="28" cy="28" r="8"/>
+                                <circle cx="28" cy="28" r="3"/>
+                                <path d="M12 8l4 6"/>
+                                <path d="M44 8l-4 6"/>
+                                <line x1="28" y1="4" x2="28" y2="10"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="law-journey-step-number">Step 02</div>
+                    <h3>The Research Phase</h3>
+                    <p class="law-journey-step-desc">They click through 3-5 firms, read practice area pages, check Google reviews, and look for signs you understand their situation. 74% visit a law firm's website before making contact.</p>
+                    <div class="law-journey-step-solution">Trust-driven website + thought leadership content</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="law-journey-step">
+                    <div class="law-journey-step-icon-wrap">
+                        <div class="law-journey-step-icon-inner">
+                            <svg viewBox="0 0 56 56">
+                                <path d="M8 40V16a4 4 0 014-4h32a4 4 0 014 4v18a4 4 0 01-4 4H18l-10 8v-6z"/>
+                                <circle cx="20" cy="26" r="2" fill="#F5A623" stroke="none"/>
+                                <circle cx="28" cy="26" r="2" fill="#F5A623" stroke="none"/>
+                                <circle cx="36" cy="26" r="2" fill="#F5A623" stroke="none"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="law-journey-step-number">Step 03</div>
+                    <h3>The Shortlist</h3>
+                    <p class="law-journey-step-desc">They narrow it down to 2-3 firms. The deciding factors? How professional your website looks, how clearly you explain the process, and how easy it is to book a consultation.</p>
+                    <div class="law-journey-step-solution">CRO + landing pages built for booked consultations</div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="law-journey-step">
+                    <div class="law-journey-step-icon-wrap">
+                        <div class="law-journey-step-icon-inner">
+                            <svg viewBox="0 0 56 56">
+                                <path d="M28 50C28 50 6 36 6 20a12 12 0 0122-6.7A12 12 0 0150 20C50 36 28 50 28 50z"/>
+                                <path d="M20 30l4-8 4 5 4-3 4 6"/>
+                                <polyline points="38 26 38 18 46 18"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="law-journey-step-number">Step 04</div>
+                    <h3>The Relationship Begins</h3>
+                    <p class="law-journey-step-desc">They book a consult, sign the retainer, and become a client. But without follow-up, they won't refer others or come back for future matters.</p>
+                    <div class="law-journey-step-solution">CRM automation + email nurture + review generation</div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ========== SECTION 3: TWO-COLUMN (Text + Scrollable Cards) ========== -->
@@ -1526,6 +3049,8 @@
                 <button class="law-case-study-tab active" data-tab="rin-kim-law">Rin Kim Law</button>
                 <button class="law-case-study-tab" data-tab="franklin-family-law">Franklin Family Law</button>
                 <button class="law-case-study-tab" data-tab="love-family-lawyers">Love Family Lawyers</button>
+                <button class="law-case-study-tab" data-tab="becker-watt-lawyers">Becker Watt Lawyers</button>
+                <button class="law-case-study-tab" data-tab="medical-law">Medical Law</button>
                 <a href="case-studies.html" class="law-case-studies-cta">View All Case Studies</a>
             </div>
 
@@ -1606,6 +3131,125 @@
                     <p>Love Family Lawyers struggled with high CPCs, limited impressions, and inefficient budget allocation — their early campaigns yielded just one costly conversion. By extending visibility through the search network, reverting to their highest-converting landing page, disabling low-quality display ads and shifting bidding strategies, we drove branded search conversions under $100 and reduced client acquisition costs from $220 to under $180, delivering sustained growth in a fiercely competitive market.</p>
                 </div>
             </div>
+
+            <!-- Becker Watt Lawyers Case Study -->
+            <div class="law-case-study" data-content="becker-watt-lawyers">
+                <div class="law-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/becker%20watt%20case%20studie%20photo.webp" alt="Becker Watt Lawyers">
+                    <div class="law-case-study-stats-overlay">
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">400%</div>
+                            <div class="law-case-stat-label">Increase in Lead Quantity</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">200%</div>
+                            <div class="law-case-stat-label">Improved Cost Per Lead</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">$105</div>
+                            <div class="law-case-stat-label">Average Cost Per Lead</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="law-case-study-content">
+                    <h3>Becker Watt Lawyers</h3>
+                    <div class="law-case-study-outcome">Outcome | 400% increase in lead quantity &amp; 200% improved cost per lead</div>
+                    <p>Becker Watt Lawyers was stuck with a previous agency that was delivering fabricated results — over 1,400 fake conversions and $170k in wasted ad spend. Through a complete campaign restructure, custom landing page development, corrected conversion tracking, and a remarketing strategy built for high-intent leads, we delivered a 400% increase in lead quantity, a 200% improvement in cost per lead at just $105 per lead, and a 13.74% landing page conversion rate — giving their team the confidence and clarity to focus on winning cases.</p>
+                </div>
+            </div>
+
+            <!-- Medical Law Case Study -->
+            <div class="law-case-study" data-content="medical-law">
+                <div class="law-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/medical%20law%20pic.png" alt="Medical Law">
+                    <div class="law-case-study-stats-overlay">
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">120%</div>
+                            <div class="law-case-stat-label">Conversion Rate Increase</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">55%</div>
+                            <div class="law-case-stat-label">Increase in Lead Quality</div>
+                        </div>
+                        <div class="law-case-stat">
+                            <div class="law-case-stat-number">3x</div>
+                            <div class="law-case-stat-label">Uplift in Engagement</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="law-case-study-content">
+                    <h3>Medical Law</h3>
+                    <div class="law-case-study-outcome">Outcome | 120% conversion rate increase &amp; 55% improvement in lead quality</div>
+                    <p>This personal injury law firm had been running Meta campaigns that weren't delivering — poor targeting, creative fatigue, and instant forms generating low-quality leads with minimal return. Through refined audience targeting, extensive creative split testing, overhauled ad copy, and a purpose-built landing page designed to convert, we delivered a 120% increase in conversion rates, a 55% improvement in lead quality generating 40+ leads per month, and a 3x uplift in engagement across our redesigned creatives — turning their ad spend into a genuine growth channel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS (LAW) ========== -->
+    <section class="law-hiw-section">
+        <div class="law-hiw-container">
+            <span class="law-hiw-badge"><span class="law-hiw-badge-dot"></span>How It Works</span>
+            <h2 class="law-hiw-heading">From First Call to Full Pipeline</h2>
+            <p class="law-hiw-intro">Most of our law firm clients see measurable pipeline growth within the first 60 days.</p>
+
+            <div class="law-hiw-steps">
+                <!-- Step 1 -->
+                <div class="law-hiw-step">
+                    <div class="law-hiw-step-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80" alt="Reviewing law firm digital audit on laptop" loading="lazy">
+                        <div class="law-hiw-step-image-overlay"></div>
+                        <div class="law-hiw-step-number">01</div>
+                    </div>
+                    <div class="law-hiw-step-body">
+                        <div class="law-hiw-step-label">Step One</div>
+                        <h3>Free Growth Audit</h3>
+                        <p>We review your digital presence, your competitors, and the search landscape for your practice areas. You'll walk away knowing where you're leaving matters on the table.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="law-hiw-step">
+                    <div class="law-hiw-step-image">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80" alt="Building compliant legal marketing strategy" loading="lazy">
+                        <div class="law-hiw-step-image-overlay"></div>
+                        <div class="law-hiw-step-number">02</div>
+                    </div>
+                    <div class="law-hiw-step-body">
+                        <div class="law-hiw-step-label">Step Two</div>
+                        <h3>Compliant Strategy</h3>
+                        <p>A marketing plan designed for your practice areas with legal advertising compliance baked in. Every recommendation tied to qualified enquiries and signed retainers.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="law-hiw-step">
+                    <div class="law-hiw-step-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Monitoring and optimising law firm campaigns" loading="lazy">
+                        <div class="law-hiw-step-image-overlay"></div>
+                        <div class="law-hiw-step-number">03</div>
+                    </div>
+                    <div class="law-hiw-step-body">
+                        <div class="law-hiw-step-label">Step Three</div>
+                        <h3>Launch and Optimise</h3>
+                        <p>We go live and start driving qualified enquiries. Every campaign monitored, tested, and refined weekly. We track consultations booked and cost per matter.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="law-hiw-step">
+                    <div class="law-hiw-step-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Scaling law firm growth with data-driven strategies" loading="lazy">
+                        <div class="law-hiw-step-image-overlay"></div>
+                        <div class="law-hiw-step-number">04</div>
+                    </div>
+                    <div class="law-hiw-step-body">
+                        <div class="law-hiw-step-label">Step Four</div>
+                        <h3>Scale What Works</h3>
+                        <p>Once we identify what's driving the best matters, we double down. New practice areas, new geographies, increased budgets — all driven by data.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1636,65 +3280,56 @@
                 </div>
             </div>
             <div class="contact-form-container">
-                <form class="contact-form" name="law-firms-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
-                    <input type="hidden" name="form-name" value="law-firms-contact">
-                    <p style="display:none">
-                        <label>Don't fill this out: <input name="bot-field"></label>
-                    </p>
+                <form class="contact-form" id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" required>
+                            <input type="text" id="firstName" name="entry.898026604" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" required>
+                            <input type="text" id="lastName" name="entry.740647919" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="entry.218975118" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="entry.739101585">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="revenue">Current Monthly Revenue</label>
-                            <input type="text" id="revenue" name="revenue">
+                            <input type="text" id="revenue" name="entry.944393005">
                         </div>
                         <div class="form-group">
                             <label for="website">Website URL</label>
-                            <input type="text" id="website" name="website" placeholder="e.g. jrnydigital.com.au">
+                            <input type="text" id="website" name="entry.1572941628" placeholder="e.g. jrnydigital.com.au">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="hearAbout">How Did You Hear About Us?</label>
-                        <input type="text" id="hearAbout" name="hearAbout">
+                        <input type="text" id="hearAbout" name="entry.2041540004">
                     </div>
                     <div class="form-group">
                         <label for="budget">Monthly Marketing Budget?</label>
-                        <select id="budget" name="budget">
+                        <select id="budget" name="entry.413828990">
                             <option value="" disabled selected></option>
-                            <option value="0-5000">$0 - $5,000</option>
-                            <option value="5000-10000">$5,000 - $10,000</option>
-                            <option value="10000-25000">$10,000 - $25,000</option>
-                            <option value="25000-50000">$25,000 - $50,000</option>
-                            <option value="50000+">$50,000+</option>
+                            <option value="$0 - $5,000">$0 - $5,000</option>
+                            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                            <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                            <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+                            <option value="$50,000+">$50,000+</option>
                         </select>
                     </div>
                     <div class="form-submit">
                         <button type="submit">Submit</button>
                     </div>
                 </form>
-                <div class="form-success" id="formSuccess" style="display:none;">
-                    <div class="form-success-icon">&#10003;</div>
-                    <h3>Form Submitted Successfully!</h3>
-                    <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -1951,6 +3586,28 @@
             });
         });
 
+        // ========== Mouse tracking for law problem cards ==========
+        document.querySelectorAll('.law-problem-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // ========== Mouse tracking for law HIW steps ==========
+        document.querySelectorAll('.law-hiw-step').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
         // ========== Mouse tracking for FAQ items ==========
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('mousemove', (e) => {
@@ -2017,31 +3674,36 @@
             statsObserver.observe(statsSection);
         }
 
-        // ========== Contact Form Submission ==========
+        // ========== Contact Form Submission - Google Forms ==========
         const contactForm = document.getElementById('contactForm');
-        const formSuccess = document.getElementById('formSuccess');
+        const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeqOmxO3Hei3qxF4s96Wgf7DV_JNq7ZFRJqD9Xj5zwUALDZIA/formResponse';
 
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                const formData = new FormData(contactForm);
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
 
-                fetch('/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(formData).toString()
-                })
-                .then(function(response) {
-                    if (response.ok) {
-                        contactForm.style.display = 'none';
-                        formSuccess.style.display = 'block';
-                    } else {
-                        alert('Something went wrong (Error ' + response.status + '). Please try again.');
-                    }
-                })
-                .catch(function(error) {
-                    alert('Something went wrong. Please try again.');
-                });
+                // Create hidden iframe to submit form
+                var iframe = document.createElement('iframe');
+                iframe.name = 'hidden_iframe';
+                iframe.id = 'hidden_iframe';
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+
+                // Set form to submit to the hidden iframe
+                contactForm.setAttribute('action', googleFormURL);
+                contactForm.setAttribute('target', 'hidden_iframe');
+                contactForm.setAttribute('method', 'POST');
+
+                // Submit the form natively (into the hidden iframe)
+                contactForm.submit();
+
+                // Redirect after a short delay to allow submission
+                setTimeout(function() {
+                    window.location.href = 'https://jrnydigital.com.au/thank-you/';
+                }, 1000);
             });
         }
     </script>
