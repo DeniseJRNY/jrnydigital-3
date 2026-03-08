@@ -1474,20 +1474,29 @@
         .service-card-ctas .book-call:hover { color: #ffffff; }
 
         /* ========== FINANCIAL TESTIMONIALS SECTION ========== */
-        .fin-testimonials-section {
+        .fin-results-section {
             background: #000000;
             padding: 100px 60px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .fin-testimonials-container {
+        .fin-results-container {
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .fin-testimonials-header {
-            text-align: left;
-            margin-bottom: 80px;
+        .fin-results-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .fin-results-header h2 {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.2;
         }
 
         .fin-results-badge {
@@ -1539,115 +1548,191 @@
             border-radius: 50%;
         }
 
-        .fin-testimonials-header h2 {
-            font-size: 48px;
-            font-weight: 400;
-            color: #ffffff;
-            line-height: 1.1;
-            max-width: 100%;
+        .fin-results-view-all {
+            display: inline-block;
+            padding: 16px 36px;
+            background: #F5A623;
+            color: #000000;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
-        .fin-testimonials-tabs {
+        .fin-results-view-all:hover {
+            background: #e09515;
+            transform: translateY(-2px);
+        }
+
+        .fin-case-study-tabs {
             display: flex;
-            gap: 12px;
+            align-items: center;
+            gap: 15px;
             margin-bottom: 50px;
             flex-wrap: wrap;
         }
 
-        .fin-tab {
-            padding: 12px 28px;
+        .fin-case-study-tab {
+            padding: 15px 30px;
             background: transparent;
             border: 1px solid #333;
             border-radius: 50px;
             color: #888;
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'DM Sans', sans-serif;
         }
 
-        .fin-tab:hover {
+        .fin-case-study-tab:hover {
             border-color: #FFBD00;
             color: #FFBD00;
         }
 
-        .fin-tab.active {
+        .fin-case-study-tab.active {
             background: #FFBD00;
             border-color: #FFBD00;
             color: #000000;
         }
 
-        .fin-testimonial-panel {
+        .fin-case-study {
             display: none;
-        }
-
-        .fin-testimonial-panel.active {
-            display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: start;
+            align-items: center;
+            padding: 40px 0;
         }
 
-        .fin-testimonial-image {
-            border-radius: 12px;
+        .fin-case-study.active {
+            display: grid;
+        }
+
+        .fin-case-study-image-wrapper {
+            position: relative;
+            border-radius: 20px;
             overflow: hidden;
-            height: 100%;
-            min-height: 450px;
+            height: 450px;
         }
 
-        .fin-testimonial-image img {
+        .fin-case-study-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 189, 0, 0.15) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .fin-case-study-image-wrapper:hover::before {
+            opacity: 1;
+        }
+
+        .fin-case-study-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 12px;
+            transition: transform 0.5s ease;
         }
 
-        .fin-testimonial-stats {
+        .fin-case-study-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .fin-case-study-stats-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+            z-index: 2;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .fin-case-stat {
+            text-align: center;
+        }
+
+        .fin-case-stat-number {
+            font-size: 36px;
+            font-weight: 600;
+            color: #FFBD00;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .fin-case-stat-label {
+            font-size: 12px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fin-case-study-content {
+            background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            gap: 0;
+            justify-content: center;
         }
 
-        .fin-stat-item {
-            padding: 30px 0;
-            border-top: 3px solid #F5A623;
+        .fin-case-study-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 189, 0, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+            pointer-events: none;
+            border-radius: 20px;
         }
 
-        .fin-stat-item:last-child {
-            border-bottom: 3px solid #F5A623;
+        .fin-case-study-content:hover::before {
+            opacity: 1;
         }
 
-        .fin-stat-row {
-            display: flex;
-            align-items: baseline;
-            gap: 25px;
+        .fin-case-study-content > * {
+            position: relative;
+            z-index: 2;
         }
 
-        .fin-stat-number {
-            font-size: 64px;
-            font-weight: 400;
-            color: #F5A623;
-            line-height: 1;
-            min-width: 160px;
-        }
-
-        .fin-stat-info {
-            flex: 1;
-        }
-
-        .fin-stat-title {
-            font-size: 22px;
-            font-weight: 700;
+        .fin-case-study-content h3 {
+            font-size: 32px;
+            font-weight: 600;
             color: #ffffff;
-            line-height: 1.3;
-            margin-bottom: 4px;
+            margin-bottom: 15px;
         }
 
-        .fin-stat-subtitle {
-            font-size: 15px;
+        .fin-case-study-outcome {
+            font-size: 14px;
+            color: #FFBD00;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .fin-case-study-content p {
+            font-size: 16px;
+            line-height: 1.8;
             color: #ffffff;
-            font-weight: 400;
         }
 
         /* ========== CONTACT FORM SECTION ========== */
@@ -1768,10 +1853,8 @@
             .services-grid-section { padding: 80px 40px; }
             .services-grid-header h2 { font-size: 38px; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .fin-testimonials-section { padding: 80px 40px; }
-            .fin-testimonials-header h2 { font-size: 56px; }
-            .fin-stat-number { font-size: 52px; min-width: 130px; }
-            .fin-stat-title { font-size: 18px; }
+            .fin-results-section { padding: 80px 40px; }
+            .fin-results-header h2 { font-size: 42px; }
             .contact-section { padding: 80px 40px; }
             .contact-info h2 { font-size: 38px; }
             .faq-container { grid-template-columns: 1fr; gap: 50px; }
@@ -1817,14 +1900,14 @@
             .services-grid-header h2 { font-size: 30px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-card { padding: 35px 25px; }
-            .fin-testimonials-section { padding: 60px 20px; }
-            .fin-testimonials-header h2 { font-size: 32px; }
-            .fin-testimonial-panel.active { grid-template-columns: 1fr; gap: 40px; }
-            .fin-testimonial-image { min-height: 300px; }
-            .fin-stat-number { font-size: 44px; min-width: 110px; }
-            .fin-stat-title { font-size: 17px; }
-            .fin-stat-subtitle { font-size: 13px; }
-            .fin-tab { padding: 10px 22px; font-size: 13px; }
+            .fin-results-section { padding: 60px 20px; }
+            .fin-results-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .fin-results-header h2 { font-size: 32px; }
+            .fin-case-study.active { grid-template-columns: 1fr; gap: 40px; }
+            .fin-case-study-image-wrapper { height: 300px; }
+            .fin-case-study-content h3 { font-size: 24px; }
+            .fin-case-study-content p { font-size: 15px; }
+            .fin-case-study-tab { padding: 10px 22px; font-size: 13px; }
             .contact-section { padding: 60px 20px; }
             .contact-container { grid-template-columns: 1fr; gap: 40px; }
             .contact-info h2 { font-size: 32px; }
@@ -1849,11 +1932,10 @@
             .hero h1 { font-size: 30px; }
             .stat-number { font-size: 40px; }
             .services-grid-header h2 { font-size: 26px; }
-            .fin-testimonials-header h2 { font-size: 26px; }
-            .fin-stat-number { font-size: 36px; min-width: 90px; }
-            .fin-stat-title { font-size: 15px; }
-            .fin-stat-row { gap: 15px; }
-            .fin-stat-item { padding: 20px 0; }
+            .fin-results-header h2 { font-size: 26px; }
+            .fin-case-study-image-wrapper { height: 250px; }
+            .fin-case-study-content h3 { font-size: 22px; }
+            .fin-case-study-content p { font-size: 14px; }
             .contact-info h2 { font-size: 28px; }
             .faq-header h2 { font-size: 30px; }
             .cta-header h2 { font-size: 26px; }
@@ -2424,90 +2506,72 @@
         </div>
     </section>
 
-    <!-- ========== FINANCIAL TESTIMONIALS ========== -->
-    <section class="fin-testimonials-section">
-        <div class="fin-testimonials-container">
-            <div class="fin-testimonials-header">
-                <span class="fin-results-badge"><span class="fin-results-badge-dot"></span>Results</span>
+    <!-- ========== TABBED CASE STUDIES ========== -->
+    <section class="fin-results-section">
+        <div class="fin-results-container">
+            <span class="fin-results-badge"><span class="fin-results-badge-dot"></span>Real Results</span>
+            <div class="fin-results-header">
                 <h2>We'll Let The Results Speak<br>For Themselves</h2>
+                <a href="case-studies.html" class="fin-results-view-all">View More Case Studies</a>
             </div>
 
-            <div class="fin-testimonials-tabs">
-                <button class="fin-tab active" data-fin-tab="client-1">Cryptocurrency</button>
-                <button class="fin-tab" data-fin-tab="client-2">Stocks</button>
+            <div class="fin-case-study-tabs">
+                <button class="fin-case-study-tab active" data-tab="fin-ringo-insurance">Ringo Insurance</button>
+                <button class="fin-case-study-tab" data-tab="fin-centrestone-insurance">Centrestone Insurance</button>
             </div>
 
-            <!-- Client 1 Panel -->
-            <div class="fin-testimonial-panel active" data-fin-content="client-1">
-                <div class="fin-testimonial-image">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&q=80" alt="Financial services professional" loading="lazy">
+            <!-- Ringo Insurance Case Study -->
+            <div class="fin-case-study active" data-content="fin-ringo-insurance">
+                <div class="fin-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Screenshot%202026-03-08%20at%205.24.50%E2%80%AFPM.png" alt="Ringo Insurance" loading="lazy">
+                    <div class="fin-case-study-stats-overlay">
+                        <div class="fin-case-stat">
+                            <div class="fin-case-stat-number">151</div>
+                            <div class="fin-case-stat-label">Conversions</div>
+                        </div>
+                        <div class="fin-case-stat">
+                            <div class="fin-case-stat-number">2,291</div>
+                            <div class="fin-case-stat-label">Clicks</div>
+                        </div>
+                        <div class="fin-case-stat">
+                            <div class="fin-case-stat-number">+111%</div>
+                            <div class="fin-case-stat-label">Keyword Conversions</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="fin-testimonial-stats">
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">257%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Marketing Efficiency Ratio</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">430%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Decrease Advertising Spend</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">7.5</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Return on Investment</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="fin-case-study-content">
+                    <h3>Ringo Insurance</h3>
+                    <div class="fin-case-study-outcome">Outcome | 151 conversions, keyword conversions up +111%</div>
+                    <p>Ringo Insurance competes in one of Australia's most contested insurance niches against well-established national providers. Google Ads generated 151 conversions from 2,291 clicks across Search and Performance Max campaigns — with conversions per keyword up 111%, reflecting strong targeting and match type optimisation across high-intent jewellery insurance terms.</p>
                 </div>
             </div>
 
-            <!-- Client 2 Panel -->
-            <div class="fin-testimonial-panel" data-fin-content="client-2">
-                <div class="fin-testimonial-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Financial growth dashboard analytics" loading="lazy">
+            <!-- Centrestone Insurance Case Study -->
+            <div class="fin-case-study" data-content="fin-centrestone-insurance">
+                <div class="fin-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/670807375.jpg" alt="Centrestone Insurance" loading="lazy">
+                    <div class="fin-case-study-stats-overlay">
+                        <div class="fin-case-stat">
+                            <div class="fin-case-stat-number">2,455</div>
+                            <div class="fin-case-stat-label">Conversions</div>
+                        </div>
+                        <div class="fin-case-stat">
+                            <div class="fin-case-stat-number">25.73%</div>
+                            <div class="fin-case-stat-label">Conversion Rate</div>
+                        </div>
+                        <div class="fin-case-stat">
+                            <div class="fin-case-stat-number">$17.91</div>
+                            <div class="fin-case-stat-label">Cost Per Conversion</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="fin-testimonial-stats">
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">277%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Increase Opportunity Value</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">348%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Conversion Rate Improvement</div>
-                                <div class="fin-stat-subtitle">Within 1 month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-stat-item">
-                        <div class="fin-stat-row">
-                            <div class="fin-stat-number">709%</div>
-                            <div class="fin-stat-info">
-                                <div class="fin-stat-title">Sales Qualified Opportunities</div>
-                                <div class="fin-stat-subtitle">Since implementing our framework</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="fin-case-study-content">
+                    <h3>Centrestone Insurance</h3>
+                    <div class="fin-case-study-outcome">Outcome | 25.73% conversion rate — 5x the industry average</div>
+                    <p>Centrestone is Australia's leading specialist jewellery insurer, and the campaign results reflect that position. Google Ads delivered 2,455 conversions from 5,969 clicks at a 25.73% conversion rate — roughly five times the insurance industry benchmark. At just $17.91 per conversion across six campaigns spanning brand, generic, and competitor terms, the results demonstrate exceptional efficiency at scale.</p>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -3040,19 +3104,28 @@
             });
         });
 
-        // ========== Financial Testimonials Tabs ==========
-        const finTabs = document.querySelectorAll('.fin-tab');
-        const finPanels = document.querySelectorAll('.fin-testimonial-panel');
+        // ========== Financial Case Study Tabs ==========
+        const finTabs = document.querySelectorAll('.fin-case-study-tab');
+        const finCaseStudies = document.querySelectorAll('.fin-case-study');
 
         finTabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.finTab;
-
+                const targetTab = tab.dataset.tab;
                 finTabs.forEach(t => t.classList.remove('active'));
-                finPanels.forEach(p => p.classList.remove('active'));
-
+                finCaseStudies.forEach(cs => cs.classList.remove('active'));
                 tab.classList.add('active');
-                document.querySelector(`.fin-testimonial-panel[data-fin-content="${targetTab}"]`).classList.add('active');
+                document.querySelector(`.fin-case-study[data-content="${targetTab}"]`).classList.add('active');
+            });
+        });
+
+        // ========== Mouse tracking for fin case study elements ==========
+        document.querySelectorAll('.fin-case-study-content, .fin-case-study-image-wrapper').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
             });
         });
 
