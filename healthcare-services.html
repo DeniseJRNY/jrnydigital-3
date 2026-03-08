@@ -1543,6 +1543,268 @@
         .footer-bottom p { font-size: 16px; color: rgba(255,255,255,0.7); }
 
         /* ========== RESPONSIVE ========== */
+        /* ========== TABBED CASE STUDIES SECTION ========== */
+        .hc-results-section {
+            background: #000000;
+            padding: 100px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hc-results-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hc-results-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .hc-results-header h2 {
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .hc-results-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+            background: #1a1a1a;
+            z-index: 1;
+        }
+
+        .hc-results-badge::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: conic-gradient(from var(--angle), transparent 60%, #F5A623 80%, #FFBD00 100%, transparent 100%);
+            z-index: -2;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .hc-results-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background: #1a1a1a;
+            z-index: -1;
+        }
+
+        .hc-results-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .hc-results-view-all {
+            display: inline-block;
+            padding: 16px 36px;
+            background: #F5A623;
+            color: #000000;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .hc-results-view-all:hover {
+            background: #e09515;
+            transform: translateY(-2px);
+        }
+
+        .hc-case-study-tabs {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hc-case-study-tab {
+            padding: 15px 30px;
+            background: transparent;
+            border: 1px solid #333;
+            border-radius: 50px;
+            color: #888;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .hc-case-study-tab:hover {
+            border-color: #FFBD00;
+            color: #FFBD00;
+        }
+
+        .hc-case-study-tab.active {
+            background: #FFBD00;
+            border-color: #FFBD00;
+            color: #000000;
+        }
+
+        .hc-case-study {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .hc-case-study.active {
+            display: grid;
+        }
+
+        .hc-case-study-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 450px;
+        }
+
+        .hc-case-study-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 189, 0, 0.15) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .hc-case-study-image-wrapper:hover::before {
+            opacity: 1;
+        }
+
+        .hc-case-study-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .hc-case-study-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .hc-case-study-stats-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+            z-index: 2;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .hc-case-stat {
+            text-align: center;
+        }
+
+        .hc-case-stat-number {
+            font-size: 36px;
+            font-weight: 600;
+            color: #FFBD00;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .hc-case-stat-label {
+            font-size: 12px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hc-case-study-content {
+            background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hc-case-study-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 189, 0, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .hc-case-study-content:hover::before {
+            opacity: 1;
+        }
+
+        .hc-case-study-content > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hc-case-study-content h3 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .hc-case-study-outcome {
+            font-size: 14px;
+            color: #FFBD00;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hc-case-study-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ffffff;
+        }
+
         @media (max-width: 1024px) {
             nav { padding: 20px 40px; }
             .hero-content { padding: 140px 40px 60px; }
@@ -1554,6 +1816,8 @@
             .tagline-section p { font-size: 22px; }
             .value-section { padding: 80px 40px; }
             .value-container { gap: 50px; }
+            .hc-results-section { padding: 80px 40px; }
+            .hc-results-header h2 { font-size: 42px; }
             .services-grid-section { padding: 80px 40px; }
             .services-grid-header h2 { font-size: 38px; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1598,6 +1862,14 @@
             .value-container { grid-template-columns: 1fr; gap: 40px; }
             .value-text h2 { font-size: 28px; }
             .value-cards-scroll { max-height: none; overflow-y: visible; }
+            .hc-results-section { padding: 60px 20px; }
+            .hc-results-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .hc-results-header h2 { font-size: 32px; }
+            .hc-case-study.active { grid-template-columns: 1fr; gap: 40px; }
+            .hc-case-study-image-wrapper { height: 300px; }
+            .hc-case-study-content h3 { font-size: 24px; }
+            .hc-case-study-content p { font-size: 15px; }
+            .hc-case-study-tab { padding: 10px 22px; font-size: 13px; }
             .services-grid-section { padding: 60px 20px; }
             .services-grid-header h2 { font-size: 30px; }
             .services-grid { grid-template-columns: 1fr; }
@@ -1626,6 +1898,10 @@
             .hero h1 { font-size: 30px; }
             .stat-number { font-size: 40px; }
             .services-grid-header h2 { font-size: 26px; }
+            .hc-results-header h2 { font-size: 26px; }
+            .hc-case-study-image-wrapper { height: 250px; }
+            .hc-case-study-content h3 { font-size: 22px; }
+            .hc-case-study-content p { font-size: 14px; }
             .contact-info h2 { font-size: 28px; }
             .faq-header h2 { font-size: 30px; }
             .cta-header h2 { font-size: 26px; }
@@ -1763,79 +2039,79 @@
         <div class="hc-trades-container">
             <span class="hc-trades-badge"><span class="hc-trades-badge-dot"></span>Who We Work With</span>
             <div class="hc-trades-header-row">
-                <h2 class="hc-trades-heading">We Know Your Practice Area. We Market It Better.</h2>
+                <h2 class="hc-trades-heading">We Know Your Healthcare Niche. We Market It Better.</h2>
                 <a href="contact-us.html" class="hc-section-cta-btn">Let's Talk</a>
             </div>
-            <p class="hc-trades-body">A family law firm's marketing needs are nothing like a criminal defence practice. We build strategies around your specific area of law, your compliance requirements, and how your ideal clients actually search for and evaluate firms like yours.</p>
+            <p class="hc-trades-body">A dentist's marketing needs are nothing like a physio's. We build strategies around your specific practice, your compliance requirements, and how your patients actually search for and evaluate providers like you.</p>
 
             <div class="hc-trades-grid">
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Family Law</span>
+                    <span>General Practitioners</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Criminal Defence</span>
+                    <span>Dentists &amp; Orthodontists</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Personal Injury</span>
+                    <span>Physiotherapists</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Medical Negligence</span>
+                    <span>Chiropractors</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Employment Law</span>
+                    <span>Psychologists &amp; Counsellors</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Immigration Law</span>
+                    <span>Dermatologists</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Commercial Litigation</span>
+                    <span>Cosmetic Clinics</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Property &amp; Conveyancing</span>
+                    <span>Optometrists</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Wills &amp; Estate Planning</span>
+                    <span>NDIS Providers</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Traffic Law &amp; Driving Offences</span>
+                    <span>Allied Health Clinics</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Insurance Law</span>
+                    <span>Podiatrists</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Construction Law</span>
+                    <span>Fertility &amp; IVF Clinics</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Motorcycle &amp; Cycling Accidents</span>
+                    <span>Aged Care &amp; Home Care</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Birth Trauma &amp; Birth Injury</span>
+                    <span>Veterinary Clinics</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Workers Compensation</span>
+                    <span>Medical Specialists</span>
                 </div>
                 <div class="hc-trade-item">
                     <div class="hc-trade-item-indicator"></div>
-                    <span>Consumer Law</span>
+                    <span>Telehealth Platforms</span>
                 </div>
             </div>
 
-            <p class="hc-trades-cta-line">Don't see your practice area? Chances are we've worked with it. <a href="contact-us.html">Get in touch</a> and we'll show you what's possible.</p>
+            <p class="hc-trades-cta-line">Don't see your practice? Chances are we've worked with it. <a href="contact-us.html">Get in touch</a> and we'll show you what's possible.</p>
         </div>
     </section>
 
@@ -2182,6 +2458,102 @@
                     <p>Clicks and likes? They're nice. But not enough. We bring in real patients, strengthen relationships and drive measurable growth that matters.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ========== TABBED CASE STUDIES ========== -->
+    <section class="hc-results-section">
+        <div class="hc-results-container">
+            <span class="hc-results-badge"><span class="hc-results-badge-dot"></span>Real Results</span>
+            <div class="hc-results-header">
+                <h2>We'll Let The Results Speak<br>For Themselves</h2>
+                <a href="case-studies.html" class="hc-results-view-all">View More Case Studies</a>
+            </div>
+
+            <div class="hc-case-study-tabs">
+                <button class="hc-case-study-tab active" data-tab="hc-eye-select">Eye Select</button>
+                <button class="hc-case-study-tab" data-tab="hc-aplus-physio">A Plus Physiotherapy</button>
+                <button class="hc-case-study-tab" data-tab="hc-qp-care">QP Care</button>
+            </div>
+
+            <!-- Eye Select Case Study -->
+            <div class="hc-case-study active" data-content="hc-eye-select">
+                <div class="hc-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/EYESELECT_STORES-006-1024x683.jpg" alt="Eye Select" loading="lazy">
+                    <div class="hc-case-study-stats-overlay">
+                        <div class="hc-case-stat">
+                            <div class="hc-case-stat-number">108</div>
+                            <div class="hc-case-stat-label">Conversions</div>
+                        </div>
+                        <div class="hc-case-stat">
+                            <div class="hc-case-stat-number">33%</div>
+                            <div class="hc-case-stat-label">Conversion Rate</div>
+                        </div>
+                        <div class="hc-case-stat">
+                            <div class="hc-case-stat-number">$13.22</div>
+                            <div class="hc-case-stat-label">Cost Per Conversion</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hc-case-study-content">
+                    <h3>Eye Select</h3>
+                    <div class="hc-case-study-outcome">Outcome | 108 conversions at $13.22 per conversion</div>
+                    <p>Targeted Google Ads campaign for a Queensland optometry practice, focused on local intent keywords. By restructuring campaigns around suburb-specific search terms, we drove consistent patient enquiries at a fraction of typical healthcare ad costs.</p>
+                </div>
+            </div>
+
+            <!-- A Plus Physiotherapy Case Study -->
+            <div class="hc-case-study" data-content="hc-aplus-physio">
+                <div class="hc-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/image-3.webp" alt="A Plus Physiotherapy" loading="lazy">
+                    <div class="hc-case-study-stats-overlay">
+                        <div class="hc-case-stat">
+                            <div class="hc-case-stat-number">272</div>
+                            <div class="hc-case-stat-label">Organic Sessions</div>
+                        </div>
+                        <div class="hc-case-stat">
+                            <div class="hc-case-stat-number">1,558</div>
+                            <div class="hc-case-stat-label">GBP Impressions</div>
+                        </div>
+                        <div class="hc-case-stat">
+                            <div class="hc-case-stat-number">231</div>
+                            <div class="hc-case-stat-label">Direction Requests</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hc-case-study-content">
+                    <h3>A Plus Physiotherapy</h3>
+                    <div class="hc-case-study-outcome">Outcome | 218 search queries & 231 direction requests in 3 months</div>
+                    <p>Built the digital foundation for a Melbourne physio clinic from scratch — GA4 setup, Search Console integration, content strategy, and GBP optimisation. Within the first three months the clinic was appearing for 218 search queries and driving consistent local foot traffic.</p>
+                </div>
+            </div>
+
+            <!-- QP Care Case Study -->
+            <div class="hc-case-study" data-content="hc-qp-care">
+                <div class="hc-case-study-image-wrapper">
+                    <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Empowering-Lives.webp" alt="QP Care" loading="lazy">
+                    <div class="hc-case-study-stats-overlay">
+                        <div class="hc-case-stat">
+                            <div class="hc-case-stat-number">34,149</div>
+                            <div class="hc-case-stat-label">Search Impressions</div>
+                        </div>
+                        <div class="hc-case-stat">
+                            <div class="hc-case-stat-number">74,326</div>
+                            <div class="hc-case-stat-label">Facebook Impressions</div>
+                        </div>
+                        <div class="hc-case-stat">
+                            <div class="hc-case-stat-number">4,326</div>
+                            <div class="hc-case-stat-label">YouTube Subscribers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hc-case-study-content">
+                    <h3>QP Care</h3>
+                    <div class="hc-case-study-outcome">Outcome | 146% YouTube growth & 34K+ search impressions in 3 months</div>
+                    <p>A multi-channel awareness campaign spanning SEO, social, and email for a healthcare provider. Focused on building audience and visibility across platforms, growing YouTube subscribers by 146% and significantly expanding organic search reach over three months.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -2776,6 +3148,30 @@
                 }, 1000);
             });
         }
+        // ========== HC Case Study Tabs ==========
+        const hcTabs = document.querySelectorAll('.hc-case-study-tab');
+        const hcCaseStudies = document.querySelectorAll('.hc-case-study');
+
+        hcTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.dataset.tab;
+                hcTabs.forEach(t => t.classList.remove('active'));
+                hcCaseStudies.forEach(cs => cs.classList.remove('active'));
+                tab.classList.add('active');
+                document.querySelector(`.hc-case-study[data-content="${targetTab}"]`).classList.add('active');
+            });
+        });
+
+        // ========== Mouse tracking for HC case study elements ==========
+        document.querySelectorAll('.hc-case-study-content, .hc-case-study-image-wrapper').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
     </script>
 </body>
 </html>
